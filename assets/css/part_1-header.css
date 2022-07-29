@@ -1,9 +1,4 @@
 /* --- Header ------------------------------------------------------------------------------------------------------- */
-header {
-	position: relative;
-	min-height: 100vh;
-}
-
 header .header-content {
 	position: absolute;
 	top: 50%;

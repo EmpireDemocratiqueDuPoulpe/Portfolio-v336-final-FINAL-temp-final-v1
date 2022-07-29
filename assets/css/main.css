@@ -40,3 +40,9 @@ nav .nav-links .nav-link {
 	margin: 0 10px;
 	text-decoration: none;
 }
+
+/* --- Sections ----------------------------------------------------------------------------------------------------- */
+header, section {
+	position: relative;
+	min-height: 100vh;
+}
