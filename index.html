@@ -4,8 +4,26 @@
 	<head>
 		<title>Alexis Lecomte - CV</title>
 		<meta charset="UTF-8">
+		<link rel="stylesheet" href="assets/css/main.css">
+		<link rel="stylesheet" href="assets/css/part_1-header.css">
 	</head>
 	<body>
+		<header>
+			<div class="header-content">
+				<div class="hello-message">
+					<span class="hello">Bonjour</span>
+					<span class="my-name">Je suis Alexis &lt;NOM FAMILLE?&gt;</span>
+					<div class="my-situation">
+						<span class="fake-situation"></span>
+						<span class="real-situation">&Eacute;tudiant en &eacute;cole d&apos;informatique.</span>
+					</div>
+				</div>
+
+				<div class="profile-picture">
+					<img src="assets/images/me.png" alt="Ma photo de profil"/>
+				</div>
+			</div>
+		</header>
 		<h1>yo</h1>
 
 		<p>Un logo ici pour faire joli</p>
@@ -34,6 +52,7 @@
 		<p>alexis.lecomte@supinfo.com</p>
 		<p>Lien vers LinkedIn</p>
 
+		<script src="assets/js/fakeSituationGenerator.js"></script>
 		<script type="text/javascript">
 			setInterval(() => {
 				document.title = Math.floor(Math.random() * 1000).toString();
