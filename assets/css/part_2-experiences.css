@@ -1,0 +1,59 @@
+/* --- Experiences container ---------------------------------------------------------------------------------------- */
+#experiences-section .experiences-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: stretch;
+	width: 65%;
+	margin: 0 auto;
+	border: thin gray solid;
+}
+
+/* --- Experiences buttons list ------------------------------------------------------------------------------------- */
+#experiences-section .experiences-selector {
+	flex-grow: 0;
+	flex-shrink: 0;
+	width: 15%;
+}
+
+/* -- Selector buttons -- */
+#experiences-section .experiences-selector .experience-button {
+	padding: 7px 10px;
+}
+
+#experiences-section .experiences-selector .experience-button.selected {
+	background: darkolivegreen;
+}
+
+#experiences-section .experiences-selector .experience-button h4 {
+	margin: 0;
+	color: aqua;
+}
+
+/* --- Experience info box ------------------------------------------------------------------------------------------ */
+#experiences-section .experience-infos {
+	padding: 15px;
+}
+
+#experiences-section .experience-infos h3 {
+	margin-top: 0;
+}
+
+#experiences-section .experience-infos h3 .experience-company {
+	color: gold;
+}
+
+/* -- Experience details -- */
+#experiences-section .experience-infos .experience-details {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 10px;
+}
+
+#experiences-section .experience-infos .experience-details .experience-picture {
+	flex-shrink: 0;
+	max-width: 445px;
+	max-height: 250px;
+}
