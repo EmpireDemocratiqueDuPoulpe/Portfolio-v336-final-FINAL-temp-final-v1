@@ -1,0 +1,16 @@
+/* --- App navigation menu ------------------------------------------------------------------------------------------ */
+.App-navigation {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: 50px;
+	line-height: 50px;
+	padding: 0 20px;
+	background: #ECECEC;
+	z-index: 1000;
+}
