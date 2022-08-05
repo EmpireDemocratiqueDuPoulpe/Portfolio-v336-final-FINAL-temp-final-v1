@@ -1,6 +1,7 @@
 import AppNavigation, { NavigationLink } from "../../components/AppNavigation/AppNavigation.js";
-import ProfilePicture from "../../assets/images/me.png";
+import SocialNetwork from "../../components/SocialNetwork/SocialNetwork.js";
 import { Content } from "../../config/config.js";
+import ProfilePicture from "../../assets/images/me.png";
 import "./App.css";
 
 function getSituation() {
@@ -46,7 +47,17 @@ function App() {
 			</section>
 
 			<section id="contact-section" className="portfolio-section">
+				<h2>Contact</h2>
+
+				<h3>Envie d&apos;en savoir plus ?</h3>
+				<p>Contactez-moi par mail ou LinkedIn. Bon par contre il faut rallonger ce texte.</p>
+
+				<SocialNetwork.LinkedIn/>
+
+				<a href="mailto:alexis.lecomte@supinfo.com">Envoyer un mail</a>
 			</section>
+
+			<span>https://icones8.fr</span>
 		</div>
 	);
 }
