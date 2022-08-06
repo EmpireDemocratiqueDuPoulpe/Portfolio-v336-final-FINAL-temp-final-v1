@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import AppNavigation, { NavigationLink } from "../../components/AppNavigation/AppNavigation.js";
 import Experiences from "../../components/Experiences/Experiences.js";
 import Project from "../../components/Project/Project.js";
@@ -56,6 +57,15 @@ const experiences = [
  *****************************************************/
 
 function App() {
+	/* ---- Effects --------------------------------- */
+	useEffect(() => {
+		const interval = setInterval(() => {
+			document.title = Math.floor(Math.random() * 1000).toString();
+		}, 1000);
+
+		return () => clearInterval(interval);
+	}, []);
+
 	/* ---- Page content ---------------------------- */
 	return (
 		<div className="App">
@@ -126,6 +136,37 @@ function App() {
 			</section>
 
 			<span>https://icones8.fr</span>
+
+
+			<div className="temp">
+				<h1>yo</h1>
+
+				<p>Un logo ici pour faire joli</p>
+
+				<h2>&Agrave; propos de moi</h2>
+				<p>coucou c&apos;est moi. ahaha c&apos;est rigolo. non.</p>
+				<p>Ah et je suis &eacute;tudiant en informatique. &ccedil;a peut servir.</p>
+				<p>Photo?</p>
+				<p>Lien vers le CV</p>
+
+				<h2>Exp&eacute;riences</h2>
+				<h3>Intitul&eacute; n&deg;1</h3>
+				<p>&Agrave; : &lt;NOM ENTREPRISE&gt;</p>
+				<p>Du &lt;DATE D&Eacute;BUT&gt; au &lt;DATE FIN&gt;</p>
+				<p>Description descriptive et concise du projet.</p>
+				<p>Lien vers GitHub</p>
+				<p>Capture d&apos;&eacute;cran</p>
+				<em>Avis de l&apos;entreprise</em>
+
+				<h2>Projets</h2>
+				<h3>Projet pertinent n&deg;1</h3>
+				<p>Ça fait des trucs et des bidules.</p>
+				<em>Je suis le projet et je confirme que je fais des trucs et des bidules.</em>
+
+				<h2>Contact</h2>
+				<p>alexis.lecomte@supinfo.com</p>
+				<p>Lien vers LinkedIn</p>
+			</div>
 		</div>
 	);
 }
