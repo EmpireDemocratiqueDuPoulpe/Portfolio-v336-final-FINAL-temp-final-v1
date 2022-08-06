@@ -1,16 +1,5 @@
-/* --- Projects grid ------------------------------------------------------------------------------------------------ */
-#projects-section .projects-grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 1fr;
-	gap: 30px;
-	width: 65vw;
-	margin: 0 auto;
-}
-
 /* --- Project box -------------------------------------------------------------------------------------------------- */
-/* -- Container -- */
-#projects-section .project {
+.project {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -23,7 +12,7 @@
 	transition: box-shadow 150ms ease-in-out;
 }
 
-#projects-section .project:hover {
+.project:hover {
 	-o-box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
 	-moz-box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
 	-webkit-box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
@@ -31,12 +20,10 @@
 }
 
 /* -- Name -- */
-#projects-section .project .project-name {
-	margin-top: 0;
-}
+.project .project-name { margin-top: 0; }
 
 /* -- Techs -- */
-#projects-section .project .project-techs {
+.project .project-techs {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;

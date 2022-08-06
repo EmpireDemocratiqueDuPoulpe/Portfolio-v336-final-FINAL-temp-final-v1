@@ -1,4 +1,5 @@
 import AppNavigation, { NavigationLink } from "../../components/AppNavigation/AppNavigation.js";
+import Project from "../../components/Project/Project.js";
 import SocialNetwork from "../../components/SocialNetwork/SocialNetwork.js";
 import { Content } from "../../config/config.js";
 import ProfilePicture from "../../assets/images/me.png";
@@ -44,6 +45,25 @@ function App() {
 			</section>
 
 			<section id="projects-section" className="portfolio-section">
+				<h2>Projets</h2>
+
+				<div className="projects-grid">
+					<Project name="Pond Simulator 2020" href="#" techs={["Java"]}>
+						Pond Simulator 2020 is a JAVA project I did during my second year of study at SupInfo. This program is designed to simulate, in a simplified way, a lake and the life of the ducks inside.
+					</Project>
+
+					<Project name="Instabus" href="#" techs={["Kotlin"]}>
+						Instabus is an Android application created using Kotlin for a school project. It’s a social network like Instagram where users can search for bus stations in Barcelona and take pictures of them. Taken pictures can be seen by all users.
+					</Project>
+
+					<Project name="Mr. Driller clone" href="#" techs={["Python"]}>
+						Y&apos;a pas de description
+					</Project>
+
+					<Project name="Melodie" href="#" techs={["C#", "HTML", "CSS", "JavaScript"]}>
+						Melodie is a website where a logged-in user can create playlists and add musics to them using a file or a link. The songs are played by the Wavesurfer API, so JavaScript is required.
+					</Project>
+				</div>
 			</section>
 
 			<section id="contact-section" className="portfolio-section">

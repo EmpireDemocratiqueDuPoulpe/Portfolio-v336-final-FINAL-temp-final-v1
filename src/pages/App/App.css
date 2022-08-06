@@ -45,3 +45,14 @@ section.portfolio-section {
 	height: 100%;
 	object-fit: contain;
 }
+
+/* --- "Projects" section ------------------------------------------------------------------------------------------- */
+#projects-section .projects-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	gap: 30px;
+	width: 65vw;
+	margin: 0 auto;
+}
+
