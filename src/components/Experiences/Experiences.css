@@ -1,0 +1,21 @@
+/* --- Experiences ------------------------------------------------------------------------------------------------ */
+/* -- Container -- */
+.experiences-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: stretch;
+	width: 65%;
+	margin: 0 auto;
+	border: thin gray solid;
+}
+
+/* -- Selector -- */
+.experiences-container .experience-selector {
+	flex-grow: 0;
+	flex-shrink: 0;
+	width: 15%;
+}
+
+/* -- Info box -- */
+.experiences-container .experience-infos { padding: 15px; }
