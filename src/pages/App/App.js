@@ -70,13 +70,13 @@ function App() {
 	return (
 		<div className="App">
 			<AppNavigation>
-				<NavigationLink href="#about-section">Pr&eacute;sentation</NavigationLink>
-				<NavigationLink href="#experiences-section">Exp&eacute;rience</NavigationLink>
-				<NavigationLink href="#projects-section">Projets</NavigationLink>
-				<NavigationLink href="#contact-section">Contact</NavigationLink>
+				<NavigationLink href="#presentation">Pr&eacute;sentation</NavigationLink>
+				<NavigationLink href="#experiences">Exp&eacute;rience</NavigationLink>
+				<NavigationLink href="#projets">Projets</NavigationLink>
+				<NavigationLink href="#contact">Contact</NavigationLink>
 			</AppNavigation>
 
-			<section id="about-section" className="portfolio-section">
+			<section id="presentation" className="portfolio-section">
 				<div className="about-content">
 					<div className="welcome-msg">
 						<span className="hello">Bonjour</span>
@@ -96,13 +96,13 @@ function App() {
 				</div>
 			</section>
 
-			<section id="experiences-section" className="portfolio-section">
+			<section id="experiences" className="portfolio-section">
 				<h2>Exp&eacute;riences</h2>
 
 				<Experiences experiences={experiences}/>
 			</section>
 
-			<section id="projects-section" className="portfolio-section">
+			<section id="projets" className="portfolio-section">
 				<h2>Projets</h2>
 
 				<div className="projects-grid">
@@ -124,7 +124,7 @@ function App() {
 				</div>
 			</section>
 
-			<section id="contact-section" className="portfolio-section">
+			<section id="contact" className="portfolio-section">
 				<h2>Contact</h2>
 
 				<h3>Envie d&apos;en savoir plus ?</h3>

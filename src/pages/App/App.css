@@ -6,7 +6,7 @@ section.portfolio-section {
 
 /* --- "About me" section ------------------------------------------------------------------------------------------- */
 /* -- Container -- */
-#about-section .about-content  {
+section#presentation .about-content  {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -18,36 +18,36 @@ section.portfolio-section {
 }
 
 /* -- Welcome message -- */
-#about-section .about-content .welcome-msg {
+section#presentation .about-content .welcome-msg {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
 }
 
-#about-section .about-content .hello { font-size: 2em; }
-#about-section .about-content .my-name { font-size: 2.5em; }
+section#presentation .about-content .hello { font-size: 2em; }
+section#presentation .about-content .my-name { font-size: 2.5em; }
 
 /* -- My situation -- */
-#about-section .about-content .my-situation .fake-situation { text-decoration: line-through; }
-#about-section .about-content .my-situation .real-situation { font-size: 1.75em; }
+section#presentation .about-content .my-situation .fake-situation { text-decoration: line-through; }
+section#presentation .about-content .my-situation .real-situation { font-size: 1.75em; }
 
 /* -- Profile picture -- */
-#about-section .profile-picture {
+section#presentation .profile-picture {
 	width: 250px;
 	height: 250px;
 	background: rgba(0, 0, 0, 0.5);
 	border-radius: 50%;
 }
 
-#about-section .profile-picture img {
+section#presentation .profile-picture img {
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
 }
 
 /* --- "Projects" section ------------------------------------------------------------------------------------------- */
-#projects-section .projects-grid {
+section#projets .projects-grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 1fr;
