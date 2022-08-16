@@ -4,6 +4,7 @@ section.portfolio-section {
 	position: relative;
 	min-height: 100vh;
 	padding: 50px 10vw 0 10vw;
+	scroll-margin-top: 100px;
 }
 
 /* --- "About me" section ------------------------------------------------------------------------------------------- */
