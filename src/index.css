@@ -1,7 +1,9 @@
 /* --- Root CSS ----------------------------------------------------------------------------------------------------- */
 :root {
   --primary-color: #FAED26;
-  --secondary-color: #7711d0;
+  --secondary-color: #7711D0;
+  --secondary-color-3: #511786;
+  --secondary-color-5: #2C1342;
   --tertiary-color: #FA269D;
   --background-color: #171139;
   --text-color_primary: #D0CACA;
