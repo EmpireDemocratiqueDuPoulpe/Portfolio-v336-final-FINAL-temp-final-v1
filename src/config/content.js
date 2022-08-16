@@ -13,6 +13,9 @@ export default {
 			"Traqueur de gluon",
 			"Cartographe de cumulonimbus",
 			"Percussionniste de mousse",
-		]
+		],
+		getRandom() {
+			return this.enable ? (this.list[Math.floor(Math.random() * this.list.length)]) : null;
+		}
 	}
 };

@@ -11,11 +11,7 @@ import "./App.css";
  * Constants
  *****************************************************/
 
-function getSituation() {
-	return Content.fakeSituations.list[Math.floor(Math.random() * Content.fakeSituations.list.length)];
-}
-const fakeSituation = Content.fakeSituations.enable ? getSituation() : null;
-
+const fakeSituation = Content.fakeSituations.getRandom();
 const experiences = [
 	{
 		id: 1,
