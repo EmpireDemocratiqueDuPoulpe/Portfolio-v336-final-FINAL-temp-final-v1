@@ -1,12 +1,18 @@
 /* --- Root CSS ----------------------------------------------------------------------------------------------------- */
 :root {
-
+  --primary-color: #FAED26;
+  --secondary-color: #7711d0;
+  --tertiary-color: #FA269D;
+  --background-color: #171139;
+  --text-color_primary: #D0CACA;
 }
 
 html {
   box-sizing: border-box;
   width: 100%;
   scroll-behavior: smooth;
+  background: var(--background-color);
+  color: var(--text-color_primary);
 }
 
 body {
@@ -22,4 +28,9 @@ body {
   overflow-x: hidden;
 }
 
+h1, h2 { color: var(--primary-color); }
+
 /* --- Special classes ---------------------------------------------------------------------------------------------- */
+.link {
+  color: var(--tertiary-color);
+}

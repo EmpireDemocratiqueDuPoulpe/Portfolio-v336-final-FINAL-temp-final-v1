@@ -129,7 +129,7 @@ function App() {
 
 				<SocialNetwork.LinkedIn/>
 
-				<a href="mailto:alexis.lecomte@supinfo.com">Envoyer un mail</a>
+				<a className="link" href="mailto:alexis.lecomte@supinfo.com">Envoyer un mail</a>
 			</section>
 
 			<span>https://icones8.fr</span>

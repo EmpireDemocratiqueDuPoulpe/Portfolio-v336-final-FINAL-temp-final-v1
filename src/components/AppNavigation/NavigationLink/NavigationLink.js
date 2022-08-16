@@ -4,7 +4,7 @@ import "./NavigationLink.css";
 function NavigationLink({ href, children }) {
 	/* ---- Page content ---------------------------- */
 	return (
-		<a className="navigation-link" href={href}>
+		<a className="link navigation-link" href={href}>
 			{children}
 		</a>
 	);

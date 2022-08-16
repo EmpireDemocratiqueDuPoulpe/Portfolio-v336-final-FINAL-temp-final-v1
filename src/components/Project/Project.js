@@ -6,7 +6,7 @@ function Project({ name, href, techs, children }) {
 	return (
 		<div className="project">
 			<h3 className="project-name">{name}</h3>
-			{href && <a className="project-link" href={href}>Lien vers le projet</a>}
+			{href && <a className="link project-link" href={href}>Lien vers le projet</a>}
 
 			<span className="project-desc">{children}</span>
 
