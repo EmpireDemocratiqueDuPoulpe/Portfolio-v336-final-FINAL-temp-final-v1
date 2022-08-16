@@ -1,29 +1,106 @@
 /* --- Project box -------------------------------------------------------------------------------------------------- */
 .project {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: stretch;
+	height: 180px;
+	padding: 4px 0 0 4px;
+	-o-box-shadow: -2px -2px 0 0 var(--secondary-color-3);
+	-moz-box-shadow: -2px -2px 0 0 var(--secondary-color-3);
+	-webkit-box-shadow: -2px -2px 0 0 var(--secondary-color-3);
+	box-shadow: -2px -2px 0 0 var(--secondary-color-3);
+	transition: box-shadow 150ms ease-in-out;
+}
+
+.project:hover {
+	-o-box-shadow: -5px -5px 0 2px var(--secondary-color);
+	-moz-box-shadow: -5px -5px 0 2px var(--secondary-color);
+	-webkit-box-shadow: -5px -5px 0 2px var(--secondary-color);
+	box-shadow: -5px -5px 0 2px var(--secondary-color);
+}
+
+/* -- Project image -- */
+.project .project-img {
+	box-sizing: border-box;
+	flex-shrink: 0;
+	flex-grow: 0;
+	text-align: center;
+	width: 35%;
+	background: var(--secondary-color-5);
+}
+
+.project .project-img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* -- Project infos -- */
+.project .project-infos {
+	position: relative;
+	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
 	padding: 15px;
-	-o-box-shadow: 2px 2px 15px 0 rgba(0, 0, 0, 0.2);
-	-moz-box-shadow: 2px 2px 15px 0 rgba(0, 0, 0, 0.2);
-	-webkit-box-shadow: 2px 2px 15px 0 rgba(0, 0, 0, 0.2);
-	box-shadow: 2px 2px 15px 0 rgba(0, 0, 0, 0.2);
-	transition: box-shadow 150ms ease-in-out;
 }
 
-.project:hover {
-	-o-box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
-	-moz-box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
-	-webkit-box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
-	box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
+/* - Name - */
+.project .project-infos .project-name { margin-top: 0; }
+
+/* - Link to the project - */
+.project .project-infos .project-link {
+	position: absolute;
+	top: 1.1em;
+	right: 15px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	height: 100%;
+	max-height: 1em;
+	text-decoration: none;
+	transition: color 150ms ease-in;
+}
+.project .project-infos .project-link:hover { color: var(--primary-color); }
+
+.project .project-infos .project-link span {
+	display: inline-block;
+	text-align: right;
+	width: 0;
+	padding-right: 0;
+	color: var(--text-color_primary);
+	white-space: nowrap;
+	transition: width 150ms ease-in, padding-right 150ms ease-in, color 150ms ease-in;
+	overflow: hidden;
+}
+.project .project-infos .project-link:hover span {
+	width: 150px;
+	padding-right: 5px;
+	color: var(--primary-color);
 }
 
-/* -- Name -- */
-.project .project-name { margin-top: 0; }
+.project .project-infos .project-link svg {
+	width: 1em;
+	height: 1em;
+	fill: var(--text-color_primary);
+	transition: fill 150ms ease-in;
+}
+.project .project-infos .project-link:hover svg { fill: var(--primary-color); }
 
-/* -- Techs -- */
-.project .project-techs {
+/* - Description - */
+.project .project-infos .project-desc {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+	overflow-y: hidden;
+}
+
+/* - Techs - */
+.project .project-infos .project-techs {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
@@ -32,4 +109,5 @@
 	flex-grow: 1;
 	font-size: 0.8em;
 	margin-top: 15px;
+	color: var(--tertiary-color);
 }
