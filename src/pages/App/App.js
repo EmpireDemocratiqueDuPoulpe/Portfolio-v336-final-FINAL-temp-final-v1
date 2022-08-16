@@ -5,6 +5,9 @@ import Project from "../../components/Project/Project.js";
 import SocialNetwork from "../../components/SocialNetwork/SocialNetwork.js";
 import { Content } from "../../config/config.js";
 import ProfilePicture from "../../assets/images/me.png";
+import PondSimulator2020 from "../../assets/images/projects/pond_simulator_2020.png";
+import Instabus from "../../assets/images/projects/instabus.png";
+import MrDriller from "../../assets/images/projects/mr_driller.png";
 import "./App.css";
 
 /*****************************************************
@@ -103,20 +106,20 @@ function App() {
 				<h2>Projets</h2>
 
 				<div className="projects-grid">
-					<Project name="Pond Simulator 2020" href="#" techs={["Java"]}>
+					<Project name="Pond Simulator 2020" href="#" techs={["Java"]} img={PondSimulator2020}>
 						Pond Simulator 2020 is a JAVA project I did during my second year of study at SupInfo. This program is designed to simulate, in a simplified way, a lake and the life of the ducks inside.
-					</Project>
-
-					<Project name="Instabus" href="#" techs={["Kotlin"]}>
-						Instabus is an Android application created using Kotlin for a school project. It’s a social network like Instagram where users can search for bus stations in Barcelona and take pictures of them. Taken pictures can be seen by all users.
-					</Project>
-
-					<Project name="Mr. Driller clone" href="#" techs={["Python"]}>
-						Y&apos;a pas de description
 					</Project>
 
 					<Project name="Melodie" href="#" techs={["C#", "HTML", "CSS", "JavaScript"]}>
 						Melodie is a website where a logged-in user can create playlists and add musics to them using a file or a link. The songs are played by the Wavesurfer API, so JavaScript is required.
+					</Project>
+
+					<Project name="Instabus" href="#" techs={["Kotlin"]} img={Instabus}>
+						Instabus is an Android application created using Kotlin for a school project. It’s a social network like Instagram where users can search for bus stations in Barcelona and take pictures of them. Taken pictures can be seen by all users.
+					</Project>
+
+					<Project name="Mr. Driller clone" href="#" techs={["Python"]} img={MrDriller}>
+						Y&apos;a pas de description
 					</Project>
 				</div>
 			</section>
@@ -133,6 +136,7 @@ function App() {
 			</section>
 
 			<span>https://icones8.fr</span>
+			<span>Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.</span>
 
 
 			<div className="temp">
