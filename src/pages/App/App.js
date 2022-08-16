@@ -79,7 +79,8 @@ function App() {
 						<h1 className="my-name">Je suis Alexis &lt;NOM FAMILLE?&gt;</h1>
 
 						<div className="my-situation">
-							<span className="fake-situation">{fakeSituation}</span>
+							<img className="fake-situation-img" src={fakeSituation.illustration} alt=""/>
+							<span className="fake-situation">{fakeSituation.name}</span>
 							<span className="real-situation">&Eacute;tudiant en &eacute;cole d&apos;informatique.</span>
 						</div>
 

@@ -32,6 +32,25 @@ section#presentation .about-content .hello { font-size: 2em; }
 section#presentation .about-content .my-name { font-size: 2.5em; }
 
 /* -- My situation -- */
+section#presentation .about-content .my-situation { position: relative; }
+
+section#presentation .about-content .my-situation .fake-situation-img {
+	position: absolute;
+	top: -15px;
+	left: -375px;
+	max-width: 250px;
+	max-height: 250px;
+	transform: rotate(20deg);
+	animation: moveIndeterminate 4s linear infinite;
+}
+
+@keyframes moveIndeterminate {
+	0%, 100% { transform: translate(0, 0); }
+	75% { transform: translate(3px, -9px) rotate(2deg); }
+	50% { transform: translate(7px, -2px); }
+	25% { transform: translate(4px, 3px) rotate(-3deg); }
+}
+
 section#presentation .about-content .my-situation .fake-situation { text-decoration: line-through; }
 section#presentation .about-content .my-situation .real-situation { font-size: 1.75em; }
 
