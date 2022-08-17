@@ -1,21 +1,37 @@
 /* --- Button ------------------------------------------------------------------------------------------------------- */
-/* -- Container -- */
+/* -- Button -- */
 .button {
 	box-sizing: border-box;
 	position: relative;
+	display: block;
+	text-align: center;
 	width: 100%;
 	max-width: 240px;
-	height: 60px;
-	padding: 0.3em;
-	border: thin rgba(225, 225, 225, 0.3) solid;
-	/*box-shadow:
-			0 2px 0 -1px rgba(225, 225, 225, 0.3), /* Top * /
-			22px 20px 0 -20px rgba(225, 225, 225, 0.3), 22px -20px 0 -20px rgba(225, 225, 225, 0.3), /* Right * /
-			0 -2px 0 -1px rgba(225, 225, 225, 0.3), /* Bottom * /
-			-22px 20px 0 -20px rgba(225, 225, 225, 0.3), -22px -20px 0 -20px rgba(225, 225, 225, 0.3) /* Left * /;*/
+	height: 55px;
+	line-height: calc(55px - 0.3em);
+	background: none;
+	border: thin var(--tertiary-color) solid;
+	color: var(--text-color_primary);
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	/* text-transform: uppercase; */
+	text-decoration: none;
+	cursor: pointer;
 }
 
-.button::before, .button::after {
+/* -- Borders -- */
+.button .button-borders {
+	position: absolute;
+	top: -0.5em;
+	right: -0.5em;
+	bottom: -0.5em;
+	left: -0.5em;
+	border: thin rgba(225, 225, 225, 0.3) solid;
+	transition: border-color 75ms ease-in-out, border-width 75ms ease-in-out;
+}
+
+.button .button-borders::before, .button .button-borders::after {
 	content: "";
 	position: absolute;
 	top: 50%;
@@ -25,27 +41,20 @@
 	transform: translateY(-50%);
 }
 
-.button::before { left: -0.15em; }
-.button::after { right: -0.15em; }
+.button .button-borders::before { left: -0.15em; }
+.button .button-borders::after { right: -0.15em; }
 
-/* -- Button -- */
-.button .button-element {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	background: none;
-	border: thin var(--tertiary-color) solid;
-	color: var(--text-color_primary);
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	appearance: none;
-	/* text-transform: uppercase; */
+/* -- Animated background -- */
+.button .button-background {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 	overflow: hidden;
-	cursor: pointer;
 }
 
-/* - Button animated background */
-.button .button-element::before {
+.button .button-background::before {
 	content: "";
 	position: absolute;
 	top: -10px;
@@ -58,7 +67,7 @@
 	z-index: -1;
 }
 
-/* - Decoration - */
+/* -- Decoration -- */
 .button .decoration {
 	position: absolute;
 	right: 20px;
@@ -67,7 +76,15 @@
 	transition: opacity 350ms linear, transform 350ms linear;
 }
 
-/* - Events - */
-.button .button-element:hover::before { width: 110%; }
+/* -- Events -- */
+/* - Borders - */
+.button:active, .button:focus { outline: none; }
 
-.button .button-element:hover .decoration { opacity: 1; transform: translateX(-6px); }
+.button:active .button-borders,
+.button:focus .button-borders { border-color: var(--primary-color); border-width: 2px; }
+
+/* - Background - */
+.button:hover .button-background::before { width: 110%; }
+
+/* - Decoration - */
+.button:hover .decoration { opacity: 1; transform: translateX(-6px); }

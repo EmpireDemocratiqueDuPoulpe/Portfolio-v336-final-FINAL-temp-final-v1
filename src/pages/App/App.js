@@ -88,7 +88,7 @@ function App() {
 							<span className="real-situation">&Eacute;tudiant en &eacute;cole d&apos;informatique</span>
 						</div>
 
-						<Button className="cv-btn" decoration="❯">Consulter mon CV</Button>
+						<Button className="cv-btn" href="https://www.google.fr" decoration="❯">Consulter mon CV</Button>
 					</div>
 
 					<div className="profile-picture">
