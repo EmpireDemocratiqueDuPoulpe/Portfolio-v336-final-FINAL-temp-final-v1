@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Button from "../../components/Button/Button.js";
 import AppNavigation, { NavigationLink } from "../../components/AppNavigation/AppNavigation.js";
 import Experiences from "../../components/Experiences/Experiences.js";
 import Project from "../../components/Project/Project.js";
@@ -78,16 +79,16 @@ function App() {
 			<section id="presentation" className="portfolio-section">
 				<div className="about-content">
 					<div className="welcome-msg">
-						<span className="hello">Bonjour</span>
-						<h1 className="my-name">Je suis Alexis &lt;NOM FAMILLE?&gt;</h1>
+						<span className="hello">Bonjour, je m&apos;appelle</span>
+						<h1 className="my-name">Alexis Lecomte</h1>
 
 						<div className="my-situation">
 							<img className="fake-situation-img" src={fakeSituation.illustration} alt=""/>
-							<span className="fake-situation">{fakeSituation.name}</span>
-							<span className="real-situation">&Eacute;tudiant en &eacute;cole d&apos;informatique.</span>
+							<span className="fake-situation animated-strikethrough always-on">{fakeSituation.name}</span>
+							<span className="real-situation">&Eacute;tudiant en &eacute;cole d&apos;informatique</span>
 						</div>
 
-						<button>Consulter mon CV &rarr;</button>
+						<Button className="cv-btn" decoration="❯">Consulter mon CV</Button>
 					</div>
 
 					<div className="profile-picture">

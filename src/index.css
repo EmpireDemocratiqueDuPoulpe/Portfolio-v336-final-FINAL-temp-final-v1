@@ -33,6 +33,53 @@ body {
 h1, h2 { color: var(--primary-color); }
 
 /* --- Special classes ---------------------------------------------------------------------------------------------- */
+/* -- Links -- */
 .link {
   color: var(--tertiary-color);
+}
+
+/* -- Buttons -- */
+/*.button {
+  position: relative;
+  display: inline-block;
+  padding: 3%;
+  background: none;
+  border: 0.125em currentColor solid;
+  border-radius: 5px;
+  color: var(--tertiary-color);
+  cursor: pointer;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--tertiary-color);
+  opacity: 0;
+  transition: opacity 125ms ease-in;
+}
+
+.button:hover {
+
+}
+.button:hover::before { opacity: 0.15; }*/
+
+/* -- Animated strikethrough -- */
+/* See https://stackoverflow.com/a/72459455/15024857 */
+.animated-strikethrough {
+  --strike: 0; /* Enable/disable the strikethrough */
+  background: linear-gradient(90deg, transparent, currentColor 0) no-repeat right center / calc(var(--strike) * 100%) 0.05em;
+  transition: background-size 330ms cubic-bezier(0.6, 0.1, 0.3, 0.9);
+}
+
+/* Not working on DOM load */
+.animated-strikethrough.always-on { transition-delay: 2s; }
+
+.animated-strikethrough.always-on,
+.animated-strikethrough.on-hover:hover {
+  --strike: 1;
+  background-position-x: left;
 }

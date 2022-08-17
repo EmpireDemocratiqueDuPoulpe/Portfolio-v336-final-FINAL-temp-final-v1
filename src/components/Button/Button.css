@@ -1,0 +1,73 @@
+/* --- Button ------------------------------------------------------------------------------------------------------- */
+/* -- Container -- */
+.button {
+	box-sizing: border-box;
+	position: relative;
+	width: 100%;
+	max-width: 240px;
+	height: 60px;
+	padding: 0.3em;
+	border: thin rgba(225, 225, 225, 0.3) solid;
+	/*box-shadow:
+			0 2px 0 -1px rgba(225, 225, 225, 0.3), /* Top * /
+			22px 20px 0 -20px rgba(225, 225, 225, 0.3), 22px -20px 0 -20px rgba(225, 225, 225, 0.3), /* Right * /
+			0 -2px 0 -1px rgba(225, 225, 225, 0.3), /* Bottom * /
+			-22px 20px 0 -20px rgba(225, 225, 225, 0.3), -22px -20px 0 -20px rgba(225, 225, 225, 0.3) /* Left * /;*/
+}
+
+.button::before, .button::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	width: 0.3em;
+	height: 18px;
+	background: var(--background-color);
+	transform: translateY(-50%);
+}
+
+.button::before { left: -0.15em; }
+.button::after { right: -0.15em; }
+
+/* -- Button -- */
+.button .button-element {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: none;
+	border: thin var(--tertiary-color) solid;
+	color: var(--text-color_primary);
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	/* text-transform: uppercase; */
+	overflow: hidden;
+	cursor: pointer;
+}
+
+/* - Button animated background */
+.button .button-element::before {
+	content: "";
+	position: absolute;
+	top: -10px;
+	bottom: -10px;
+	left: -5%;
+	width: 0;
+	background: var(--tertiary-color);
+	transform: skewX(-24deg);
+	transition: width 300ms ease-out;
+	z-index: -1;
+}
+
+/* - Decoration - */
+.button .decoration {
+	position: absolute;
+	right: 20px;
+	display: inline-block;
+	opacity: 0;
+	transition: opacity 350ms linear, transform 350ms linear;
+}
+
+/* - Events - */
+.button .button-element:hover::before { width: 110%; }
+
+.button .button-element:hover .decoration { opacity: 1; transform: translateX(-6px); }
