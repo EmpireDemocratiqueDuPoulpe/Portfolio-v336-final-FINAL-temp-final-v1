@@ -15,6 +15,7 @@ export default {
 			{ name: "Traqueur de gluon", illustration: WeightlessPainter },
 			{ name: "Cartographe de cumulonimbus", illustration: WeightlessPainter },
 			{ name: "Percussionniste de mousse", illustration: WeightlessPainter },
+			{ name: "Bodybuilder animalier", illustration: WeightlessPainter },
 		],
 		getRandom() {
 			return this.enable ? (this.list[Math.floor(Math.random() * this.list.length)]) : null;
