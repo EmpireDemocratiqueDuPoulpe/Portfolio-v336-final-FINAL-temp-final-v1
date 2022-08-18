@@ -1,6 +1,8 @@
 import { useEffect } from "react";
+import useCV from "../../context/CV/CVContext.js";
 import Button from "../../components/Button/Button.js";
 import AppNavigation, { NavigationLink } from "../../components/AppNavigation/AppNavigation.js";
+import CVModal from "../../components/CVModal/CVModal.js";
 import Experiences from "../../components/Experiences/Experiences.js";
 import Project from "../../components/Project/Project.js";
 import SocialNetwork from "../../components/SocialNetwork/SocialNetwork.js";
@@ -57,6 +59,9 @@ const experiences = [
  *****************************************************/
 
 function App() {
+	/* ---- States ---------------------------------- */
+	const cv = useCV();
+
 	/* ---- Effects --------------------------------- */
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -76,6 +81,8 @@ function App() {
 				<NavigationLink href="#contact">Contact</NavigationLink>
 			</AppNavigation>
 
+			<CVModal/>
+
 			<section id="presentation" className="portfolio-section">
 				<div className="about-content">
 					<div className="welcome-msg">
@@ -88,7 +95,7 @@ function App() {
 							<span className="real-situation">&Eacute;tudiant en &eacute;cole d&apos;informatique</span>
 						</div>
 
-						<Button className="cv-btn" href="https://www.google.fr" decoration="❯">Consulter mon CV</Button>
+						<Button className="cv-btn" onClick={cv.show} decoration="❯">Consulter mon CV</Button>
 					</div>
 
 					<div className="profile-picture">

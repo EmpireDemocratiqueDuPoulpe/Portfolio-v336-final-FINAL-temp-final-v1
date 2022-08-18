@@ -1,15 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./pages/App/App.js";
+import { CVProvider } from "./context/CV/CVContext.js";
 // import reportWebVitals from "./reportWebVitals";
 import "normalize.css";
 import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-	<React.StrictMode>
-		<App/>
-	</React.StrictMode>
+	<CVProvider>
+		<React.StrictMode>
+			<App/>
+		</React.StrictMode>
+	</CVProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
