@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useRef, useEffect } from "react";
 import useCV from "../../context/CV/CVContext.js";
 import Button from "../../components/Button/Button.js";
 import AppNavigation, { NavigationLink } from "../../components/AppNavigation/AppNavigation.js";
@@ -61,6 +61,10 @@ const experiences = [
 function App() {
 	/* ---- States ---------------------------------- */
 	const cv = useCV();
+	const presentationRef = useRef();
+	const experiencesRef = useRef();
+	const projetsRef = useRef();
+	const contactRef = useRef();
 
 	/* ---- Effects --------------------------------- */
 	useEffect(() => {
@@ -75,15 +79,15 @@ function App() {
 	return (
 		<div className="App">
 			<AppNavigation>
-				<NavigationLink href="#presentation">Pr&eacute;sentation</NavigationLink>
-				<NavigationLink href="#experiences">Exp&eacute;rience</NavigationLink>
-				<NavigationLink href="#projets">Projets</NavigationLink>
-				<NavigationLink href="#contact">Contact</NavigationLink>
+				<NavigationLink href="#presentation" sectionRef={presentationRef}>Pr&eacute;sentation</NavigationLink>
+				<NavigationLink href="#experiences" sectionRef={experiencesRef}>Exp&eacute;rience</NavigationLink>
+				<NavigationLink href="#projets" sectionRef={projetsRef}>Projets</NavigationLink>
+				<NavigationLink href="#contact" sectionRef={contactRef}>Contact</NavigationLink>
 			</AppNavigation>
 
 			<CVModal/>
 
-			<section id="presentation" className="portfolio-section">
+			<section id="presentation" className="portfolio-section" ref={presentationRef}>
 				<div className="about-content">
 					<div className="welcome-msg">
 						<span className="hello">Bonjour, je m&apos;appelle</span>
@@ -104,13 +108,13 @@ function App() {
 				</div>
 			</section>
 
-			<section id="experiences" className="portfolio-section">
+			<section id="experiences" className="portfolio-section" ref={experiencesRef}>
 				<h2>Exp&eacute;riences</h2>
 
 				<Experiences experiences={experiences}/>
 			</section>
 
-			<section id="projets" className="portfolio-section">
+			<section id="projets" className="portfolio-section" ref={projetsRef}>
 				<h2>Projets</h2>
 
 				<div className="projects-grid">
@@ -132,7 +136,7 @@ function App() {
 				</div>
 			</section>
 
-			<section id="contact" className="portfolio-section">
+			<section id="contact" className="portfolio-section" ref={contactRef}>
 				<h2>Contact</h2>
 
 				<h3>Envie d&apos;en savoir plus ?</h3>

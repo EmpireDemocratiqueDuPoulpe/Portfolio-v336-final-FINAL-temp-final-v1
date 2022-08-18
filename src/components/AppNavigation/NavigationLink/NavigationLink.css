@@ -1,6 +1,66 @@
 /* --- Navigation link ---------------------------------------------------------------------------------------------- */
 .navigation-link {
+	position: relative;
 	display: inline-block;
 	margin: 0 10px;
+	padding: 0.3em;
+	color: var(--text-color_background) !important;
+	background: none;
+	border: none;
+	border-radius: 2px;
+	font-weight: 600;
+	text-transform: uppercase;
 	text-decoration: none;
+	letter-spacing: 2px;
+	cursor: pointer;
+}
+
+/* -- Animated background and border -- */
+.navigation-link::before,
+.navigation-link::after {
+	content: "";
+	position: absolute;
+	top: 20%;
+	border-radius: 2px;
+	transition: all 400ms cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* - Background - */
+.navigation-link::before {
+	left: 0;
+	width: 100%;
+	height: 0;
+	background: var(--primary-color);
+	opacity: 0.35;
+}
+
+/* - Border - */
+.navigation-link::after {
+	left: 50%;
+	width: 0;
+	height: 1px;
+	border-top: thin transparent solid;
+}
+
+/* -- Events -- */
+/* - Hover - */
+.navigation-link:hover::after,
+.navigation-link.current::after {
+	left: 0;
+	width: 100%;
+}
+
+.navigation-link:hover::after,
+.navigation-link.current::after { border-top-color: var(--primary-color); }
+
+/* - Focus/selected - */
+.navigation-link:focus,
+.navigation-link.current {
+	color: var(--primary-color) !important;
+}
+
+.navigation-link:focus::before,
+.navigation-link.current::before {
+	height: 60%;
+	bottom: 20%;
 }
