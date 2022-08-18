@@ -53,6 +53,11 @@ section#presentation .about-content .my-situation .fake-situation-img {
 	max-height: 250px;
 	transform: rotate(20deg);
 	animation: moveIndeterminate 4s linear infinite;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	pointer-events: none;
 }
 
 @keyframes moveIndeterminate {
