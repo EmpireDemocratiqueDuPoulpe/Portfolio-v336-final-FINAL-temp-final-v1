@@ -2,14 +2,14 @@ import { useMemo } from "react";
 import PropTypes from "prop-types";
 import "./Button.css";
 
-function Button({ className, href, decoration, children }) {
+function Button({ className, href, onClick, decoration, children }) {
 	/* ---- States ---------------------------------- */
 	const classes = useMemo(() => `button${className ? ` ${className}` : ""}`, [className]);
 
 	/* ---- Functions ------------------------------- */
 	const Wrapper = ({ children }) => href
 		? <a className={classes} href={href} target="_blank" rel="noreferrer">{children}</a>
-		: <button className={classes}>{children}</button>;
+		: <button className={classes} onClick={onClick}>{children}</button>;
 	
 	/* ---- Page content ---------------------------- */
 	return (
@@ -30,6 +30,7 @@ function Button({ className, href, decoration, children }) {
 Button.propTypes = {
 	className: PropTypes.string,
 	href: PropTypes.string,
+	onClick: PropTypes.func,
 	decoration: PropTypes.string,
 	children: PropTypes.node
 };
