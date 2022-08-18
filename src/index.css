@@ -6,7 +6,8 @@
   --secondary-color-5: #2C1342;
   --tertiary-color: #FA269D;
   --background-color: #171139;
-  --text-color_primary: #D0CACA;
+  --text-color_background: #D0CACA;
+  --text-color_primary: #090909;
 }
 
 html {
@@ -14,7 +15,7 @@ html {
   width: 100%;
   scroll-behavior: smooth;
   background: var(--background-color);
-  color: var(--text-color_primary);
+  color: var(--text-color_background);
 }
 
 body {
@@ -38,35 +39,6 @@ h1, h2 { color: var(--primary-color); }
   color: var(--tertiary-color);
 }
 
-/* -- Buttons -- */
-/*.button {
-  position: relative;
-  display: inline-block;
-  padding: 3%;
-  background: none;
-  border: 0.125em currentColor solid;
-  border-radius: 5px;
-  color: var(--tertiary-color);
-  cursor: pointer;
-}
-
-.button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: var(--tertiary-color);
-  opacity: 0;
-  transition: opacity 125ms ease-in;
-}
-
-.button:hover {
-
-}
-.button:hover::before { opacity: 0.15; }*/
-
 /* -- Animated strikethrough -- */
 /* See https://stackoverflow.com/a/72459455/15024857 */
 .animated-strikethrough {
@@ -83,3 +55,7 @@ h1, h2 { color: var(--primary-color); }
   --strike: 1;
   background-position-x: left;
 }
+
+/* -- Scrolling -- */
+.no-scroll-x, .no-scroll { overflow-x: hidden; }
+.no-scroll-y, .no-scroll { overflow-y: hidden; }

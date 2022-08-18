@@ -33,7 +33,7 @@ section#presentation .about-content .hello { font-size: 1.5em; color: var(--prim
 section#presentation .about-content .my-name {
 	font-size: 3.5em;
 	margin: 0 0 0.25em 0;
-	color: var(--text-color_primary);
+	color: var(--text-color_background);
 }
 
 /* -- My situation -- */

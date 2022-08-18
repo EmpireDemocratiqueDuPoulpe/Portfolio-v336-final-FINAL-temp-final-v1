@@ -72,7 +72,7 @@
 	text-align: right;
 	width: 0;
 	padding-right: 0;
-	color: var(--text-color_primary);
+	color: var(--text-color_background);
 	white-space: nowrap;
 	transition: width 150ms ease-in, padding-right 150ms ease-in, color 150ms ease-in;
 	overflow: hidden;
@@ -86,7 +86,7 @@
 .project .project-infos .project-link svg {
 	width: 1em;
 	height: 1em;
-	fill: var(--text-color_primary);
+	fill: var(--text-color_background);
 	transition: fill 150ms ease-in;
 }
 .project .project-infos .project-link:hover svg { fill: var(--primary-color); }
