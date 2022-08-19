@@ -51,6 +51,9 @@
 	width: 25px;
 	height: 25px;
 	background: var(--primary-color);
+	border: 2px black solid;
+	border-top: none;
+	border-left: none;
 	z-index: 10;
 	cursor: pointer;
 }
@@ -84,4 +87,35 @@
 	background: var(--primary-color);
 	color: var(--text-color_primary);
 	z-index: 5;
+}
+
+/* -- Download button -- */
+.cv-modal .cv-modal-box .cv-download {
+	box-sizing: border-box;
+	position: absolute;
+	right: 0.3em;
+	bottom: -1px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+	font-size: 1.25em;
+	padding: 0.3em 0.7em;
+	background: var(--primary-color);
+	color: var(--text-color_primary);
+	border: 2px black solid;
+	border-right: none;
+	border-bottom: none;
+	font-weight: 600;
+	text-decoration: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	cursor: pointer;
+}
+
+.cv-modal .cv-modal-box .cv-download i {
+	width: 1em;
+	height: 1em;
 }
