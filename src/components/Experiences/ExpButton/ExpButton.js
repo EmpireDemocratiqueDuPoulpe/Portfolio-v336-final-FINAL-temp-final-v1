@@ -15,8 +15,8 @@ function ExpButton({ experience }) {
 	/* ---- Page content ---------------------------- */
 	return (
 		<div className={`experience-button${experiences.current.id === experience.id ? " selected" : ""}`} {...eventOnElement(handleClick)}>
-			<h4>{experience.title}</h4>
-			<span>{experience.company}</span>
+			<h4 className="exp-btn-title">{experience.title}</h4>
+			<span className="exp-btn-company">{experience.company}</span>
 		</div>
 	);
 }

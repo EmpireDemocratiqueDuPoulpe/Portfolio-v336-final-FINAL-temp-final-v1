@@ -1,20 +1,51 @@
 /* --- Experience info box ------------------------------------------------------------------------------------------ */
 /* -- Title -- */
-.experience .experience-name { margin-top: 0; }
-
-.experience .experience-name .experience-company { color: gold; }
-
-/* -- Experience details -- */
-.experience .experience-details {
+.experience .experience-name {
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
-	align-items: flex-start;
-	gap: 10px;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.5em;
+	margin: 0;
+	color: var(--text-emphasis_background);
 }
 
-.experience .experience-details .experience-illustration {
-	flex-shrink: 0;
-	max-width: 445px;
-	max-height: 250px;
+.experience .experience-name .experience-company {
+	font-size: 0.8em;
+	color: var(--primary-color);
 }
+
+.experience .experience-name .experience-company .exp-company-sep { letter-spacing: -1px; margin-right: 0.5em; }
+
+/* -- Dates -- */
+.experience .experience-date {
+	display: inline-block;
+	font-size: 0.9em;
+	margin-bottom: 30px;
+}
+
+/* -- Description -- */
+.experience .experience-details .experience-desc-intro { margin-top: 0; }
+
+.experience .experience-details .experience-desc-bulleted-list {
+	position: relative;
+	padding-left: 40px;
+	list-style: none;
+}
+.experience .experience-details .experience-desc-bulleted-list li:not(:last-child) { margin-bottom: 0.35em; }
+.experience .experience-details .experience-desc-bulleted-list li::before {
+	content: "\25B0";
+	position: absolute;
+	left: 15px;
+	font-size: 0.7em;
+	color: var(--primary-color);
+	transform: translateY(0.3em);
+}
+
+/* -- Feedback -- */
+.experience .experience-feedback .ef-title {
+	margin: 1.5em 0 0.4em 0;
+	color: var(--text-emphasis_background);
+}
+
+.experience .experience-feedback .ef-content { margin-top: 0; }

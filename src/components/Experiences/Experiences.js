@@ -10,7 +10,7 @@ function Experiences({ experiences }) {
 		<div className="experiences-container">
 			<ExperiencesProvider experiences={experiences}>
 				<div className="experience-selector">
-					{experiences.map(experience => (
+					{experiences.sort((expA, expB) => expB.id - expA.id).map(experience => (
 						<ExpButton key={`${experience.title}-${experience.id}`} experience={experience}/>
 					))}
 				</div>

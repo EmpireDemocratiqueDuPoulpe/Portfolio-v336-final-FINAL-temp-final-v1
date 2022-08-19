@@ -1,8 +1,60 @@
 /* --- Experience selector button ----------------------------------------------------------------------------------- */
-.experience-button { padding: 7px 10px; }
-.experience-button.selected { background: darkolivegreen; }
+.experience-button {
+	position: relative;
+	padding: 0.65em 0.625em;
+	cursor: pointer;
+	border-left: 1px #665E32 solid;
+}
 
-.experience-button h4 {
+/* -- Animated background and border -- */
+.experience-button::before,
+.experience-button::after {
+	content: "";
+	position: absolute;
+	background: var(--primary-color);
+	transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+	transition-duration: 300ms;
+	pointer-events: none;
+}
+
+/* -- Animated background -- */
+.experience-button::before {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	opacity: 0.35;
+	transition-property: width;
+}
+.experience-button.selected::before { width: 100% }
+
+/* -- Border -- */
+.experience-button::after {
+	top: 50%;
+	bottom: 0;
+	left: -2px;
+	width: 3px;
+	height: 0;
+	transition-property: top, height;
+}
+.experience-button:hover::after,
+.experience-button.selected::after {
+	top: 0;
+	height: 100%;
+}
+
+/* -- Job title -- */
+.experience-button .exp-btn-title {
 	margin: 0;
-	color: aqua;
+	color: var(--primary-color);
+}
+
+/* -- Company name -- */
+.experience-button .exp-btn-company {
+	display: inline-block;
+	width: 100%;
+	font-size: 0.8em;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
