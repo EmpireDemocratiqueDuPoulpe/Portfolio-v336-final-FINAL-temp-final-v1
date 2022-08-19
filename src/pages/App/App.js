@@ -18,41 +18,6 @@ import "./App.css";
  *****************************************************/
 
 const fakeSituation = Content.fakeSituations.getRandom();
-const experiences = [
-	{
-		id: 1,
-		title: "Titre du job", company: "Entreprise",
-		startDate: "01/01/1970", endDate: "31/12/9999",
-		illustrations: [ ProfilePicture ],
-		description: "Phlébotome hors-la-loi frère de la côte, moujik pyrophore, terroriste sauvage rocambole gangster trafiquant de chair humaine topinambour. Frère de la côte mégacycle, cloporte satrape brontosaure. Mitrailleur à bavette va-nu-pieds malotru aérolithe. Mitrailleur à bavette vermine polichinelle, canaque cornemuse brontosaure. Gangster dynamiteur paltoquet voleur, rocambole iconoclaste cataplasme sauvage. Ku-Klux-Klan protozoaire cro-magnon, épouvantail jus de réglisse ostrogoth cachalot. Marchand de guano serpent cataplasme ectoplasme. Patate kroumir emplâtre, cataplasme saltimbanque, aztèque phylactère phlébotome traîne-potence vivisectionniste. Jus de réglisse catachrèse vermicelle, terroriste arlequin, pacte à quatre scélérats coquin polygraphe misérable va-nu-pieds.",
-		feedback: {
-			title: "Avis de l'entreprise/<NOM EMPLOYÉ>",
-			content: "Mamelouk vercingétorix de carnaval, mamelouk scélérat phlébotome. Chauffard rocambole schizophrène, catachrèse cyclone misérable. Gargarisme forban renégat mouchard. Ophicléide lâche, zèbre sinapisme frère de la côte. Cornemuse scolopendre, crétin des alpes apprenti dictateur à la noix de coco polichinelle. Pirate protozoaire va-nu-pieds vivisectionniste, mitrailleur à bavette amphitryon phylactère ectoplasme. Brigand polichinelle, ostrogoth emplâtre polygraphe. Soulographe sacripant rhizopode accapareur, ivrogne anacoluthe choléra soulographe."
-		}
-	},
-	{
-		id: 2,
-		title: "Titre du job", company: "Entreprise",
-		startDate: "01/01/1970", endDate: "31/12/9999",
-		illustrations: [ ProfilePicture ],
-		description: "Phlébotome hors-la-loi frère de la côte, moujik pyrophore, terroriste sauvage rocambole gangster trafiquant de chair humaine topinambour. Frère de la côte mégacycle, cloporte satrape brontosaure. Mitrailleur à bavette va-nu-pieds malotru aérolithe. Mitrailleur à bavette vermine polichinelle, canaque cornemuse brontosaure. Gangster dynamiteur paltoquet voleur, rocambole iconoclaste cataplasme sauvage. Ku-Klux-Klan protozoaire cro-magnon, épouvantail jus de réglisse ostrogoth cachalot. Marchand de guano serpent cataplasme ectoplasme. Patate kroumir emplâtre, cataplasme saltimbanque, aztèque phylactère phlébotome traîne-potence vivisectionniste. Jus de réglisse catachrèse vermicelle, terroriste arlequin, pacte à quatre scélérats coquin polygraphe misérable va-nu-pieds.",
-		feedback: {
-			title: "Avis de l'entreprise/<NOM EMPLOYÉ>",
-			content: "Mamelouk vercingétorix de carnaval, mamelouk scélérat phlébotome. Chauffard rocambole schizophrène, catachrèse cyclone misérable. Gargarisme forban renégat mouchard. Ophicléide lâche, zèbre sinapisme frère de la côte. Cornemuse scolopendre, crétin des alpes apprenti dictateur à la noix de coco polichinelle. Pirate protozoaire va-nu-pieds vivisectionniste, mitrailleur à bavette amphitryon phylactère ectoplasme. Brigand polichinelle, ostrogoth emplâtre polygraphe. Soulographe sacripant rhizopode accapareur, ivrogne anacoluthe choléra soulographe."
-		}
-	},
-	{
-		id: 3,
-		title: "Titre du job", company: "Entreprise",
-		startDate: "01/01/1970", endDate: "31/12/9999",
-		illustrations: [ ProfilePicture ],
-		description: "Phlébotome hors-la-loi frère de la côte, moujik pyrophore, terroriste sauvage rocambole gangster trafiquant de chair humaine topinambour. Frère de la côte mégacycle, cloporte satrape brontosaure. Mitrailleur à bavette va-nu-pieds malotru aérolithe. Mitrailleur à bavette vermine polichinelle, canaque cornemuse brontosaure. Gangster dynamiteur paltoquet voleur, rocambole iconoclaste cataplasme sauvage. Ku-Klux-Klan protozoaire cro-magnon, épouvantail jus de réglisse ostrogoth cachalot. Marchand de guano serpent cataplasme ectoplasme. Patate kroumir emplâtre, cataplasme saltimbanque, aztèque phylactère phlébotome traîne-potence vivisectionniste. Jus de réglisse catachrèse vermicelle, terroriste arlequin, pacte à quatre scélérats coquin polygraphe misérable va-nu-pieds.",
-		feedback: {
-			title: "Avis de l'entreprise/<NOM EMPLOYÉ>",
-			content: "Mamelouk vercingétorix de carnaval, mamelouk scélérat phlébotome. Chauffard rocambole schizophrène, catachrèse cyclone misérable. Gargarisme forban renégat mouchard. Ophicléide lâche, zèbre sinapisme frère de la côte. Cornemuse scolopendre, crétin des alpes apprenti dictateur à la noix de coco polichinelle. Pirate protozoaire va-nu-pieds vivisectionniste, mitrailleur à bavette amphitryon phylactère ectoplasme. Brigand polichinelle, ostrogoth emplâtre polygraphe. Soulographe sacripant rhizopode accapareur, ivrogne anacoluthe choléra soulographe."
-		}
-	}
-];
 
 /*****************************************************
  * App
@@ -111,7 +76,7 @@ function App() {
 			<section id="experiences" className="portfolio-section" ref={experiencesRef}>
 				<h2>Exp&eacute;riences</h2>
 
-				<Experiences experiences={experiences}/>
+				<Experiences experiences={Content.experiences}/>
 			</section>
 
 			<section id="projets" className="portfolio-section" ref={projetsRef}>
