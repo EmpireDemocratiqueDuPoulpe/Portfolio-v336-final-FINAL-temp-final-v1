@@ -4,7 +4,7 @@
 	display: inline-block;
 	margin: 0 10px;
 	padding: 0.3em;
-	color: var(--text-color_background) !important;
+	color: var(--text-emphasis_background) !important;
 	background: none;
 	border: none;
 	border-radius: 2px;

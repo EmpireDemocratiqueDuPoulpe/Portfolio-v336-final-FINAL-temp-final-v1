@@ -49,7 +49,7 @@
 }
 
 /* - Name - */
-.project .project-infos .project-name { margin-top: 0; }
+.project .project-infos .project-name { margin-top: 0; color: var(--text-emphasis_background); }
 
 /* - Link to the project - */
 .project .project-infos .project-link {
