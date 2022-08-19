@@ -6,6 +6,7 @@ import CVModal from "../../components/CVModal/CVModal.js";
 import Experiences from "../../components/Experiences/Experiences.js";
 import Project from "../../components/Project/Project.js";
 import SocialNetwork from "../../components/SocialNetwork/SocialNetwork.js";
+import Map from "../../components/Map/Map.js";
 import { Content } from "../../config/config.js";
 import ProfilePicture from "../../assets/images/me.png";
 import PondSimulator2020 from "../../assets/images/projects/pond_simulator_2020.png";
@@ -110,6 +111,7 @@ function App() {
 				<SocialNetwork.LinkedIn/>
 
 				<a className="link" href="mailto:alexis.lecomte@supinfo.com">Envoyer un mail</a>
+				<Map/>
 			</section>
 
 			<span>https://icones8.fr</span>
