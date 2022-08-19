@@ -84,15 +84,15 @@ function App() {
 
 				<div className="projects-grid">
 					<Project name="Pond Simulator 2020" href="#" techs={["Java"]} img={PondSimulator2020}>
-						Pond Simulator 2020 is a JAVA project I did during my second year of study at SupInfo. This program is designed to simulate, in a simplified way, a lake and the life of the ducks inside.
+						Pond Simulator 2020 est un projet Java r&eacute;alis&eacute; au cours de ma seconde ann&eacute;e d&apos;&eacute;tude à SupInfo. Le programme simule, de manière simplifi&eacute;e et cartoonesque, la vie dans un lac, les canards qui y vivent, les n&eacute;nuphars qui y poussent et les r&eacute;gimes dictatorials qui &eacute;mergent du peuple ans&eacute;riforme.
 					</Project>
 
 					<Project name="Melodie" href="#" techs={["C#", "HTML", "CSS", "JavaScript"]}>
-						Melodie is a website where a logged-in user can create playlists and add musics to them using a file or a link. The songs are played by the Wavesurfer API, so JavaScript is required.
+						Melodie est un site web permettant &grave; un utilisateur authentifi&eacute; d&apos;&eacute;couter des morceaux de musique depuis ses listes de lecture. Les musiques y sont ajout&eacute;es en entrant un lien ou un fichier audio.
 					</Project>
 
 					<Project name="Instabus" href="#" techs={["Kotlin"]} img={Instabus}>
-						Instabus is an Android application created using Kotlin for a school project. It’s a social network like Instagram where users can search for bus stations in Barcelona and take pictures of them. Taken pictures can be seen by all users.
+						Instabus est une application Android produite &agrave; l&apos;issue d&apos;un projet scolaire. C&apos;est un r&eacute;seau social similaire &agrave; Instagram, mais avec un concept de niche. Les utilisateurs peuvent chercher des arr&ecirc;ts de bus dans Barcelone, s&apos;y prendre en photo et le partager au monde. Je l&apos;avais dit, concept de niche.
 					</Project>
 
 					<Project name="Mr. Driller clone" href="#" techs={["Python"]} img={MrDriller}>
