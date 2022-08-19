@@ -77,6 +77,13 @@
 	overflow-y: scroll;
 }
 
+/* Fix the text layer misalignment */
+.cv-modal .cv-modal-box .modal-content .pdf-page .react-pdf__Page__textContent {
+	top: 0 !important;
+	left: 0 !important;
+	transform: none !important;
+}
+
 /* -- Page number -- */
 .cv-modal .cv-modal-box .page-number {
 	position: absolute;
