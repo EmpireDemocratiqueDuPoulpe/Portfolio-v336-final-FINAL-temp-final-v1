@@ -1,5 +1,13 @@
 /* --- App content ---------------------------------------------------------------------------------------------------*/
-.App-content { padding-left: calc(100vw - 100%); }
+.App .App-content {
+	box-sizing: border-box;
+	height: 100%;
+	max-height: calc(100vh - 60px);
+	margin-top: 60px;
+	overflow-y: auto;
+}
+
+.App .App-padded-content { padding-left: calc(100vw - 100%); }
 
 /* --- Sections ----------------------------------------------------------------------------------------------------- */
 section.portfolio-section {
