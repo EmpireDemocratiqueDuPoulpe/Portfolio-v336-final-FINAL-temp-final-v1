@@ -131,9 +131,9 @@ function App() {
 					<p className="copyright my-copyright">Copyright &copy; Alexis Lecomte - 2022</p>
 
 					<p className="copyright fontawesome-copyright">
-						Font Awesome Pro 6.1.2 by <a className="link" href="https://fontawesome.com">@fontawesome</a>
-						&nbsp;- <a className="link" href="https://fontawesome.com/license">License</a> (Commercial License)
-						- Copyright 2022 Fonticons, Inc.
+						Font Awesome Pro 6.1.2 by <a className="link" href="https://fontawesome.com" target="_blank" rel="noreferrer">@fontawesome</a>
+						&nbsp;- <a className="link" href="https://fontawesome.com/license/free" target="_blank" rel="noreferrer">License</a>
+						&nbsp;(Commercial License) - Copyright 2022 Fonticons, Inc.
 					</p>
 				</div>
 			</footer>
