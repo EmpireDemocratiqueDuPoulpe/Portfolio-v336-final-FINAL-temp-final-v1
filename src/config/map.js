@@ -13,7 +13,7 @@ export default {
 					coordinates: [CENTER.lng, CENTER.lat]
 				},
 				properties: {
-					title: "Saint-Amand-les-Eaux",
+					title: null,
 					description: "J'habite ici"
 				}
 			}

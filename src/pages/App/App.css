@@ -100,7 +100,50 @@ section#projets .projects-grid {
 	margin: 0 auto;
 }
 
-/* --- Footer ------------------------------------------------------------------------------------------------------- */
+/* --- "Contact" section -------------------------------------------------------------------------------------------- */
+section#contact .contact-content {
+	width: 40%;
+	margin: 0 auto;
+}
+
+section#contact .contact-content .emphasis { color: var(--primary-color); }
+
+/* -- Explanation -- */
+section#contact .contact-content .contact-explanation {
+	margin-bottom: 30px;
+}
+
+/* -- Links -- */
+section#contact .contact-content .contact-links {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+/* - Networks - */
+section#contact .contact-content .contact-links .contact-networks .social-network:not(:last-child) { margin-right: 0.5em; }
+
+/* - Separator - */
+section#contact .contact-content .contact-links .contact-sep {
+	align-self: stretch;
+	width: 2px;
+	margin: 0 1.5em 0 1em;
+	background: var(--text-attenuate_background⨣1);
+}
+
+/* - Mail link - */
+section#contact .contact-content .contact-links .contact-mail {
+	width: 40%;
+}
+
+/* -- Map -- */
+section#contact .contact-content .map {
+	width: 100%;
+	margin: 30px auto 0 auto;
+}
+
+	/* --- Footer ------------------------------------------------------------------------------------------------------- */
 footer {
 	margin-top: 50px;
 	padding: 50px 50px 25px 50px;

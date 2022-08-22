@@ -14,8 +14,11 @@ function Marker({ map, feature, onClick, children }) {
 			markerInstance.current = new mapboxgl.Marker(markerRef.current)
 				.setLngLat(feature.geometry.coordinates)
 				.setPopup(
-					new mapboxgl.Popup({ offset: 25 })
-						.setHTML(`<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`)
+					new mapboxgl.Popup({ offset: 25, closeButton: false, closeOnClick: true, cloneOnMove: false })
+						.setHTML(`
+							${feature.properties.title ? `<h3>${feature.properties.title}</h3>` : ""}
+							${feature.properties.description ? `<p>${feature.properties.description}</p>` : ""}
+						`)
 				)
 				.addTo(map)
 				.togglePopup();

@@ -106,13 +106,33 @@ function App() {
 				<section id="contact" className="portfolio-section" ref={contactRef}>
 					<h2>Contact</h2>
 
-					<h3>Envie d&apos;en savoir plus ?</h3>
-					<p>Contactez-moi par mail ou LinkedIn. Bon par contre il faut rallonger ce texte.</p>
+					<div className="contact-content">
+						<h3>Envie d&apos;en savoir plus ?</h3>
 
-					<SocialNetwork.LinkedIn/>
+						<p className="contact-explanation">
+							Je suis ouvert aux propositions <span className="emphasis">d&apos;alternance</span> ou <span className="emphasis">d&apos;embauche</span>.
+							Si vous &ecirc;tes int&eacute;ress&eacute;, vous pouvez me contacter par LinkedIn ou m&apos;envoyer
+							directement un e-mail. Vous pouvez aussi consulter mon profil GitHub sur lequel vous pourrez y retrouver
+							certain de mes projets.
+						</p>
 
-					<a className="link" href="mailto:alexis.lecomte@supinfo.com">Envoyer un mail</a>
-					<Map lat={MapConfig.center.lat} lng={MapConfig.center.lng} markers={MapConfig.markers}/>
+						<div className="contact-links">
+							<div className="contact-networks">
+								<SocialNetwork.LinkedIn href="https://www.linkedin.com/in/alexicomte/"/>
+								<SocialNetwork.GitHub href="https://github.com/EmpireDemocratiqueDuPoulpe"/>
+							</div>
+
+							<div className="contact-sep"/>
+
+							<div className="contact-mail">
+								<Button href="mailto:alexis.lecomte@supinfo.com" decoration="✉">
+									Envoyer un mail
+								</Button>
+							</div>
+						</div>
+
+						<Map lat={MapConfig.center.lat} lng={MapConfig.center.lng} markers={MapConfig.markers}/>
+					</div>
 				</section>
 			</div>
 

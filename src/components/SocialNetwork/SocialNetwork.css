@@ -1,17 +1,10 @@
 /* --- Social network icon ------------------------------------------------------------------------------------------ */
 .social-network {
 	display: inline-block;
-	width: 48px;
-	height: 48px;
+	width: 1em;
+	height: 1em;
+	font-size: 3em;
 }
 
-.social-network object {
-	width: 100%;
-	height: 100%;
-	pointer-events: none;
-}
-
-/* NOT WORKING */
-.social-network:not(:hover) svg { fill: purple; }
-
-/* svg { fill: red; } */
+.social-network svg { fill: var(--text-emphasis_background); }
+.social-network svg:hover { fill: var(--tertiary-color); }
