@@ -1,3 +1,6 @@
+/* --- App content ---------------------------------------------------------------------------------------------------*/
+.App-content { padding-left: calc(100vw - 100%); }
+
 /* --- Sections ----------------------------------------------------------------------------------------------------- */
 section.portfolio-section {
 	box-sizing: border-box;
@@ -97,3 +100,48 @@ section#projets .projects-grid {
 	margin: 0 auto;
 }
 
+/* --- Footer ------------------------------------------------------------------------------------------------------- */
+footer {
+	margin-top: 50px;
+	padding: 50px 50px 25px 50px;
+	background: var(--background-color⨣1);
+}
+
+/* -- The swag quote -- */
+footer .stylish-quote {
+	width: 50%;
+	font-size: 1.65em;
+	margin: 0 auto;
+	font-weight: 600;
+}
+
+footer .stylish-quote blockquote {
+	text-indent: -0.50em;
+	color: var(--text-emphasis_background);
+	border-left: 2px red solid;
+}
+
+@supports (hanging-punctuation: first) {
+	footer .stylish-quote blockquote {
+		text-indent: 0;
+		hanging-punctuation: first;
+	}
+}
+
+footer .stylish-quote blockquote .emphasis { color: var(--primary-color); }
+
+/* -- Licensing and copyrights -- */
+footer .licensing {
+	text-align: center;
+	margin-top: 50px;
+}
+
+footer .licensing .copyright {
+	margin: 0;
+	color: var(--text-attenuate_background⨣1);
+}
+
+footer .licensing .copyright .link { color: var(--tertiary-desaturated); }
+
+footer .licensing .my-copyright { font-weight: 600; }
+footer .licensing :not(.my-copyright) { font-size: 0.9em; }
