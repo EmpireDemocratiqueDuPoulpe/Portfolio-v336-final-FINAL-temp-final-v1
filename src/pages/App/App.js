@@ -111,7 +111,7 @@ function App() {
 				<SocialNetwork.LinkedIn/>
 
 				<a className="link" href="mailto:alexis.lecomte@supinfo.com">Envoyer un mail</a>
-				<Map lat={50.449061} lng={3.428135} markers={MapConfig.markers}/>
+				<Map lat={MapConfig.center.lat} lng={MapConfig.center.lng} markers={MapConfig.markers}/>
 			</section>
 
 			<span>https://icones8.fr</span>
