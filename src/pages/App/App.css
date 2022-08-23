@@ -1,3 +1,11 @@
+/* --- App scrollbar -------------------------------------------------------------------------------------------------*/
+.App-scrollbar .scrollbar-vertical-track { margin-top: 9px; }
+
+.App-scrollbar .scrollbar-vertical-thumb {
+	background: var(--background-color⨣3);
+	cursor: pointer;
+}
+
 /* --- App content ---------------------------------------------------------------------------------------------------*/
 .App .App-padded-content { padding-left: calc(100vw - 100%); }
 
