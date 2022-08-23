@@ -1,4 +1,5 @@
 import { useRef, useEffect } from "react";
+import useScrollContext from "../../context/Scroll/ScrollContext.js";
 import useCV from "../../context/CV/CVContext.js";
 import { Scrollbars } from "react-custom-scrollbars-2";
 import Button from "../../components/Button/Button.js";
@@ -27,6 +28,7 @@ const fakeSituation = Content.fakeSituations.getRandom();
 
 function App() {
 	/* ---- States ---------------------------------- */
+	const scroll = useScrollContext();
 	const cv = useCV();
 	const clipPathPropName = useRef(null);
 	const AppContentRef = useRef();
@@ -34,37 +36,6 @@ function App() {
 	const experiencesRef = useRef();
 	const projetsRef = useRef();
 	const contactRef = useRef();
-
-	const handleScroll = scrollBox => {
-		if (AppContentRef.current) {
-			// Get the property name
-			if (!clipPathPropName.current) {
-				// Un-prefixed
-				if (AppContentRef.current.style.clipPath !== null) {
-					clipPathPropName.current = "clipPath";
-				} else {
-					// Prefixed
-					for (const vendor in ["Webkit", "webkit", "Moz"]) {
-						const fullName = `${vendor}ClipPath`;
-
-						if (AppContentRef.current.style[fullName] !== null) {
-							clipPathPropName.current = fullName;
-							break;
-						}
-					}
-
-					// Unknown
-					if (!clipPathPropName.current) {
-						clipPathPropName.current = -1;
-					}
-				}
-			}
-
-			if (clipPathPropName.current && (clipPathPropName.current !== -1)) {
-				AppContentRef.current.style[clipPathPropName.current] = `inset(${scrollBox.scrollTop + 60}px 0 0 0)`;
-			}
-		}
-	};
 
 	/* ---- Effects --------------------------------- */
 	useEffect(() => {
@@ -75,6 +46,42 @@ function App() {
 		return () => clearInterval(interval);
 	}, []);
 
+	useEffect(() => {
+		const handleScroll = scrollBox => {
+			if (AppContentRef.current) {
+				// Get the property name
+				if (!clipPathPropName.current) {
+					// Un-prefixed
+					if (AppContentRef.current.style.clipPath !== null) {
+						clipPathPropName.current = "clipPath";
+					} else {
+						// Prefixed
+						for (const vendor in ["Webkit", "webkit", "Moz"]) {
+							const fullName = `${vendor}ClipPath`;
+
+							if (AppContentRef.current.style[fullName] !== null) {
+								clipPathPropName.current = fullName;
+								break;
+							}
+						}
+
+						// Unknown
+						if (!clipPathPropName.current) {
+							clipPathPropName.current = -1;
+						}
+					}
+				}
+
+				if (clipPathPropName.current && (clipPathPropName.current !== -1)) {
+					AppContentRef.current.style[clipPathPropName.current] = `inset(${scrollBox.scrollTop + 60}px 0 0 0)`;
+				}
+			}
+		};
+
+		scroll.addListener(handleScroll);
+		return () => scroll.removeListener(handleScroll);
+	}, [scroll]);
+
 	/* ---- Page content ---------------------------- */
 	return (
 		<Scrollbars
@@ -84,7 +91,7 @@ function App() {
 			renderThumbVertical={props => <div {...props} className="scrollbar-vertical-thumb"/>}
 			autoHeight={true} autoHeightMin="100%" autoHeightMax="100vh"
 			autoHide={false}
-			onScrollFrame={handleScroll}>
+			onScrollFrame={scroll.handleScroll}>
 			<div className="App">
 				<AppNavigation>
 					<NavigationLink href="#presentation" sectionRef={presentationRef}>Pr&eacute;sentation</NavigationLink>
