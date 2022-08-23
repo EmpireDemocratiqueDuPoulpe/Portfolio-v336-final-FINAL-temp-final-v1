@@ -122,6 +122,13 @@ section#contact .contact-content .contact-links {
 }
 
 /* - Networks - */
+section#contact .contact-content .contact-links .contact-networks {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.15em;
+}
 section#contact .contact-content .contact-links .contact-networks .social-network:not(:last-child) { margin-right: 0.5em; }
 
 /* - Separator - */
