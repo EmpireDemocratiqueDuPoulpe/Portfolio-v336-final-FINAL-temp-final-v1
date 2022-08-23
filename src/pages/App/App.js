@@ -27,6 +27,7 @@ const fakeSituation = Content.fakeSituations.getRandom();
 function App() {
 	/* ---- States ---------------------------------- */
 	const cv = useCV();
+	const AppContentRef = useRef();
 	const presentationRef = useRef();
 	const experiencesRef = useRef();
 	const projetsRef = useRef();
@@ -41,6 +42,17 @@ function App() {
 		return () => clearInterval(interval);
 	}, []);
 
+	useEffect(() => {
+		const handleScroll = () => {
+			if (AppContentRef.current) {
+				AppContentRef.current.style.clipPath = `inset(${window.scrollY + 60}px 0 0 0)`;
+			}
+		};
+
+		document.addEventListener("scroll", handleScroll);
+		return () => document.removeEventListener("scroll", handleScroll);
+	}, []);
+
 	/* ---- Page content ---------------------------- */
 	return (
 		<div className="App">
@@ -53,7 +65,7 @@ function App() {
 
 			<CVModal/>
 
-			<div className="App-content">
+			<div className="App-content" ref={AppContentRef}>
 				<div className="App-padded-content">
 					<section id="presentation" className="portfolio-section" ref={presentationRef}>
 						<div className="about-content">

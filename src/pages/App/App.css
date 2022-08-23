@@ -1,19 +1,11 @@
 /* --- App content ---------------------------------------------------------------------------------------------------*/
-.App .App-content {
-	box-sizing: border-box;
-	height: 100%;
-	max-height: calc(100vh - 60px);
-	margin-top: 60px;
-	overflow-y: auto;
-}
-
 .App .App-padded-content { padding-left: calc(100vw - 100%); }
 
 /* --- Sections ----------------------------------------------------------------------------------------------------- */
 section.portfolio-section {
 	box-sizing: border-box;
 	position: relative;
-	min-height: 100vh;
+	min-height: calc(100vh - 60px);
 	padding: 50px 10vw 0 10vw;
 	scroll-margin-top: 100px;
 }
