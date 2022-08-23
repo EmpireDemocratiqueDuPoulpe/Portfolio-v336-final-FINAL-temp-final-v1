@@ -27,6 +27,7 @@ const fakeSituation = Content.fakeSituations.getRandom();
 function App() {
 	/* ---- States ---------------------------------- */
 	const cv = useCV();
+	const clipPathPropName = useRef(null);
 	const AppContentRef = useRef();
 	const presentationRef = useRef();
 	const experiencesRef = useRef();
@@ -45,7 +46,32 @@ function App() {
 	useEffect(() => {
 		const handleScroll = () => {
 			if (AppContentRef.current) {
-				AppContentRef.current.style.clipPath = `inset(${window.scrollY + 60}px 0 0 0)`;
+				// Get the property name
+				if (!clipPathPropName.current) {
+					// Un-prefixed
+					if (AppContentRef.current.style.clipPath !== null) {
+						clipPathPropName.current = "clipPath";
+					} else {
+						// Prefixed
+						for (const vendor in ["Webkit", "webkit", "Moz"]) {
+							const fullName = `${vendor}ClipPath`;
+
+							if (AppContentRef.current.style[fullName] !== null) {
+								clipPathPropName.current = fullName;
+								break;
+							}
+						}
+
+						// Unknown
+						if (!clipPathPropName.current) {
+							clipPathPropName.current = -1;
+						}
+					}
+				}
+
+				if (clipPathPropName.current && (clipPathPropName.current !== -1)) {
+					AppContentRef.current.style[clipPathPropName.current] = `inset(${window.scrollY + 60}px 0 0 0)`;
+				}
 			}
 		};
 
