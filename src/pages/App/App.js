@@ -35,6 +35,37 @@ function App() {
 	const projetsRef = useRef();
 	const contactRef = useRef();
 
+	const handleScroll = scrollBox => {
+		if (AppContentRef.current) {
+			// Get the property name
+			if (!clipPathPropName.current) {
+				// Un-prefixed
+				if (AppContentRef.current.style.clipPath !== null) {
+					clipPathPropName.current = "clipPath";
+				} else {
+					// Prefixed
+					for (const vendor in ["Webkit", "webkit", "Moz"]) {
+						const fullName = `${vendor}ClipPath`;
+
+						if (AppContentRef.current.style[fullName] !== null) {
+							clipPathPropName.current = fullName;
+							break;
+						}
+					}
+
+					// Unknown
+					if (!clipPathPropName.current) {
+						clipPathPropName.current = -1;
+					}
+				}
+			}
+
+			if (clipPathPropName.current && (clipPathPropName.current !== -1)) {
+				AppContentRef.current.style[clipPathPropName.current] = `inset(${scrollBox.scrollTop + 60}px 0 0 0)`;
+			}
+		}
+	};
+
 	/* ---- Effects --------------------------------- */
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -42,42 +73,6 @@ function App() {
 		}, 1000);
 
 		return () => clearInterval(interval);
-	}, []);
-
-	useEffect(() => {
-		const handleScroll = () => {
-			if (AppContentRef.current) {
-				// Get the property name
-				if (!clipPathPropName.current) {
-					// Un-prefixed
-					if (AppContentRef.current.style.clipPath !== null) {
-						clipPathPropName.current = "clipPath";
-					} else {
-						// Prefixed
-						for (const vendor in ["Webkit", "webkit", "Moz"]) {
-							const fullName = `${vendor}ClipPath`;
-
-							if (AppContentRef.current.style[fullName] !== null) {
-								clipPathPropName.current = fullName;
-								break;
-							}
-						}
-
-						// Unknown
-						if (!clipPathPropName.current) {
-							clipPathPropName.current = -1;
-						}
-					}
-				}
-
-				if (clipPathPropName.current && (clipPathPropName.current !== -1)) {
-					AppContentRef.current.style[clipPathPropName.current] = `inset(${window.scrollY + 60}px 0 0 0)`;
-				}
-			}
-		};
-
-		document.addEventListener("scroll", handleScroll);
-		return () => document.removeEventListener("scroll", handleScroll);
 	}, []);
 
 	/* ---- Page content ---------------------------- */
@@ -88,7 +83,8 @@ function App() {
 			renderTrackVertical={({ style, ...props }) => <div {...props} style={{ top: "2px", right: "2px", bottom: "2px", ...style }} className="scrollbar-vertical-track"/>}
 			renderThumbVertical={props => <div {...props} className="scrollbar-vertical-thumb"/>}
 			autoHeight={true} autoHeightMin="100%" autoHeightMax="100vh"
-			autoHide={false}>
+			autoHide={false}
+			onScrollFrame={handleScroll}>
 			<div className="App">
 				<AppNavigation>
 					<NavigationLink href="#presentation" sectionRef={presentationRef}>Pr&eacute;sentation</NavigationLink>
