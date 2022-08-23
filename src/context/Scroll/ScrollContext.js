@@ -13,9 +13,13 @@ const ScrollContext = createContext(null);
  *****************************************************/
 export function ScrollProvider({ children }) {
 	/* ---- States - Part one ----------------------- */
+	const api = useRef(null);
 	const listeners = useRef(Object.create(null));
 
 	/* ---- Functions ------------------------------- */
+	const setAPI = api => { api.current = api; };
+	const getAPI = () => api.current;
+
 	const findListenerKey = callback => Object.keys(listeners.current).find(key => listeners.current[key] === callback);
 
 	const addListener = useCallback(callback => {
@@ -41,7 +45,10 @@ export function ScrollProvider({ children }) {
 	};
 
 	/* ---- States - Part two ----------------------- */
-	const memoizedContext = useMemo(() => ({ addListener, removeListener, handleScroll }), [addListener, removeListener]);
+	const memoizedContext = useMemo(() => ({
+		setAPI, getAPI,
+		addListener, removeListener, handleScroll,
+	}), [addListener, removeListener]);
 
 	/* ---- Page content ---------------------------- */
 	return (

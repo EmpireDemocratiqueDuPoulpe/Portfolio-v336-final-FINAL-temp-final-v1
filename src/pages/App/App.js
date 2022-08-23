@@ -30,6 +30,7 @@ function App() {
 	/* ---- States ---------------------------------- */
 	const scroll = useScrollContext();
 	const cv = useCV();
+	const scrollbar = useRef();
 	const clipPathPropName = useRef(null);
 	const AppContentRef = useRef();
 	const presentationRef = useRef();
@@ -82,10 +83,17 @@ function App() {
 		return () => scroll.removeListener(handleScroll);
 	}, [scroll]);
 
+	useEffect(() => {
+		scroll.setAPI(scrollbar.current);
+		// We simply want to update the API.
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [scrollbar.current]);
+
 	/* ---- Page content ---------------------------- */
 	return (
 		<Scrollbars
 			className="App-scrollbar"
+			ref={scrollbar}
 			renderView={props => <div {...props} className="scrollbar-view"/>}
 			renderTrackVertical={({ style, ...props }) => <div {...props} style={{ top: "2px", right: "2px", bottom: "2px", ...style }} className="scrollbar-vertical-track"/>}
 			renderThumbVertical={props => <div {...props} className="scrollbar-vertical-thumb"/>}

@@ -6,6 +6,8 @@
 	cursor: pointer;
 }
 
+.App-scrollbar .scrollbar-view { scroll-behavior: smooth; }
+
 /* --- App content ---------------------------------------------------------------------------------------------------*/
 .App .App-padded-content { padding-left: calc(100vw - 100%); }
 

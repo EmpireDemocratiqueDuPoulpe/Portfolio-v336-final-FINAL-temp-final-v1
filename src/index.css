@@ -19,7 +19,6 @@
 html {
   box-sizing: border-box;
   width: 100%;
-  scroll-behavior: smooth;
   background: var(--background-color);
   background: -moz-linear-gradient(323deg, var(--background-color) 0%, rgba(54, 45, 105, 1) 100%);
   background: -webkit-linear-gradient(323deg, var(--background-color) 0%, rgba(54, 45, 105, 1) 100%);
