@@ -27,22 +27,20 @@
 	right: -0.5em;
 	bottom: -0.5em;
 	left: -0.5em;
-	border: thin rgba(225, 225, 225, 0.3) solid;
 	transition: border-color 75ms ease-in-out, border-width 75ms ease-in-out;
 }
 
 .button .button-borders::before, .button .button-borders::after {
 	content: "";
 	position: absolute;
-	top: 50%;
-	width: 0.3em;
-	height: 18px;
-	background: var(--background-color);
-	transform: translateY(-50%);
+	left: 0;
+	width: 100%;
+	height: 40%;
+	border: thin rgba(225, 225, 225, 0.3) solid;
 }
 
-.button .button-borders::before { left: -0.15em; }
-.button .button-borders::after { right: -0.15em; }
+.button .button-borders::before { top: 0; border-bottom: none; }
+.button .button-borders::after { bottom: 0; border-top: none; }
 
 /* -- Animated background -- */
 .button .button-background {
@@ -80,8 +78,10 @@
 /* - Borders - */
 .button:active, .button:focus { outline: none; }
 
-.button:active .button-borders,
-.button:focus .button-borders { border-color: var(--primary-color); border-width: 2px; }
+.button:active .button-borders::before,
+.button:active .button-borders::after,
+.button:focus .button-borders::before,
+.button:focus .button-borders::after { border-color: var(--primary-color); border-width: 2px; }
 
 /* - Background - */
 .button:hover .button-background::before { width: 110%; }
