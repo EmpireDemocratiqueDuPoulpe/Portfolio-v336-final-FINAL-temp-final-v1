@@ -26,8 +26,8 @@ function Star({ parent, layer: layerName }) {
 		const boundingBox = parent ? parent.getBoundingClientRect() : { width: 0, height: 0 };
 		
 		return {
-			top: `${random(0, boundingBox.height, false)}px`,
-			left: `${random(0, boundingBox.width, false)}px`,
+			top: `${(random(0, boundingBox.height, false) * 100) / boundingBox.height}%`,
+			left: `${(random(0, boundingBox.width, false) * 100) / boundingBox.width}%`,
 			styles: {
 				opacity: `opacity-${random(1, 3, false)}`
 			}
