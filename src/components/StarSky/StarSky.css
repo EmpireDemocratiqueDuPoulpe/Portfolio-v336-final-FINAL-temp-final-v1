@@ -1,0 +1,27 @@
+/* --- Stars sky ---------------------------------------------------------------------------------------------------- */
+.stars-sky {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+/* -- Star overlays -- */
+.stars-sky .stars-layer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.stars-sky .stars-layer.far-stars     { font-size: 0.5em; }
+.stars-sky .stars-layer.midway-stars  { font-size: 1em; }
+.stars-sky .stars-layer.close-stars   { font-size: 1.5em; }
+
+/* TEMP */
+.stars-sky .stars-layer.far-stars .star     { top: 40%; left: 53%; transform: translate(-50%, -50%); }
+.stars-sky .stars-layer.midway-stars .star  { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.stars-sky .stars-layer.close-stars .star   { top: 60%; left: 47%; transform: translate(-50%, -50%); }
+/* ---- */

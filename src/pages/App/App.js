@@ -2,6 +2,7 @@ import { useRef, useEffect } from "react";
 import useScrollContext from "../../context/Scroll/ScrollContext.js";
 import useCV from "../../context/CV/CVContext.js";
 import { Scrollbars } from "react-custom-scrollbars-2";
+import StarSky from "../../components/StarSky/StarSky.js";
 import Button from "../../components/Button/Button.js";
 import AppNavigation, { NavigationLink } from "../../components/AppNavigation/AppNavigation.js";
 import CVModal from "../../components/CVModal/CVModal.js";
@@ -113,6 +114,8 @@ function App() {
 				<div className="App-content" ref={AppContentRef}>
 					<div className="App-padded-content">
 						<section id="presentation" className="portfolio-section" ref={presentationRef}>
+							<StarSky/>
+
 							<div className="about-content">
 								<div className="welcome-msg">
 									<span className="hello">Bonjour, je m&apos;appelle</span>
