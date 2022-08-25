@@ -1,5 +1,5 @@
 /**
- * @module CVContext
+ * @module CV
  * @category Contexts
  * @author Alexis L. <alexis.lecomte@supinfo.com>
  */

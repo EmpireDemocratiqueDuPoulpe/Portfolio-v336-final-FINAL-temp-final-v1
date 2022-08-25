@@ -1,5 +1,5 @@
 /**
- * @module ScrollContext
+ * @module Scroll
  * @category Contexts
  * @author Alexis L. <alexis.lecomte@supinfo.com>
  */

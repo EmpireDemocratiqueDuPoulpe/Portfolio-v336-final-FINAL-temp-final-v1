@@ -1,5 +1,5 @@
 /**
- * @module ExperiencesContext
+ * @module Experiences
  * @category Contexts
  * @author Alexis L. <alexis.lecomte@supinfo.com>
  */
