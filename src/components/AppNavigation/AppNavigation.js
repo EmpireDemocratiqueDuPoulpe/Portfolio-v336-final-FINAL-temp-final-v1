@@ -1,3 +1,9 @@
+/**
+ * @module AppNavigation
+ * @category Components
+ * @author Alexis L. <alexis.lecomte@supinfo.com>
+ */
+
 import PropTypes from "prop-types";
 import "./AppNavigation.css";
 

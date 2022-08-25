@@ -1,3 +1,10 @@
+/**
+ * @module ExpInfos
+ * @category Components
+ * @subcategory Experiences
+ * @author Alexis L. <alexis.lecomte@supinfo.com>
+ */
+
 import useExperiences from "../../../context/Experiences/ExperiencesContext.js";
 import "./ExpInfos.css";
 

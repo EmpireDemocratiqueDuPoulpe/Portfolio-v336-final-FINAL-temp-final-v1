@@ -1,16 +1,32 @@
+/**
+ * @module StarSky
+ * @category Components
+ * @author Alexis L. <alexis.lecomte@supinfo.com>
+ */
+
 import { useState, useRef, useEffect } from "react";
 import Star from "./Star/Star.js";
 import "./StarSky.css";
 
 function StarSky() {
 	/* ---- States ---------------------------------- */
-	const containerRef = useRef();
-	const [farStars, setFarStars] = useState(null);
-	const [midwayStars, setMidwayStars] = useState(null);
-	const [closeStars, setCloseStars] = useState(null);
+	const containerRef = useRef(/** @type {Element|null} */ null);
+	const [farStars, setFarStars] = useState(/** @type{Array<JSX.Element>|null} */ null);
+	const [midwayStars, setMidwayStars] = useState(/** @type{Array<JSX.Element>|null} */ null);
+	const [closeStars, setCloseStars] = useState(/** @type{Array<JSX.Element>|null} */ null);
 
 	/* ---- Effects --------------------------------- */
 	useEffect(() => {
+		/**
+		 * Generates `count` stars and returns an array of JSX elements ready to be inserted into the document.
+		 * @function
+		 * @private
+		 *
+		 * @param {"far"|"midway"|"close"} layer - The layer in which the star will be located.
+		 * @param {number} count - How many stars to generate?
+		 *
+		 * @return {Array<JSX.Element>} - Generated stars
+		 */
 		const generateStars = (layer, count) => {
 			const stars = [];
 

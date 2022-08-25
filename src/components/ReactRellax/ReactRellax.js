@@ -1,11 +1,17 @@
+/**
+ * @module ReactRellax
+ * @category Components
+ * @author Alexis L. <alexis.lecomte@supinfo.com>
+ */
+
 import { useRef, useEffect, memo } from "react";
 import PropTypes from "prop-types";
 import Rellax from "rellax";
 
 function ReactRellax({ className, wrapper, horizontal, vertical, speed, percentage, zIndex, onMove, ...rest }) {
 	/* ---- States ---------------------------------- */
-	const parallaxRef = useRef();
-	const containerRef = useRef();
+	const parallaxRef = useRef(/** @type {Rellax|null} */ null);
+	const containerRef = useRef(/** @type {Element|null} */ null);
 
 	/* ---- Effects --------------------------------- */
 	useEffect(() => {

@@ -1,9 +1,44 @@
+/**
+ * @module NavigationLink
+ * @category Components
+ * @subcategory AppNavigation
+ * @author Alexis L. <alexis.lecomte@supinfo.com>
+ */
+
 import { useState, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
 import useScrollContext from "../../../context/Scroll/ScrollContext.js";
 import useClassName from "../../../hooks/className/useClassName.js";
 import "./NavigationLink.css";
 
+/*****************************************************
+ * Functions of NavigationLink
+ *****************************************************/
+
+/**
+ * Updates the `inSection` state when the user scroll.
+ * @callback handleScrollFunction
+ * @private
+ *
+ * @param {{ scrollTop: number }} scrollBox - Current scroll status.
+ *
+ * @return {void}
+ */
+
+/*****************************************************
+ * Functions
+ *****************************************************/
+
+/**
+ * Checks if the section element in currently on the user screen.
+ * @function
+ * @private
+ *
+ * @param {number} scrollY - Scroll current position on the `y` axis.
+ * @param {HTMLElement|*} section - The section to check.
+ *
+ * @return {boolean} - True if the section is currently on the user's screen.
+ */
 function isInSection(scrollY, section) {
 	const sectionHeight = section.offsetHeight;
 	const sectionTop = section.offsetTop - (sectionHeight / 2);
@@ -11,10 +46,14 @@ function isInSection(scrollY, section) {
 	return (scrollY >= sectionTop) && (scrollY < (sectionTop + sectionHeight));
 }
 
+/*****************************************************
+ * NavigationLink
+ *****************************************************/
+
 function NavigationLink({ href, sectionRef, children }) {
 	/* ---- States ---------------------------------- */
 	const scroll = useScrollContext();
-	const [inSection, setInSection] = useState(false);
+	const [inSection, setInSection] = useState(/** @type {boolean} */ false);
 	const classes = useClassName(hook => {
 		hook.set("link");
 		hook.set("navigation-link");
@@ -22,6 +61,7 @@ function NavigationLink({ href, sectionRef, children }) {
 	}, [inSection]);
 
 	/* ---- Functions ------------------------------- */
+	/** @type {handleScrollFunction} */
 	const handleScroll = useCallback(scrollBox => {
 		const newValue = isInSection(scrollBox.scrollTop, sectionRef.current);
 

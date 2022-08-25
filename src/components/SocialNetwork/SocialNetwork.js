@@ -1,3 +1,9 @@
+/**
+ * @module SocialNetwork
+ * @category Components
+ * @author Alexis L. <alexis.lecomte@supinfo.com>
+ */
+
 import PropTypes from "prop-types";
 import "./SocialNetwork.css";
 

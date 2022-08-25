@@ -1,3 +1,9 @@
+/**
+ * @module Map
+ * @category Components
+ * @author Alexis L. <alexis.lecomte@supinfo.com>
+ */
+
 import { useState, useRef, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-unresolved
@@ -9,20 +15,50 @@ import { Map as MapConfig } from "../../config/config.js";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "./Map.css";
 
+/*****************************************************
+ * Functions of Map
+ *****************************************************/
+
+/**
+ * Disables map interactions when the user scrolls the page.
+ * @callback onScrollFunction
+ * @private
+ */
+
+/*****************************************************
+ * Constants
+ *****************************************************/
+
 mapboxgl.accessToken = MapConfig.apiKey;
+
+/*****************************************************
+ * Map
+ *****************************************************/
 
 function Map({ lat, lng, zoom, markers }) {
 	/* ---- States ---------------------------------- */
 	const scroll = useScrollContext();
-	const mapWrapper = useRef(null);
-	const map = useRef(null);
-	const [markersJSX, setMarkersJSX] = useState([]);
-	const [isInteractive, setInteractive] = useState(false);
+	const mapWrapper = useRef(/** @type {Element|null} */ null);
+	const map = useRef(/** @type {mapboxgl.Map|null} */ null);
+	const [markersJSX, setMarkersJSX] = useState(/** @type {Array<JSX.Element>} */ []);
+	const [isInteractive, setInteractive] = useState(/** @type {boolean} */ false);
 
 	/* ---- Functions ------------------------------- */
+	/**
+	 * Disables interactions with the map.
+	 * @function
+	 * @private
+	 */
 	const disableInteractiveState = () => { setInteractive(false); };
+
+	/**
+	 * Toggles interactions with the map.
+	 * @function
+	 * @private
+	 */
 	const toggleInteractiveState = () => { setInteractive(!isInteractive); };
 
+	/** @type {onScrollFunction} */
 	const onScroll = useCallback(() => {
 		if (isInteractive) {
 			disableInteractiveState();
@@ -33,6 +69,7 @@ function Map({ lat, lng, zoom, markers }) {
 	useEffect(() => {
 		if (!map.current) {
 			// Map initialization
+			// noinspection JSUnresolvedFunction
 			map.current = new mapboxgl.Map({
 				container: mapWrapper.current,
 				style: "mapbox://styles/mapbox/streets-v11",

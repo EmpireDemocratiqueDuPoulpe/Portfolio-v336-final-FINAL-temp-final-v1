@@ -1,3 +1,9 @@
+/**
+ * @module Functions
+ * @category Global
+ * @author Alexis L. <alexis.lecomte@supinfo.com>
+ */
+
 /*****************************************************
  * Accessibility
  *****************************************************/

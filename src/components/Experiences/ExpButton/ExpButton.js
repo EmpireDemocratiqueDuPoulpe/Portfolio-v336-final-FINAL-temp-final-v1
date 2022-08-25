@@ -1,3 +1,10 @@
+/**
+ * @module ExpButton
+ * @category Components
+ * @subcategory Experiences
+ * @author Alexis L. <alexis.lecomte@supinfo.com>
+ */
+
 import PropTypes from "prop-types";
 import useExperiences from "../../../context/Experiences/ExperiencesContext.js";
 import { eventOnElement } from "../../../global/Functions.js";
@@ -8,9 +15,12 @@ function ExpButton({ experience }) {
 	const experiences = useExperiences();
 
 	/* ---- Functions ------------------------------- */
-	const handleClick = () => {
-		experiences.set(experience.id);
-	};
+	/**
+	 * Sets this experience as the one that is selected when the user clicks on it.
+	 * @function
+	 * @private
+	 */
+	const handleClick = () => { experiences.set(experience.id); };
 
 	/* ---- Page content ---------------------------- */
 	return (

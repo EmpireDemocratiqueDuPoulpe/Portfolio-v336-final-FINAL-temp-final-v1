@@ -1,3 +1,9 @@
+/**
+ * @module App
+ * @category Pages
+ * @author Alexis L. <alexis.lecomte@supinfo.com>
+ */
+
 import { useRef, useEffect } from "react";
 import useScrollContext from "../../context/Scroll/ScrollContext.js";
 import useCV from "../../context/CV/CVContext.js";
@@ -21,6 +27,12 @@ import "./App.css";
  * Constants
  *****************************************************/
 
+/**
+ * A fake situation, because it's funny. ඞ
+ * @const
+ * @readonly
+ * @type {{ name: string, illustration: * }}
+ */
 const fakeSituation = Content.fakeSituations.getRandom();
 
 /*****************************************************
@@ -31,13 +43,13 @@ function App() {
 	/* ---- States ---------------------------------- */
 	const scroll = useScrollContext();
 	const cv = useCV();
-	const scrollbar = useRef();
-	const clipPathPropName = useRef(null);
-	const AppContentRef = useRef();
-	const presentationRef = useRef();
-	const experiencesRef = useRef();
-	const projetsRef = useRef();
-	const contactRef = useRef();
+	const scrollbar = useRef(/** @type {Object|null} */ null);
+	const clipPathPropName = useRef(/** @type {string|-1|null} */ null);
+	const AppContentRef = useRef(/** @type {HTMLElement|null} */ null);
+	const presentationRef = useRef(/** @type {Element|null} */ null);
+	const experiencesRef = useRef(/** @type {Element|null} */ null);
+	const projetsRef = useRef(/** @type {Element|null} */ null);
+	const contactRef = useRef(/** @type {Element|null} */ null);
 
 	/* ---- Effects --------------------------------- */
 	useEffect(() => {

@@ -2,6 +2,12 @@ import { Document, Page } from "react-pdf/dist/esm/entry.webpack5.js";
 import useCV from "../../context/CV/CVContext.js";
 import { eventOnElement } from "../../global/Functions.js";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+/**
+ * @module CVModal
+ * @category Components
+ * @author Alexis L. <alexis.lecomte@supinfo.com>
+ */
+
 import "./CVModal.css";
 
 function CVModal() {
@@ -28,6 +34,7 @@ function CVModal() {
 
 				<span className="page-number">Page {cv.pages.current} sur {cv.pages.total}</span>
 
+				{/* `process.env.PUBLIC_URL` is accessible, but ESLint thinks it is not. */}
 				{/* eslint-disable-next-line no-undef */}
 				<a className="cv-download" href={`${process.env.PUBLIC_URL}/documents/cv.pdf`} download="CV - Alexis Lecomte.pdf">
 					<i>

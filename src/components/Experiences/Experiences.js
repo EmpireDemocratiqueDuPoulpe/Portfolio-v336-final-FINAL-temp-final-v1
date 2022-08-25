@@ -1,3 +1,9 @@
+/**
+ * @module Experiences
+ * @category Components
+ * @author Alexis L. <alexis.lecomte@supinfo.com>
+ */
+
 import PropTypes from "prop-types";
 import { ExperiencesProvider } from "../../context/Experiences/ExperiencesContext.js";
 import ExpButton from "./ExpButton/ExpButton.js";
