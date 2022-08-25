@@ -53,14 +53,6 @@ function App() {
 
 	/* ---- Effects --------------------------------- */
 	useEffect(() => {
-		const interval = setInterval(() => {
-			document.title = Math.floor(Math.random() * 1000).toString();
-		}, 1000);
-
-		return () => clearInterval(interval);
-	}, []);
-
-	useEffect(() => {
 		const handleScroll = scrollBox => {
 			if (AppContentRef.current) {
 				// Get the property name

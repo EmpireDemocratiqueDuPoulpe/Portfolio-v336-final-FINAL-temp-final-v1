@@ -7,6 +7,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
+import useDocumentTitleContext from "../../../context/DocumentTitle/DocumentTitleContext.js";
 import useScrollContext from "../../../context/Scroll/ScrollContext.js";
 import useClassName from "../../../hooks/className/useClassName.js";
 import "./NavigationLink.css";
@@ -52,6 +53,7 @@ function isInSection(scrollY, section) {
 
 function NavigationLink({ href, sectionRef, children }) {
 	/* ---- States ---------------------------------- */
+	const docTitle = useDocumentTitleContext();
 	const scroll = useScrollContext();
 	const [inSection, setInSection] = useState(/** @type {boolean} */ false);
 	const classes = useClassName(hook => {
@@ -67,8 +69,12 @@ function NavigationLink({ href, sectionRef, children }) {
 
 		if (inSection !== newValue) {
 			setInSection(newValue);
+
+			if (newValue && (typeof children === "string")) {
+				docTitle.setPrefix(children);
+			}
 		}
-	}, [sectionRef, inSection]);
+	}, [sectionRef, inSection, docTitle, children]);
 
 	/* ---- Effects --------------------------------- */
 	useEffect(() => {

@@ -1,6 +1,7 @@
 import WeightlessPainter from "../assets/images/situations/peintre_en_apesanteur.png";
 
 export default {
+	title: "Alexis Lecomte",
 	fakeSituations: {
 		enable: true,
 		list: [
