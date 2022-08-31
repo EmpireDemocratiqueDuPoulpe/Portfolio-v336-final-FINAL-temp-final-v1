@@ -126,9 +126,10 @@ function App() {
 									<h1 className="my-name title-font">Alexis Lecomte</h1>
 
 									<div className="my-situation">
+										<span className="real-situation title-font">&Eacute;tudiant en &eacute;cole d&apos;informatique</span>
+
 										<img className="fake-situation-img" src={fakeSituation.illustration} alt=""/>
 										<span className="fake-situation animated-strikethrough always-on">{fakeSituation.name}</span>
-										<span className="real-situation title-font">&Eacute;tudiant en &eacute;cole d&apos;informatique</span>
 									</div>
 
 									<Button className="cv-btn" onClick={cv.show} decoration="❯">Consulter mon CV</Button>

@@ -42,10 +42,14 @@ section#presentation .about-content .welcome-msg {
 	align-items: flex-start;
 }
 
-section#presentation .about-content .hello { font-size: 1.5em; color: var(--primary-color); }
+section#presentation .about-content .hello {
+	font-size: 1.5em;
+	margin-bottom: 0.5em;
+	color: var(--primary-color);
+}
 section#presentation .about-content .my-name {
 	font-size: 3.5em;
-	margin: 0 0 0.25em 0;
+	margin: 0;
 	color: var(--text-color_background);
 }
 
@@ -56,6 +60,18 @@ section#presentation .about-content .my-situation {
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
+}
+
+section#presentation .about-content .my-situation .real-situation {
+	margin-top: 0;
+	font-size: 1.70em;
+	font-weight: 500;
+}
+
+section#presentation .about-content .my-situation .fake-situation {
+	color: var(--tertiary-color);
+	white-space: nowrap;
+	z-index: -1;
 }
 
 section#presentation .about-content .my-situation .fake-situation-img {
@@ -80,27 +96,8 @@ section#presentation .about-content .my-situation .fake-situation-img {
 	25% { transform: translate(4px, 3px) rotate(-3deg); }
 }
 
-section#presentation .about-content .my-situation .fake-situation {
-	position: absolute;
-	top: -0.5em;
-	left: -0.5em;
-	font-size: 4em;
-	color: var(--tertiary-color);
-	opacity: 0.20;
-	white-space: nowrap;
-	z-index: -1;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	user-select: none;
-}
-section#presentation .about-content .my-situation .real-situation {
-	margin-top: 0.5em;
-	font-size: 1.70em;
-	font-weight: 500;
-}
-
 /* -- CV button */
-section#presentation .about-content .cv-btn { margin: 40px auto 0 auto; }
+section#presentation .about-content .cv-btn { margin: 60px auto 0 auto; }
 
 /* -- Profile picture -- */
 section#presentation .profile-picture {
