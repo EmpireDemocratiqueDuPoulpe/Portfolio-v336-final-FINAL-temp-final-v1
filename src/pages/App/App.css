@@ -116,7 +116,12 @@ section#presentation .profile-picture img {
 	object-fit: contain;
 }
 
+/* --- "Experiences" section ---------------------------------------------------------------------------------------- */
+section#experiences h2 { margin-left: 15%; }
+
 /* --- "Projects" section ------------------------------------------------------------------------------------------- */
+section#projets h2 { margin-left: 7%; }
+
 section#projets .projects-grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -127,6 +132,8 @@ section#projets .projects-grid {
 }
 
 /* --- "Contact" section -------------------------------------------------------------------------------------------- */
+section#contact h2 { margin-left: 30%; }
+
 section#contact .contact-content {
 	width: 40%;
 	margin: 0 auto;
