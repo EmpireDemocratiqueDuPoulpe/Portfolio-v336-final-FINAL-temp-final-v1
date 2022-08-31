@@ -59,6 +59,7 @@ function NavigationLink({ href, sectionRef, children }) {
 	const classes = useClassName(hook => {
 		hook.set("link");
 		hook.set("navigation-link");
+		hook.set("title-font");
 		hook.setIf(inSection, "current");
 	}, [inSection]);
 

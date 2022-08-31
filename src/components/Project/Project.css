@@ -97,8 +97,9 @@
 /* - Description - */
 .project .project-infos .project-desc {
 	display: -webkit-box;
+	font-size: 0.9em;
 	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 4;
+	-webkit-line-clamp: 6;
 	overflow-y: hidden;
 }
 

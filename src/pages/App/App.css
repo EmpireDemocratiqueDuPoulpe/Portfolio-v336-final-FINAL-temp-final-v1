@@ -80,8 +80,24 @@ section#presentation .about-content .my-situation .fake-situation-img {
 	25% { transform: translate(4px, 3px) rotate(-3deg); }
 }
 
-section#presentation .about-content .my-situation .fake-situation { color: var(--tertiary-color); opacity: 0.75; }
-section#presentation .about-content .my-situation .real-situation { font-size: 1.75em; }
+section#presentation .about-content .my-situation .fake-situation {
+	position: absolute;
+	top: -0.5em;
+	left: -0.5em;
+	font-size: 4em;
+	color: var(--tertiary-color);
+	opacity: 0.20;
+	white-space: nowrap;
+	z-index: -1;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+section#presentation .about-content .my-situation .real-situation {
+	margin-top: 0.5em;
+	font-size: 1.70em;
+	font-weight: 500;
+}
 
 /* -- CV button */
 section#presentation .about-content .cv-btn { margin: 40px auto 0 auto; }
@@ -175,6 +191,12 @@ footer .stylish-quote {
 	font-weight: 600;
 }
 
+footer .stylish-quote blockquote,
+footer .stylish-quote figcaption {
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
 footer .stylish-quote blockquote {
 	text-indent: -0.50em;
 	color: var(--text-emphasis_background);
@@ -189,6 +211,11 @@ footer .stylish-quote blockquote {
 }
 
 footer .stylish-quote blockquote .emphasis { color: var(--primary-color); }
+
+footer .stylish-quote figcaption {
+	font-size: 0.9em;
+	color: var(--text-color_background);
+}
 
 /* -- Licensing and copyrights -- */
 footer .licensing {
