@@ -74,10 +74,10 @@ section#presentation .about-content .my-situation .fake-situation {
 	z-index: -1;
 }
 
-section#presentation .about-content .my-situation .fake-situation-img {
+section#presentation .fake-situation-img {
 	position: absolute;
-	top: -15px;
-	left: -375px;
+	top: 50%;
+	left: 12%;
 	max-width: 250px;
 	max-height: 250px;
 	transform: rotate(20deg);

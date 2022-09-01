@@ -119,6 +119,7 @@ function App() {
 					<div className="App-padded-content">
 						<section id="presentation" className="portfolio-section" ref={presentationRef}>
 							<StarSky/>
+							<img className="fake-situation-img" src={fakeSituation.illustration} alt=""/>
 
 							<div className="about-content">
 								<div className="welcome-msg">
@@ -127,8 +128,6 @@ function App() {
 
 									<div className="my-situation">
 										<span className="real-situation title-font">&Eacute;tudiant en &eacute;cole d&apos;informatique</span>
-
-										<img className="fake-situation-img" src={fakeSituation.illustration} alt=""/>
 										<span className="fake-situation animated-strikethrough always-on">{fakeSituation.name}</span>
 									</div>
 
