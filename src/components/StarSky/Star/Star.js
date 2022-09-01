@@ -42,9 +42,9 @@ import "./Star.css";
  * @type {Array<Layer>}
  */
 const LAYERS = [
-	{ name: "close", speed: -3 },
+	{ name: "close", speed: -2 },
 	{ name: "midway", speed: 0 },
-	{ name: "far", speed: 3 },
+	{ name: "far", speed: 2 },
 ];
 
 /*****************************************************
