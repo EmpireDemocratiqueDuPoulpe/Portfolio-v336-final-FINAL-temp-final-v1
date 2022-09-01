@@ -23,8 +23,6 @@
 /* -- Nebula -- */
 .stars-sky .stars-layer .nebula {
 	position: absolute;
-	width: 200px;
-	height: 200px;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -34,6 +32,8 @@
 	background-image: url("../../assets/images/galaxy_transparent_1.png");
 	top: 60%;
 	right: 0;
+	width: 200px;
+	height: 200px;
 }
 
 .stars-sky .stars-layer .nebula.style-2 {
