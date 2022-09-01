@@ -50,6 +50,9 @@ function StarSky() {
 	return (
 		<div ref={containerRef} className="stars-sky">
 			<div className="stars-layer far-stars">
+				<div className="nebula style-1"/>
+				<div className="nebula style-2"/>
+
 				{farStars}
 			</div>
 
