@@ -4,15 +4,29 @@
  * @author Alexis L. <alexis.lecomte@supinfo.com>
  */
 
-import { createContext, useContext, useRef, useMemo, useCallback } from "react";
+import { createContext, useContext, useRef, useEffect, useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
 import { v4 as uuidv4 } from "uuid";
+import { useBeforeunload } from "react-beforeunload";
 
 /*****************************************************
  * Typedefs
  *****************************************************/
 
 /** @typedef {React.Context<null|Object>} ScrollCtx */
+
+/**
+ * @typedef {Object} ScrollBox
+ *
+ * @property {number} top - scrollTop progress, from 0 to 1.
+ * @property {number} left - scrollLeft progress, from 0 to 1.
+ * @property {number} clientWidth - Width of the view.
+ * @property {number} clientHeight - Height of the view.
+ * @property {number} scrollWidth - Native scrollWidth.
+ * @property {number} scrollHeight - Native scrollHeight.
+ * @property {number} scrollLeft - Native scrollLeft.
+ * @property {number} scrollTop - Native scrollTop.
+ */
 
 /*****************************************************
  * Functions of ScrollProvider
@@ -50,6 +64,7 @@ export function ScrollProvider({ children }) {
 	/* ---- States - Part one ----------------------- */
 	const api = useRef(/** @type {Object|null} */ null);
 	const listeners = useRef(/** @type {Object} */ Object.create(null));
+	const restoredScrollPos = useRef(/** @type {number|null} */ null);
 
 	/* ---- Functions ------------------------------- */
 	/**
@@ -58,7 +73,14 @@ export function ScrollProvider({ children }) {
 	 *
 	 * @param {Object} api - Scroll API.
 	 */
-	const setAPI = api => { api.current = api; };
+	const setAPI = api => {
+		api.current = api;
+
+		if (restoredScrollPos.current) {
+			api.scrollTop(restoredScrollPos.current);
+			restoredScrollPos.current = null;
+		}
+	};
 
 	/**
 	 * Returns the scroll API used by `react-custom-scrollbars-2`.
@@ -97,22 +119,62 @@ export function ScrollProvider({ children }) {
 	}, []);
 
 	/**
+	 * Saves the current scroll position to the session storage.
+	 * @function
+	 */
+	const saveScrollPos = () => {
+		if (getAPI()) {
+			localStorage.setItem("scroll-position", `${getAPI().getScrollTop()}`);
+		}
+	};
+
+	const restoreScrollPos = () => {
+		const scrollPos = localStorage.getItem("scroll-position");
+
+		if (scrollPos) {
+			restoredScrollPos.current = parseInt(scrollPos, 10);
+		}
+	};
+
+	/**
 	 * Propagates the scroll event to every listener when triggered.
 	 * @function
 	 *
-	 * @param {Object} scrollBox - Current scroll status.
+	 * @param {ScrollBox} scrollBox - Current scroll status.
 	 */
-	const handleScroll = scrollBox => {
+	const handleScroll = useCallback(scrollBox => {
 		for (const key in listeners.current) {
 			listeners.current[key](scrollBox);
 		}
-	};
+	}, []);
+
+	/* ---- Effects --------------------------------- */
+	useBeforeunload(() => {
+		if (getAPI()) {
+			saveScrollPos(getAPI().getValues());
+		}
+	});
+	
+	useEffect(() => {
+		// Restore the scroll position
+		restoreScrollPos();
+
+		// "beforeunload" event is used to save the current scroll position.
+		//document.addEventListener("beforeunload", saveScrollPos);
+		// return () => {
+		//document.removeEventListener("beforeunload", saveScrollPos);
+		/*localStorage.setItem("exit", "2");
+			if (getAPI()) {
+				saveScrollPos(getAPI().getValues());
+			}*/
+		//};
+	}, []);
 
 	/* ---- States - Part two ----------------------- */
 	const memoizedContext = useMemo(() => ({
 		setAPI, getAPI,
 		addListener, removeListener, handleScroll,
-	}), [addListener, removeListener]);
+	}), [addListener, removeListener, handleScroll]);
 
 	/* ---- Page content ---------------------------- */
 	return (
