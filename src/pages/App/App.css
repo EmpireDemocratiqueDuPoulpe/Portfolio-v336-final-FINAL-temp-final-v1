@@ -20,6 +20,14 @@ section.portfolio-section {
 	scroll-margin-top: 100px;
 }
 
+/* // Tablets */
+@media all and (min-width: 768px) and (max-width: 1024px) {
+	section.portfolio-section {
+		padding-left: 3vw;
+		padding-right: 3vw;
+	}
+}
+
 /* --- "About me" section ------------------------------------------------------------------------------------------- */
 /* -- Container -- */
 section#presentation .about-content  {
@@ -101,6 +109,8 @@ section#presentation .about-content .cv-btn { margin: 60px auto 0 auto; }
 
 /* -- Profile picture -- */
 section#presentation .profile-picture {
+	flex-grow: 0;
+	flex-shrink: 0;
 	width: 250px;
 	height: 250px;
 	background: rgba(0, 0, 0, 0.5);
@@ -111,6 +121,42 @@ section#presentation .profile-picture img {
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
+}
+
+/* // Tablets */
+@media all and (min-width: 768px) and (max-width: 1024px) {
+	section#presentation .about-content {
+		gap: 60px;
+	}
+
+	section#presentation .fake-situation-img {
+		top: auto;
+		bottom: 5%;
+		left: 3%;
+		width: 125px;
+		height: 125px;
+	}
+}
+
+/* // Phones */
+@media all and (max-width: 480px) {
+	section#presentation .about-content .hello { font-size: 1.25em; }
+	section#presentation .about-content .my-name { font-size: 3em; }
+
+	section#presentation .about-content .my-situation .real-situation { font-size: 1.5em; }
+	section#presentation .about-content .my-situation .fake-situation { font-size: 0.7em; margin-top: 0.7em; }
+}
+
+@media all and (max-width: 480px) and (orientation: portrait) {
+	section#presentation .profile-picture { display: none; }
+
+	section#presentation .fake-situation-img {
+		top: auto;
+		bottom: -3%;
+		left: 3%;
+		width: 90px;
+		height: 90px;
+	}
 }
 
 /* --- "Experiences" section ---------------------------------------------------------------------------------------- */
@@ -126,6 +172,21 @@ section#projets .projects-grid {
 	gap: 30px;
 	width: 65vw;
 	margin: 0 auto;
+}
+
+/* // Tablets */
+@media all and (min-width: 768px) and (max-width: 1024px) {
+	section#projets .projects-grid { grid-template-columns: 1fr; }
+}
+
+/* // Phones */
+@media all and (max-width: 480px) {
+	section#projets .projects-grid {
+		grid-template-columns: 1fr;
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
 }
 
 /* --- "Contact" section -------------------------------------------------------------------------------------------- */
@@ -178,6 +239,26 @@ section#contact .contact-content .contact-links .contact-mail {
 section#contact .contact-content .map {
 	width: 100%;
 	margin: 30px auto 0 auto;
+}
+
+/* // Tablets */
+@media all and (min-width: 768px) and (max-width: 1024px) {
+	section#contact h2 { margin-left: 20%; }
+
+	section#contact .contact-content {
+		width: 60%;
+	}
+}
+
+/* // Phones */
+@media all and (max-width: 480px) {
+	section#contact { font-size: 0.8em; }
+
+	section#contact h2 { margin-left: 0; }
+
+	section#contact .contact-content {
+		width: 100%;
+	}
 }
 
 	/* --- Footer ------------------------------------------------------------------------------------------------------- */

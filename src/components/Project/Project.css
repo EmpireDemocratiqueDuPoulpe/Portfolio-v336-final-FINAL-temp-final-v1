@@ -22,6 +22,11 @@
 	box-shadow: 0 0 0 4px var(--primary-color), 0 -9px 0 4px var(--primary-color);
 }
 
+/* // Phones */
+@media all and (max-width: 480px) {
+	.project { height: auto; }
+}
+
 /* -- Window title -- */
 .project::after {
 	content: attr(data-window-title);
@@ -65,6 +70,11 @@
 
 /* - Name - */
 .project .project-infos .project-name { margin-top: 0; color: var(--text-emphasis_background); }
+
+/* // Phones */
+@media all and (max-width: 480px) {
+	.project .project-infos .project-name { font-size: 1em; margin-right: 1.5em; }
+}
 
 /* - Link to the project - */
 .project .project-infos .project-link {
@@ -116,6 +126,11 @@
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 6;
 	overflow-y: hidden;
+}
+
+/* // Phones */
+@media all and (max-width: 480px) {
+	.project .project-infos .project-desc { display: block; font-size: 0.8em; }
 }
 
 /* - Techs - */
