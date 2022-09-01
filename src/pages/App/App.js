@@ -151,19 +151,23 @@ function App() {
 							<h2 className="title-font">Projets</h2>
 
 							<div className="projects-grid">
-								<Project name="Pond Simulator 2020" href="https://github.com/EmpireDemocratiqueDuPoulpe/Pond-Simulator-2020" techs={["Java"]} img={PondSimulator2020}>
+								<Project name="Pond Simulator 2020" windowTitle="quack!" techs={["Java"]} img={PondSimulator2020}
+									href="https://github.com/EmpireDemocratiqueDuPoulpe/Pond-Simulator-2020">
 									Pond Simulator 2020 simule, de manière simplifi&eacute;e et cartoonesque, la vie dans un lac, les canards qui y vivent, les n&eacute;nuphars qui y poussent et les r&eacute;gimes dictatorials qui &eacute;mergent du peuple ans&eacute;riforme.
 								</Project>
 
-								<Project name="Melodie" href="https://github.com/EmpireDemocratiqueDuPoulpe/Melodie" techs={["C#", "HTML", "CSS", "JavaScript"]}>
+								<Project name="Melodie" windowTitle="♫ Playing Darude Sandstorm - Dubstep Edition" techs={["C#", "HTML", "CSS", "JavaScript"]}
+									href="https://github.com/EmpireDemocratiqueDuPoulpe/Melodie">
 									Melodie est un site web permettant &agrave; un utilisateur authentifi&eacute; d&apos;&eacute;couter des morceaux de musique depuis ses listes de lecture. Les musiques y sont ajout&eacute;es en entrant un lien ou un fichier audio.
 								</Project>
 
-								<Project name="Instabus" href="https://github.com/EmpireDemocratiqueDuPoulpe/Instabus" techs={["Kotlin"]} img={Instabus}>
+								<Project name="Instabus" windowTitle="#bus #crazy #Setra_S_416_GT-HD/2" techs={["Kotlin"]} img={Instabus}
+									href="https://github.com/EmpireDemocratiqueDuPoulpe/Instabus">
 									Instabus est un r&eacute;seau social similaire &agrave; Instagram, mais avec un concept de niche. Les utilisateurs peuvent chercher des arr&ecirc;ts de bus dans Barcelone, s&apos;y prendre en photo et le partager au monde. Je l&apos;avais dit, concept de niche.
 								</Project>
 
-								<Project name="Mr. Driller clone" href="#" techs={["Python"]} img={MrDriller}>
+								<Project name="Mr. Driller clone" techs={["Python"]} img={MrDriller}
+									href="#">
 									Y&apos;a pas de description
 								</Project>
 							</div>

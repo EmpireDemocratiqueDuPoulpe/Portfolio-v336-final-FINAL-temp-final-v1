@@ -1,25 +1,40 @@
 /* --- Project box -------------------------------------------------------------------------------------------------- */
 .project {
 	box-sizing: border-box;
+	position: relative;
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
 	align-items: stretch;
 	height: 180px;
-	padding: 4px 0 0 4px;
-	-o-box-shadow: -2px -2px 0 0 var(--secondary-color-3);
-	-moz-box-shadow: -2px -2px 0 0 var(--secondary-color-3);
-	-webkit-box-shadow: -2px -2px 0 0 var(--secondary-color-3);
-	box-shadow: -2px -2px 0 0 var(--secondary-color-3);
+	padding: 4px;
+	-o-box-shadow: -1px -1px 0 1px transparent;
+	-moz-box-shadow: -1px -1px 0 1px transparent;
+	-webkit-box-shadow: -1px -1px 0 1px transparent;
+	box-shadow: -1px -1px 0 1px transparent;
 	transition: box-shadow 150ms ease-in-out;
 }
 
 .project:hover {
-	-o-box-shadow: -5px -5px 0 2px var(--secondary-color);
-	-moz-box-shadow: -5px -5px 0 2px var(--secondary-color);
-	-webkit-box-shadow: -5px -5px 0 2px var(--secondary-color);
-	box-shadow: -5px -5px 0 2px var(--secondary-color);
+	-o-box-shadow: 0 0 0 4px var(--primary-color), 0 -9px 0 4px var(--primary-color);
+	-moz-box-shadow: 0 0 0 4px var(--primary-color), 0 -9px 0 4px var(--primary-color);
+	-webkit-box-shadow: 0 0 0 4px var(--primary-color), 0 -9px 0 4px var(--primary-color);
+	box-shadow: 0 0 0 4px var(--primary-color), 0 -9px 0 4px var(--primary-color);
 }
+
+/* -- Window title -- */
+.project::after {
+	content: attr(data-window-title);
+	position: absolute;
+	top: -11px;
+	left: 5px;
+	font-size: 10px;
+	color: var(--text-color_primary);
+	opacity: 0;
+	transition: opacity 150ms ease-in-out;
+}
+
+.project:hover::after { opacity: 1; }
 
 /* -- Project image -- */
 .project .project-img {

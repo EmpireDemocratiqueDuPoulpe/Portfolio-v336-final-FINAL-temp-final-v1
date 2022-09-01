@@ -7,10 +7,10 @@
 import PropTypes from "prop-types";
 import "./Project.css";
 
-function Project({ name, href, techs, img, children }) {
+function Project({ name, href, techs, img, windowTitle, children }) {
 	/* ---- Page content ---------------------------- */
 	return (
-		<div className="project">
+		<div className="project" data-window-title={windowTitle ?? name}>
 			<div className="project-img">
 				<img src={img} alt="Une capture d'écran du projet"/>
 			</div>
@@ -44,6 +44,7 @@ Project.propTypes = {
 	href: PropTypes.string,
 	techs: PropTypes.arrayOf(PropTypes.string),
 	img: PropTypes.string,
+	windowTitle: PropTypes.string,
 	children: PropTypes.node
 };
 
