@@ -6,6 +6,7 @@
 
 import { createContext, useContext, useState, useRef, useEffect, useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
+import useWindowSize from "../../hooks/windowSize/useWindowSize.js";
 
 /*****************************************************
  * Typedefs
@@ -67,6 +68,7 @@ const NO_SCROLL_CLASS = "no-scroll";
  *****************************************************/
 export function CVProvider({ children }) {
 	/* ---- States - Part one ----------------------- */
+	const { width } = useWindowSize();
 	const file = "./documents/cv.pdf";
 	const [state, setState] = useState(/** @type {string} */ states.HIDDEN);
 	const [animDurationMs, setAnimDurationMs] = useState(/** @type {number} */ 250);
@@ -88,8 +90,24 @@ export function CVProvider({ children }) {
 	 * @function
 	 */
 	const show = () => {
-		setState(states.SHOWN);
-		document.body.parentElement.classList.add(NO_SCROLL_CLASS);
+		if (width >= 1100) {
+			setState(states.SHOWN);
+			document.body.parentElement.classList.add(NO_SCROLL_CLASS);
+		} else {
+			openInNewTab();
+		}
+	};
+
+	const openInNewTab = () => {
+		fetch("./documents/cv.pdf")
+			.then(response => response.blob())
+			.then(pdfFile => {
+				const fileURL = URL.createObjectURL(pdfFile);
+				const newWindow = window.open();
+
+				newWindow.location.href = fileURL;
+			})
+			.catch(console.error);
 	};
 
 	/** @type {hideFunction} */
