@@ -16,7 +16,9 @@
 	cursor: pointer;
 }
 
-.App-navigation .navigation-links .navigation-links-content .navigation-link:last-child { margin-right: 0; }
+.App-navigation .navigation-links:not(.phone-mode) .navigation-links-content .navigation-link:last-child {
+	margin-right: 0;
+}
 
 .App-navigation .navigation-links.phone-mode .navigation-links-content .navigation-link {
 	position: absolute;
