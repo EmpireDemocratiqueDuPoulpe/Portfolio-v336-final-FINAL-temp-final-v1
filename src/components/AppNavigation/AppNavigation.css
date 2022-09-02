@@ -1,5 +1,7 @@
 /* --- App navigation menu ------------------------------------------------------------------------------------------ */
 .App-navigation {
+	--nav-height: 50px;
+
 	position: fixed;
 	top: 10px;
 	right: 10px;
@@ -8,10 +10,94 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	height: 50px;
-	line-height: 50px;
+	height: var(--nav-height);
+	line-height: var(--nav-height);
 	padding: 0 20px;
 	background: var(--background-color⨣1);
 	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 	z-index: 1000;
+}
+
+/* -- Navigation links -- */
+.App-navigation .navigation-links {
+	--nav-btn-size: 30px;
+
+	flex-grow: 1;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	height: var(--nav-height);
+}
+
+.App-navigation .navigation-links .navigation-links-content {
+	flex-grow: 1;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	height: var(--nav-height);
+	overflow: hidden;
+}
+
+/* - Navigation link button - */
+.App-navigation .navigation-links .navigation-links-btn { display: none; }
+.App-navigation .navigation-links.phone-mode .navigation-links-btn {
+	flex-grow: 0;
+	flex-shrink: 0;
+	position: relative;
+	display: inline-block;
+	width: var(--nav-btn-size);
+	height: var(--nav-btn-size);
+	background: var(--background-color⨣2);
+}
+
+.App-navigation .navigation-links.phone-mode .navigation-links-btn svg {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: inline-block;
+	width: 70%;
+	height: 70%;
+	fill: var(--text-color_background);
+	transform: translate(-50%, -50%);
+}
+
+/* - Navigation link button - Content - */
+.App-navigation .navigation-links.phone-mode .navigation-links-btn .nl-btn-content {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding-right: 40px;
+	background: var(--background-color);
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 150ms ease-in-out;
+	pointer-events: none;
+}
+
+.App-navigation .navigation-links.phone-mode .navigation-links-btn.open .nl-btn-content{
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+/* - Navigation link button - Close button - */
+.App-navigation .navigation-links.phone-mode .navigation-links-btn .nl-btn-content .nl-btn-close-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: var(--nav-btn-size);
+	height: var(--nav-btn-size);
+	background: var(--background-color⨣2);
+	border: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	cursor: pointer;
+}
+
+.App-navigation .navigation-links.phone-mode .navigation-links-btn .nl-btn-content .nl-btn-close-btn svg {
+	fill: var(--text-color_background);
 }

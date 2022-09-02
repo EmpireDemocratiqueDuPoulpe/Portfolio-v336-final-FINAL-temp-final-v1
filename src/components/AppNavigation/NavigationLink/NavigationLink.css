@@ -16,6 +16,24 @@
 	cursor: pointer;
 }
 
+.App-navigation .navigation-links .navigation-links-content .navigation-link:last-child { margin-right: 0; }
+
+.App-navigation .navigation-links.phone-mode .navigation-links-content .navigation-link {
+	position: absolute;
+	top: 0;
+	right: -10px; /* Right margin */
+	bottom: 0;
+	transition: transform 150ms ease-in-out;
+}
+
+.App-navigation .navigation-links.phone-mode .navigation-links-content .navigation-link:not(.current) {
+	transform: translateY(calc(var(--nav-height) * -1));
+}
+
+.App-navigation .navigation-links.phone-mode .navigation-links-content .navigation-link.current ~ .navigation-link {
+	transform: translateY(var(--nav-height));
+}
+
 /* -- Animated background and border -- */
 .navigation-link::before,
 .navigation-link::after {
