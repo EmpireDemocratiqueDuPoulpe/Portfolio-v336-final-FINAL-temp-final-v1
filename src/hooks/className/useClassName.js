@@ -122,7 +122,7 @@ function hasDepsChanged(currentDeps, newDeps) {
 }
 
 /**
- * Build a `className` string from classes defined in the hook.
+ * Builds a `className` string from classes defined in the hook.
  * @function
  *
  * @example
