@@ -305,7 +305,7 @@ footer .stylish-quote figcaption {
 
 /* // Phones */
 @media all and (max-width: 480px) {
-	footer .stylish-quote { width: 100%; }
+	footer .stylish-quote { width: 100%; font-size: 1.25em; }
 
 	footer .stylish-quote blockquote,
 	footer .stylish-quote figcaption { margin-left: 0; margin-right: 0; }
