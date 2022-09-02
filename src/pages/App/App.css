@@ -245,9 +245,7 @@ section#contact .contact-content .map {
 @media all and (min-width: 768px) and (max-width: 1024px) {
 	section#contact h2 { margin-left: 20%; }
 
-	section#contact .contact-content {
-		width: 60%;
-	}
+	section#contact .contact-content { width: 60%; }
 }
 
 /* // Phones */
@@ -256,9 +254,7 @@ section#contact .contact-content .map {
 
 	section#contact h2 { margin-left: 0; }
 
-	section#contact .contact-content {
-		width: 100%;
-	}
+	section#contact .contact-content { width: 100%; }
 }
 
 	/* --- Footer ------------------------------------------------------------------------------------------------------- */
@@ -302,6 +298,19 @@ footer .stylish-quote figcaption {
 	color: var(--text-color_background);
 }
 
+/* // Tablets */
+@media all and (min-width: 768px) and (max-width: 1024px) {
+	footer .stylish-quote { width: 90%; }
+}
+
+/* // Phones */
+@media all and (max-width: 480px) {
+	footer .stylish-quote { width: 100%; }
+
+	footer .stylish-quote blockquote,
+	footer .stylish-quote figcaption { margin-left: 0; margin-right: 0; }
+}
+
 /* -- Licensing and copyrights -- */
 footer .licensing {
 	text-align: center;
@@ -317,3 +326,8 @@ footer .licensing .copyright .link { color: var(--tertiary-desaturated); }
 
 footer .licensing .my-copyright { font-weight: 600; }
 footer .licensing :not(.my-copyright) { font-size: 0.9em; }
+
+/* // Phones */
+@media all and (max-width: 480px) {
+	footer .licensing { font-size: 0.8em; }
+}
