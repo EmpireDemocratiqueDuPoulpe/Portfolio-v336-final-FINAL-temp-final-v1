@@ -5,6 +5,7 @@
  */
 
 import { useRef, useEffect } from "react";
+import { NavigationProvider } from "../../context/Navigation/NavigationContext.js";
 import useScrollContext from "../../context/Scroll/ScrollContext.js";
 import useCV from "../../context/CV/CVContext.js";
 import { Scrollbars } from "react-custom-scrollbars-2";
@@ -106,12 +107,14 @@ function App() {
 			autoHide={false}
 			onScrollFrame={scroll.handleScroll}>
 			<div className="App">
-				<AppNavigation>
-					<NavigationLink href="#presentation" sectionRef={presentationRef}>Pr&eacute;sentation</NavigationLink>
-					<NavigationLink href="#experiences" sectionRef={experiencesRef}>Exp&eacute;rience</NavigationLink>
-					<NavigationLink href="#projets" sectionRef={projetsRef}>Projets</NavigationLink>
-					<NavigationLink href="#contact" sectionRef={contactRef}>Contact</NavigationLink>
-				</AppNavigation>
+				<NavigationProvider>
+					<AppNavigation>
+						<NavigationLink href="#presentation" sectionRef={presentationRef}>Pr&eacute;sentation</NavigationLink>
+						<NavigationLink href="#experiences" sectionRef={experiencesRef}>Exp&eacute;rience</NavigationLink>
+						<NavigationLink href="#projets" sectionRef={projetsRef}>Projets</NavigationLink>
+						<NavigationLink href="#contact" sectionRef={contactRef}>Contact</NavigationLink>
+					</AppNavigation>
+				</NavigationProvider>
 
 				<CVModal/>
 
