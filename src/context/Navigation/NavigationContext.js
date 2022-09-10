@@ -24,6 +24,43 @@ import useScrollContext from "../Scroll/ScrollContext.js";
  */
 
 /*****************************************************
+ * Functions of NavigationProvider
+ *****************************************************/
+
+/**
+ * Returns the index of an HTML element relative to the array of links.
+ * @callback getArrayIndexFunction
+ * @private
+ *
+ * @param {Node} element - HTML Element to find index of.
+ *
+ * @return {number}
+ */
+
+/**
+ * Adds a link to the navigation manager.
+ * @callback addLinkFunction
+ *
+ * @param {{current}} linkRef - Reference to the `NavigationLink` element.
+ * @param {{current}} sectionRef - Reference to the `section` pointed by this link.
+ */
+
+/**
+ * Removes a link from the navigation manager.
+ * @callback removeLinkFunction
+ *
+ * @param {{current}} linkRef - Reference to the `NavigationLink` element.
+ */
+
+/**
+ * Sets a link as selected.
+ * @callback selectLinkFunction
+ * @private
+ *
+ * @param {Link} link - The link to select.
+ */
+
+/*****************************************************
  * Constants
  *****************************************************/
 
@@ -46,6 +83,15 @@ export function NavigationProvider({ children }) {
 	const links = useRef(/** @type {Array<Link>} */ []);
 
 	/* ---- Functions ------------------------------- */
+	/**
+	 * Returns the index of an HTML element relative to its parent node.
+	 * @function
+	 * @private
+	 *
+	 * @param {Node} element - HTML Element to find index of.
+	 *
+	 * @return {number}
+	 */
 	const getElementIndex = element => {
 		let index = 0;
 		while ((element = element.previousSibling) != null) {
@@ -55,10 +101,22 @@ export function NavigationProvider({ children }) {
 		return index;
 	};
 
-	const getArrayIndex = useCallback(linkRef => links.current.findIndex(l => l.linkRef === linkRef), []);
+	/** @type {getArrayIndexFunction} */
+	const getArrayIndex = useCallback(element => links.current.findIndex(l => l.linkRef === element), []);
 
+	/**
+	 * Builds a `Link` object.
+	 * @function
+	 * @private
+	 *
+	 * @property {number} domIndex - Index of the element in its parent.
+	 * @property {HTMLElement} linkRef - Reference to the HTML element of the link.
+	 * @property {HTMLElement} sectionRef - Reference to the HTML element of the section associated with this link.
+	 * @return {Link}
+	 */
 	const createLink = (domIndex, linkRef, sectionRef) => ({ domIndex, linkRef, sectionRef });
 
+	/** @type {addLinkFunction} */
 	const addLink = useCallback((linkRef, sectionRef) => {
 		if (!linkRef || !linkRef.current || !sectionRef || !sectionRef.current) return;
 
@@ -74,11 +132,13 @@ export function NavigationProvider({ children }) {
 		}
 	}, [getArrayIndex]);
 
+	/** @type {removeLinkFunction} */
 	const removeLink = useCallback(linkRef => {
 		if (!linkRef || !linkRef.current) return;
 		links.current = links.current.filter(l => l.linkRef !== linkRef.current);
 	}, []);
 
+	/** @type {selectLinkFunction} */
 	const selectLink = useCallback(link => {
 		if (!link.linkRef.classList.contains(CURRENT_LINK_CLASS)) {
 			// Deselect all links
@@ -86,11 +146,28 @@ export function NavigationProvider({ children }) {
 
 			// Select the good one
 			link.linkRef.classList.add(CURRENT_LINK_CLASS);
-			docTitle.setPrefix(link.linkRef.innerText);
+			docTitle.setPrefix(link.linkRef.innerText[0].toUpperCase() + link.linkRef.innerText.slice(1).toLowerCase());
 		}
 	}, [docTitle]);
 
+	/**
+	 * Sorts an array of `Link` using the `domIndex`.
+	 * @function
+	 * @private
+	 *
+	 * @param {Array<Link>} arr
+	 * @return {Array<Link>}
+	 */
 	const sortLinks = arr => arr.sort((linkA, linkB) => linkA.domIndex - linkB.domIndex);
+
+	/**
+	 * Sorts an array of `Link` using the `offsetTop`.
+	 * @function
+	 * @private
+	 *
+	 * @param {Array<Link>} arr
+	 * @return {Array<Link>}
+	 */
 	const sortLinksBySection = arr => arr.sort((linkA, linkB) => linkA.sectionRef.offsetTop - linkB.sectionRef.offsetTop);
 
 	/* ---- Effects --------------------------------- */
@@ -100,7 +177,7 @@ export function NavigationProvider({ children }) {
 			if (sortedLinks) {
 				let selectedLink = sortedLinks[0];
 
-				// We skip the first element since it's selected by default.
+				// We skip the first element since it's selected by default
 				for (const link of sortedLinks.slice(1)) {
 					if ((link.sectionRef.offsetTop - (link.sectionRef.offsetHeight / 2)) <= scrollBox.scrollTop) {
 						selectedLink = link;
