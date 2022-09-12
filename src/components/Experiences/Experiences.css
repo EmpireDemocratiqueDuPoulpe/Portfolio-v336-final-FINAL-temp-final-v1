@@ -11,8 +11,15 @@
 
 /* // Tablets */
 @media all and (min-width: 768px) and (max-width: 1024px) {
+	.experiences-container { width: 95%; }
+}
+
+/* // Phones */
+@media all and (max-width: 480px) {
 	.experiences-container {
-		width: 95%;
+		flex-direction: column;
+		width: 100%;
+		font-size: 0.9em;
 	}
 }
 
@@ -21,7 +28,24 @@
 	flex-grow: 0;
 	flex-shrink: 0;
 	width: 25%;
+	overflow-x: scroll;
+}
+
+/* // Phones */
+@media all and (max-width: 480px) {
+	.experiences-container .experience-selector {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: stretch;
+		width: 100%;
+	}
 }
 
 /* -- Info box -- */
 .experiences-container .experience-infos { padding: 0 15px; }
+
+/* // Phones */
+@media all and (max-width: 480px) {
+	.experiences-container .experience-infos { padding: 10px 0 0 0; }
+}

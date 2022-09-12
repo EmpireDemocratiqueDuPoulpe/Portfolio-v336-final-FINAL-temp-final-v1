@@ -17,11 +17,25 @@
 
 .experience .experience-name .experience-company .exp-company-sep { letter-spacing: -1px; margin-right: 0.5em; }
 
+/* // Phones */
+@media all and (max-width: 480px) {
+	.experience .experience-name {
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 3px;
+	}
+}
+
 /* -- Dates -- */
 .experience .experience-date {
 	display: inline-block;
 	font-size: 0.9em;
 	margin-bottom: 30px;
+}
+
+/* // Phones */
+@media all and (max-width: 480px) {
+	.experience .experience-date { font-size: 0.8em; }
 }
 
 /* -- Description -- */
