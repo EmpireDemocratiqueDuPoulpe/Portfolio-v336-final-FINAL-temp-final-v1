@@ -1,0 +1,17 @@
+/* --- Loading bar ------------------------------------------------------------------------------------------------ */
+.loading-bar {
+	width: 0;
+	height: 2px;
+	background: var(--primary-color);
+	animation-name: loading;
+	animation-delay: 0ms;
+	animation-timing-function: linear;
+	animation-direction: normal;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes loading {
+	0% { width: 0; }
+	100% { width: 100%; }
+}

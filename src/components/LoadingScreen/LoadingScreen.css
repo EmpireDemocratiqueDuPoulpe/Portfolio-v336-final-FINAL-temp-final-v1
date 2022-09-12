@@ -1,0 +1,22 @@
+/* --- Loading Screen --------------------------------------------------------------------------------------------- */
+/* -- Container -- */
+.loading-screen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: var(--background-color-3);
+	z-index: 15000;
+}
+
+/* -- Screen content -- */
+.loading-screen .loading-screen-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 75%;
+	transform: translate(-50%, -50%);
+}
+
+.loading-screen .loading-screen-content h2 { margin-bottom: 0; }

@@ -1,0 +1,13 @@
+/* --- Loading dot ------------------------------------------------------------------------------------------------ */
+.loading-dot {
+	animation-name: fadeInOut;
+	animation-timing-function: ease-in-out;
+	animation-direction: normal;
+	animation-iteration-count: infinite;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadeInOut {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0; }
+}

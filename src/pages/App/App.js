@@ -9,6 +9,7 @@ import { NavigationProvider } from "../../context/Navigation/NavigationContext.j
 import useScrollContext from "../../context/Scroll/ScrollContext.js";
 import useCV from "../../context/CV/CVContext.js";
 import { Scrollbars } from "react-custom-scrollbars-2";
+import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.js";
 import StarSky from "../../components/StarSky/StarSky.js";
 import Button from "../../components/Button/Button.js";
 import AppNavigation, { NavigationLink } from "../../components/AppNavigation/AppNavigation.js";
@@ -107,6 +108,8 @@ function App() {
 			autoHide={false}
 			onScrollFrame={scroll.handleScroll}>
 			<div className="App">
+				<LoadingScreen/>
+
 				<NavigationProvider>
 					<AppNavigation>
 						<NavigationLink href="#presentation" sectionRef={presentationRef}>Pr&eacute;sentation</NavigationLink>

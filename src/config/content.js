@@ -2,6 +2,14 @@ import WeightlessPainter from "../assets/images/situations/peintre_en_apesanteur
 
 export default {
 	title: "Alexis Lecomte",
+	loadingStatus: [
+		"Chargement de l'interface",
+		"Suppression des artéfacts",
+		"Polissage des textures",
+		"Activation de la matrice de sécurité",
+		"Amorçage des étoiles",
+		"Graissage de la barre de défilement",
+	],
 	fakeSituations: {
 		enable: true,
 		list: [
