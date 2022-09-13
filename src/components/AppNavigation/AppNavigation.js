@@ -9,6 +9,7 @@ import PropTypes from "prop-types";
 import useWindowSize from "../../hooks/windowSize/useWindowSize.js";
 import useClassName from "../../hooks/className/useClassName.js";
 import { eventOnElement } from "../../global/Functions.js";
+import { ReactComponent as Logo } from "../../assets/images/logo_proto.svg";
 import "./AppNavigation.css";
 
 function AppNavigation({ children }) {
@@ -31,7 +32,9 @@ function AppNavigation({ children }) {
 	/* ---- Page content ---------------------------- */
 	return (
 		<nav className="App-navigation">
-			logo
+			<div className="App-logo">
+				<Logo/>
+			</div>
 
 			<div className={classes}>
 				<div className="navigation-links-content">
