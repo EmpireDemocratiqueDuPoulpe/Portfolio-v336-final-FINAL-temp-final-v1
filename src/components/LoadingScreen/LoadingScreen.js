@@ -5,16 +5,47 @@
  * @author Alexis L. <alexis.lecomte@supinfo.com>
  */
 
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import LoadingDots from "./LoadingDots/LoadingDots.js";
 import LoadingStatus from "./LoadingStatus/LoadingStatus.js";
 import LoadingBar from "./LoadingBar/LoadingBar.js";
+import { ReactComponent as AppLogo } from "../../assets/images/logo_proto.svg";
 import "./LoadingScreen.css";
 
-function LoadingScreen({ duration }) {
+const LOADING_CLASS = "loading";
+
+function LoadingScreen({ duration, enabled }) {
+	/* ---- States ---------------------------------- */
+	const [state, setState] = useState(enabled);
+
+	/* ---- Effects --------------------------------- */
+	useEffect(() => {
+		if (state) document.body.classList.add(LOADING_CLASS);
+		else document.body.classList.remove(LOADING_CLASS);
+	}, [state]);
+
+	useEffect(() => {
+		let timeout;
+
+		if (state) {
+			timeout = setTimeout(() => {
+				setState(false);
+			}, duration);
+		}
+
+		return () => { if (timeout) clearTimeout(timeout); };
+		// We only want this useEffect to run once.
+		// eslint-disable-next-line
+	}, []);
+
 	/* ---- Page content ---------------------------- */
 	return (
 		<div className="loading-screen">
+			<div className="loading-logo">
+				<AppLogo/>
+			</div>
+
 			<div className="loading-screen-content">
 				<h2>Chargement<LoadingDots duration={duration / 2}/></h2>
 				<LoadingStatus duration={duration}/>
@@ -24,9 +55,9 @@ function LoadingScreen({ duration }) {
 	);
 }
 LoadingScreen.propTypes = {
-	duration: PropTypes.number
+	duration: PropTypes.number,
+	enabled: PropTypes.bool,
 };
-LoadingScreen.defaultProps = { duration: 3000 };
 LoadingScreen.defaultProps = { duration: 3000 };
 
 export default LoadingScreen;

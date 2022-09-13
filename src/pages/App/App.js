@@ -108,7 +108,7 @@ function App() {
 			autoHide={false}
 			onScrollFrame={scroll.handleScroll}>
 			<div className="App">
-				<LoadingScreen/>
+				<LoadingScreen enabled/>
 
 				<NavigationProvider>
 					<AppNavigation>
