@@ -31,8 +31,7 @@
 	height: 100%;
 }
 
-.App-navigation .App-logo svg,
-.App-navigation .App-logo svg * { fill: var(--text-emphasis_background); }
+.App-navigation .App-logo svg { fill: var(--text-emphasis_background); }
 
 /* -- Navigation links -- */
 .App-navigation .navigation-links {

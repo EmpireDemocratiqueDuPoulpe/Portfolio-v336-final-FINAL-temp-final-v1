@@ -20,7 +20,7 @@ const commonPropTypes = { href: PropTypes.string };
 function SocialNetwork({ href, children }) {
 	/* ---- Page content ---------------------------- */
 	return (
-		<a className="social-network" href={href}>
+		<a className="social-network" href={href} aria-label="Lien vers un réseau social externe">
 			{children}
 		</a>
 	);
