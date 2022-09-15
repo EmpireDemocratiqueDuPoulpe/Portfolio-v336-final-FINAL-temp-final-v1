@@ -7,7 +7,6 @@
 import { createContext, useContext, useRef, useEffect, useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
 import { v4 as uuidv4 } from "uuid";
-import { useBeforeunload } from "react-beforeunload";
 
 /*****************************************************
  * Typedefs
@@ -64,6 +63,7 @@ export function ScrollProvider({ children }) {
 	/* ---- States - Part one ----------------------- */
 	const api = useRef(/** @type {Object|null} */ null);
 	const listeners = useRef(/** @type {Object} */ Object.create(null));
+	const scrollPos = useRef(/** @type {number|null} */ null);
 	const restoredScrollPos = useRef(/** @type {number|null} */ null);
 
 	/* ---- Functions ------------------------------- */
@@ -122,17 +122,17 @@ export function ScrollProvider({ children }) {
 	 * Saves the current scroll position to the session storage.
 	 * @function
 	 */
-	const saveScrollPos = () => {
-		if (getAPI()) {
-			localStorage.setItem("scroll-position", `${getAPI().getScrollTop()}`);
+	const saveScrollPos = useCallback(() => {
+		if (scrollPos.current !== null) {
+			localStorage.setItem("scroll-position", `${scrollPos.current}`);
 		}
-	};
+	}, []);
 
 	const restoreScrollPos = () => {
-		const scrollPos = localStorage.getItem("scroll-position");
+		const savedScrollPos = localStorage.getItem("scroll-position");
 
-		if (scrollPos) {
-			restoredScrollPos.current = parseInt(scrollPos, 10);
+		if (savedScrollPos) {
+			restoredScrollPos.current = parseInt(savedScrollPos, 10);
 		}
 	};
 
@@ -143,32 +143,24 @@ export function ScrollProvider({ children }) {
 	 * @param {ScrollBox} scrollBox - Current scroll status.
 	 */
 	const handleScroll = useCallback(scrollBox => {
+		scrollPos.current = scrollBox.scrollTop;
+
 		for (const key in listeners.current) {
 			listeners.current[key](scrollBox);
 		}
 	}, []);
 
 	/* ---- Effects --------------------------------- */
-	useBeforeunload(() => {
-		if (getAPI()) {
-			saveScrollPos(getAPI().getValues());
-		}
-	});
-	
 	useEffect(() => {
 		// Restore the scroll position
 		restoreScrollPos();
 
 		// "beforeunload" event is used to save the current scroll position.
-		//document.addEventListener("beforeunload", saveScrollPos);
-		// return () => {
-		//document.removeEventListener("beforeunload", saveScrollPos);
-		/*localStorage.setItem("exit", "2");
-			if (getAPI()) {
-				saveScrollPos(getAPI().getValues());
-			}*/
-		//};
-	}, []);
+		window.addEventListener("beforeunload", saveScrollPos);
+		return () => {
+			window.removeEventListener("beforeunload", saveScrollPos);
+		};
+	}, [saveScrollPos]);
 
 	/* ---- States - Part two ----------------------- */
 	const memoizedContext = useMemo(() => ({
