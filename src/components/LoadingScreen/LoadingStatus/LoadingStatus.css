@@ -28,8 +28,9 @@
 }
 
 /* -- Line -- */
-.loading-status-line {
+.loading-status .loading-status-line {
 	margin: 0;
 	color: inherit;
 	opacity: 0.75;
 }
+.loading-status .loading-status-line:last-child { opacity: 1; }
