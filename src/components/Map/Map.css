@@ -19,13 +19,14 @@
 }
 .map .map-interactive-status.interactive { display: none; }
 
-.map .map-interactive-status svg {
+.map .map-interactive-status .map-interactive-status-icon {
 	position: absolute;
 	top: 50%;
 	left: 50%;
+	display: block;
 	width: 4em;
 	height: 4em;
-	fill: var(--text-emphasis_background);
+	color: var(--text-emphasis_background);
 	transform: translate(-50%, -50%);
 	animation: cursorMove 2s ease-in-out infinite;
 }

@@ -110,14 +110,14 @@
 	color: var(--primary-color);
 }
 
-.project .project-infos .project-link svg {
+.project .project-infos .project-link .project-link-icon {
 	vertical-align: middle;
 	width: 1em;
 	height: 1em;
-	fill: var(--text-color_background);
-	transition: fill 150ms ease-in;
+	color: var(--text-color_background);
+	transition: color 150ms ease-in;
 }
-.project .project-infos .project-link:hover svg { fill: var(--primary-color); }
+.project .project-infos .project-link:hover .project-link-icon { color: var(--primary-color); }
 
 /* - Description - */
 .project .project-infos .project-desc {
