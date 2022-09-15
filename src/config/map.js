@@ -10,7 +10,7 @@ export default {
 				type: "Feature",
 				geometry: {
 					type: "Point",
-					coordinates: [CENTER.lng, CENTER.lat]
+					coordinates: [CENTER.lat, CENTER.lng]
 				},
 				properties: {
 					title: null,

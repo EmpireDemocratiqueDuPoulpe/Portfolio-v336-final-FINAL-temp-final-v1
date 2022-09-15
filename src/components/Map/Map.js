@@ -4,14 +4,13 @@
  * @author Alexis L. <alexis.lecomte@supinfo.com>
  */
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
-import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-unresolved
-import MapboxLanguage from "@mapbox/mapbox-gl-language";
+import ReactMap, { Marker, Popup } from "react-map-gl";
 import useScrollContext from "../../context/Scroll/ScrollContext.js";
-import Marker from "./Marker/Marker.js";
 import { eventOnElement } from "../../global/Functions.js";
 import { Map as MapConfig } from "../../config/config.js";
+import MarkerIcon from "../../assets/images/icons/marker/marker.png";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "./Map.css";
 
@@ -26,22 +25,28 @@ import "./Map.css";
  */
 
 /*****************************************************
- * Constants
- *****************************************************/
-
-mapboxgl.accessToken = MapConfig.apiKey;
-
-/*****************************************************
  * Map
  *****************************************************/
 
 function Map({ lat, lng, zoom, markers }) {
 	/* ---- States ---------------------------------- */
 	const scroll = useScrollContext();
-	const mapWrapper = useRef(/** @type {Element|null} */ null);
-	const map = useRef(/** @type {mapboxgl.Map|null} */ null);
-	const [markersJSX, setMarkersJSX] = useState(/** @type {Array<JSX.Element>} */ []);
 	const [isInteractive, setInteractive] = useState(/** @type {boolean} */ false);
+	const [popup, setPopup] = useState(/** @type {null|Object} */ markers ? markers.features[0] : null);
+
+	const mapMarkers = useMemo(() => !markers ? [] : markers.features.map(feature => (
+		<Marker
+			key={`map-marker-${feature.geometry.coordinates[0]}-${feature.geometry.coordinates[1]}`}
+			latitude={feature.geometry.coordinates[0]}
+			longitude={feature.geometry.coordinates[1]}
+			anchor="top"
+			onClick={event => {
+				event.originalEvent.stopPropagation();
+				setPopup(feature);
+			}}>
+			<img className="map-marker-icon" src={MarkerIcon} alt="Icône d'un pointeur sur une carte"/>
+		</Marker>
+	)), [markers]);
 
 	/* ---- Functions ------------------------------- */
 	/**
@@ -67,39 +72,6 @@ function Map({ lat, lng, zoom, markers }) {
 
 	/* ---- Effects --------------------------------- */
 	useEffect(() => {
-		if (!map.current) {
-			// Map initialization
-			// noinspection JSUnresolvedFunction
-			map.current = new mapboxgl.Map({
-				container: mapWrapper.current,
-				style: "mapbox://styles/mapbox/streets-v11",
-				center: [lng, lat],
-				zoom,
-				language: "auto"
-			});
-			map.current.addControl(new MapboxLanguage({}));
-
-			// Markers
-			setMarkersJSX(markers.features.map(feature => (
-				<Marker
-					key={`map-marker-${feature.geometry.coordinates[0]}-${feature.geometry.coordinates[1]}`}
-					map={map.current}
-					feature={feature}
-				/>
-			)));
-		}
-
-		return () => {
-			map.current.remove();
-			map.current = null;
-
-			setMarkersJSX([]);
-		};
-		// This hook must run once at page loading
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
-
-	useEffect(() => {
 		scroll.addListener(onScroll);
 		return () => { scroll.removeListener(onScroll); };
 	}, [scroll, onScroll]);
@@ -113,13 +85,27 @@ function Map({ lat, lng, zoom, markers }) {
 				</svg>
 			</div>
 
-			<div className="map-box" ref={mapWrapper}/>
+			<ReactMap
+				mapboxAccessToken={MapConfig.apiKey}
+				mapStyle="mapbox://styles/mapbox/streets-v11"
+				initialViewState={{ latitude: lat, longitude: lng, zoom }}>
+				{mapMarkers}
 
-			{(map.current && markersJSX) && (
-				<div className="markers">
-					{markersJSX}
-				</div>
-			)}
+				{popup && (
+					<Popup
+						latitude={popup.geometry.coordinates[0]}
+						longitude={popup.geometry.coordinates[1]}
+						anchor="bottom"
+						onClose={() => setPopup(null)}
+						closeButton={false}
+						closeOnMove={true}>
+						<div>
+							{popup.properties.title && (<h3>{popup.properties.title}</h3>)}
+							{popup.properties.description && (<p>{popup.properties.description}</p>)}
+						</div>
+					</Popup>
+				)}
+			</ReactMap>
 		</div>
 	);
 }

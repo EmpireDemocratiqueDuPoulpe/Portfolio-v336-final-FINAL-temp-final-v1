@@ -51,6 +51,17 @@
 	height: 100%;
 }
 
+/* -- Markers -- */
+.map .map-marker-icon {
+	width: 45px;
+	height: 45px;
+	background: rgba(0, 0, 0, 0.5) url("../../assets/images/icons/marker/marker.png") center bottom no-repeat;
+	background-size: contain;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
 /* -- Tooltip -- */
 /* - Content - */
 .map .mapboxgl-popup .mapboxgl-popup-content {
