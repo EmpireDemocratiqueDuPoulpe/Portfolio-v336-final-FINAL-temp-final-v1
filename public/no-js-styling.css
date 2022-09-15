@@ -1,0 +1,120 @@
+/* --- No JS styling ---------------------------------------------------------------------------------------------- */
+/* -- Root -- */
+:root {
+	--background-color-3: #120920;
+	--text-color_background: #D0CACA;
+	--error-color: #C91F37;
+}
+
+html { box-sizing: border-box; width: 100%; }
+
+body {
+	width: 100%;
+	min-height: 100%;
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
+}
+
+/* -- Background -- */
+.no-js {
+	width: 100vw;
+	height: 100vh;
+	background: var(--background-color-3);
+	color: var(--text-color_background);
+	font-family: "Noto sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+	"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+	sans-serif;
+}
+
+/* -- Logo -- */
+/*noinspection DuplicatedCode*/
+.no-js .no-js-logo {
+	box-sizing: border-box;
+	position: absolute;
+	top: 20vh;
+	left: 50%;
+	width: 150px;
+	height: 150px;
+	padding: 20px;
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 50%;
+	transform: translateX(-50%);
+}
+
+.no-js .no-js-logo img { width: 100%; height: 100%; object-fit: contain; }
+
+/* -- Screen content -- */
+.no-js .no-js-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 75%;
+	transform: translate(-50%, -50%);
+}
+
+/* - Title - */
+.no-js .no-js-content h2 {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 5px;
+	color: var(--error-color);
+	font-family: "Montserrat", "Roboto", "Helvetica Neue", sans-serif;
+	font-weight: 800;
+	font-size: 1.5em;
+	margin-bottom: 0;
+}
+
+.no-js .no-js-content h2 svg {
+	width: 1em;
+	height: 1em;
+	fill: var(--error-color);
+}
+
+/* - Loading status - */
+.no-js .no-js-content .loading-status {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-start;
+	height: 4.8em;
+	line-height: 1.2em;
+	font-size: 0.8em;
+	color: var(--text-color_background);
+	margin: 1em 0 1.2em 0;
+	overflow: hidden;
+}
+
+/*noinspection DuplicatedCode*/
+.no-js .no-js-content .loading-status::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	-moz-box-shadow: inset 0 20px 20px -6px var(--background-color-3);
+	-webkit-box-shadow: inset 0 20px 20px -6px var(--background-color-3);
+	box-shadow: inset 0 20px 20px -6px var(--background-color-3);
+	z-index: 1;
+	opacity: 0.5;
+}
+
+/* -- Line -- */
+.no-js .no-js-content .loading-status .loading-status-line {
+	margin: 0;
+	color: inherit;
+	opacity: 0.75;
+}
+.no-js .no-js-content .loading-status .loading-status-line:last-child { opacity: 1; }
+
+/* - Loading Bar - */
+.no-js .no-js-content .loading-bar {
+	width: 100%;
+	height: 2px;
+	background: var(--error-color);
+}

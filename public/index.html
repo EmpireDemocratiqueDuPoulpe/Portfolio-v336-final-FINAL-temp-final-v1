@@ -30,10 +30,42 @@
     <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">-->
     <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700&display=swap">-->
     <!-- ------------ -->
+
+    <noscript>
+      <link rel="stylesheet" href="%PUBLIC_URL%/no-js-styling.css"/>
+    </noscript>
   </head>
 
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <div class="no-js">
+        <div class="no-js-logo">
+          <img src="%PUBLIC_URL%/logo192.png" alt="Logo de mon curriculum vitae"/>
+        </div>
+
+        <div class="no-js-content">
+          <h2>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+              <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+              <path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/>
+            </svg>
+            Chargement &eacute;chou&eacute;
+          </h2>
+
+          <div class="loading-status">
+            <p class="loading-status-line">Chargement de l'interface</p>
+            <p class="loading-status-line">
+              Il semblerait que JavaScript n'est pas activé sur votre navigateur. Malheureusement, ce site requiert cette
+              technologie. Vous pouvez essayer de l'activer dans les paramètres de votre navigateur, de mettre à jour ce
+              dernier, ou plus simplement en changeant de navigateur.
+            </p>
+          </div>
+
+          <div class="loading-bar"></div>
+        </div>
+      </div>
+    </noscript>
+
     <div id="root"></div>
   </body>
 </html>
