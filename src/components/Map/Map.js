@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { eventOnElement } from "../../global/Functions.js";
 import { Map as MapConfig } from "../../config/config.js";
-import MarkerIcon from "../../assets/images/icons/marker/marker.png";
+import { ReactComponent as MarkerIcon } from "../../assets/images/icons/marker/marker_v2.svg";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "./Map.css";
 
@@ -41,12 +41,12 @@ function Map({ lat, lng, zoom, markers }) {
 			key={`map-marker-${feature.geometry.coordinates[0]}-${feature.geometry.coordinates[1]}`}
 			latitude={feature.geometry.coordinates[0]}
 			longitude={feature.geometry.coordinates[1]}
-			anchor="top"
+			anchor="bottom-left"
 			onClick={event => {
 				event.originalEvent.stopPropagation();
 				setPopup(feature);
 			}}>
-			<img className="map-marker-icon" src={MarkerIcon} alt="Icône d'un pointeur sur une carte"/>
+			<MarkerIcon className="map-marker-icon"/>
 		</Marker>
 	)), [markers]);
 
@@ -96,6 +96,7 @@ function Map({ lat, lng, zoom, markers }) {
 						latitude={popup.geometry.coordinates[0]}
 						longitude={popup.geometry.coordinates[1]}
 						anchor="bottom"
+						offset={[50, -95]}
 						onClose={() => setPopup(null)}
 						closeButton={false}
 						closeOnMove={true}>
