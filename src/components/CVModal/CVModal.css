@@ -12,6 +12,11 @@
 }
 .cv-modal.hidden { opacity: 0; pointer-events: none; visibility: hidden; }
 
+/* // Printer */
+@media print {
+	.cv-modal { display: none; }
+}
+
 /* -- Background -- */
 .cv-modal .cv-modal-background {
 	position: absolute;

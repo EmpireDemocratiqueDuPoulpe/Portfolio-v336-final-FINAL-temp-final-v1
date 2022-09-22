@@ -22,6 +22,16 @@
 	box-shadow: 0 0 0 4px var(--primary-color), 0 -9px 0 4px var(--primary-color);
 }
 
+/* // Printer */
+@media print {
+	.project:hover {
+		-o-box-shadow: none;
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+}
+
 /* // Phones */
 @media all and (max-width: 480px) {
 	.project { height: auto; }
@@ -41,6 +51,11 @@
 
 .project:hover::after { opacity: 1; }
 
+/* // Printer */
+@media print {
+	.project::after { display: none; }
+}
+
 /* -- Project image -- */
 .project .project-img {
 	box-sizing: border-box;
@@ -56,6 +71,11 @@
 	height: 100%;
 }
 .project .project-img .webp img { object-fit: cover; }
+
+/* // Printer */
+@media print {
+	.project .project-img { background: rgba(0, 0, 0, 0.15); }
+}
 
 /* -- Project infos -- */
 .project .project-infos {
@@ -119,6 +139,11 @@
 }
 .project .project-infos .project-link:hover .project-link-icon { color: var(--primary-color); }
 
+/* // Printer */
+@media print {
+	.project .project-infos .project-link { display: none; }
+}
+
 /* - Description - */
 .project .project-infos .project-desc {
 	display: -webkit-box;
@@ -131,6 +156,16 @@
 /* // Phones */
 @media all and (max-width: 480px) {
 	.project .project-infos .project-desc { display: block; font-size: 0.8em; }
+}
+
+/* // Printer */
+@media print {
+	.project .project-infos .project-desc {
+		display: inline;
+		-webkit-box-orient: unset;
+		-webkit-line-clamp: unset;
+		overflow-y: visible;
+	}
 }
 
 /* - Techs - */

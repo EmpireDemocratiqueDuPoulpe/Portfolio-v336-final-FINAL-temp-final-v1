@@ -8,8 +8,29 @@
 
 .App-scrollbar .scrollbar-view { scroll-behavior: smooth; }
 
+/* // Printer */
+@media print {
+	.App-scrollbar {
+		min-height: unset !important;
+		max-height: unset !important;
+	}
+
+	.App-scrollbar .scrollbar-view {
+		min-height:unset !important;
+		max-height: unset !important;
+		overflow: visible !important;
+	}
+}
+
 /* --- App content ---------------------------------------------------------------------------------------------------*/
 .App .App-padded-content { padding-left: calc(100vw - 100%); }
+
+/* // Printer */
+@media print {
+	.App .App-content { clip-path: none !important; }
+
+	.App .App-padded-content { padding-left: 0; }
+}
 
 /* --- Sections ----------------------------------------------------------------------------------------------------- */
 section.portfolio-section {
@@ -28,6 +49,21 @@ section.portfolio-section {
 	}
 }
 
+/* // Printer */
+@media print {
+	section.portfolio-section {
+		min-height: unset;
+		height: auto;
+		padding-right: 0;
+		padding-bottom: 0;
+		padding-left: 0;
+		break-inside: avoid;
+		page-break-inside: avoid;
+	}
+
+	section.portfolio-section > h2 { margin-left: 7.5% !important; }
+}
+
 /* --- "About me" section ------------------------------------------------------------------------------------------- */
 /* -- Container -- */
 section#presentation .about-content  {
@@ -40,6 +76,28 @@ section#presentation .about-content  {
 	align-items: center;
 	gap: 35px;
 	transform: translate(-50%, -50%);
+}
+
+/* // Tablets */
+@media all and (min-width: 768px) and (max-width: 1024px) {
+	section#presentation .about-content { gap: 60px; }
+}
+
+/* // Printer */
+@media print {
+	section#presentation .about-content {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+
+	section#presentation .about-content {
+		position: relative;
+		top: unset;
+		left: unset;
+		transform: none;
+	}
 }
 
 /* -- Welcome message -- */
@@ -104,30 +162,8 @@ section#presentation .fake-situation-img {
 	25% { transform: translate(4px, 3px) rotate(-3deg); }
 }
 
-/* -- CV button */
-section#presentation .about-content .cv-btn { margin: 60px auto 0 auto; }
-
-/* -- Profile picture -- */
-section#presentation .profile-picture {
-	flex-grow: 0;
-	flex-shrink: 0;
-	width: 250px;
-	height: 250px;
-	background: rgba(0, 0, 0, 0.5);
-	border-radius: 50%;
-}
-
-section#presentation .profile-picture-img {
-	width: 100%;
-	height: 100%;
-}
-
 /* // Tablets */
 @media all and (min-width: 768px) and (max-width: 1024px) {
-	section#presentation .about-content {
-		gap: 60px;
-	}
-
 	section#presentation .fake-situation-img {
 		top: auto;
 		bottom: 5%;
@@ -146,9 +182,8 @@ section#presentation .profile-picture-img {
 	section#presentation .about-content .my-situation .fake-situation { font-size: 0.7em; margin-top: 0.7em; }
 }
 
+/* // Phones */
 @media all and (max-width: 480px) and (orientation: portrait) {
-	section#presentation .profile-picture { display: none; }
-
 	section#presentation .fake-situation-img {
 		top: auto;
 		bottom: -3%;
@@ -156,6 +191,44 @@ section#presentation .profile-picture-img {
 		width: 90px;
 		height: 90px;
 	}
+}
+
+/* // Printer */
+@media print {
+	section#presentation .fake-situation-img { display: none; }
+}
+
+/* -- CV button */
+section#presentation .about-content .cv-btn { margin: 60px auto 0 auto; }
+
+/* // Printer */
+@media print {
+	section#presentation .about-content .cv-btn { display: none; }
+}
+
+/* -- Profile picture -- */
+section#presentation .profile-picture {
+	flex-grow: 0;
+	flex-shrink: 0;
+	width: 250px;
+	height: 250px;
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 50%;
+}
+
+section#presentation .profile-picture-img {
+	width: 100%;
+	height: 100%;
+}
+
+/* // Phones */
+@media all and (max-width: 480px) and (orientation: portrait) {
+	section#presentation .profile-picture { display: none; }
+}
+
+/* // Printer */
+@media print {
+	section#presentation .profile-picture { background: rgba(0, 0, 0, 0.15); }
 }
 
 /* --- "Experiences" section ---------------------------------------------------------------------------------------- */
@@ -188,6 +261,16 @@ section#projets .projects-grid {
 	}
 }
 
+/* // Printer */
+@media print {
+	section#projets .projects-grid {
+		display: block;
+		width: 85%;
+	}
+
+	section#projets .projects-grid > .project:not(:last-child) { margin-bottom: 30px; }
+}
+
 /* --- "Contact" section -------------------------------------------------------------------------------------------- */
 section#contact h2 { margin-left: 30%; }
 
@@ -197,6 +280,11 @@ section#contact .contact-content {
 }
 
 section#contact .contact-content .emphasis { color: var(--primary-color); }
+
+/* // Printer */
+@media print {
+	section#contact .contact-content { width: 85%; }
+}
 
 /* -- Explanation -- */
 section#contact .contact-content .contact-explanation {
@@ -209,6 +297,11 @@ section#contact .contact-content .contact-links {
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+}
+
+/* // Printer */
+@media print {
+	section#contact .contact-content .contact-links { display: none; }
 }
 
 /* - Networks - */
@@ -256,11 +349,28 @@ section#contact .contact-content .map {
 	section#contact .contact-content { width: 100%; }
 }
 
+/* // Printer */
+@media print {
+	section#contact .contact-content .map { width: 65%; }
+}
+
 	/* --- Footer ------------------------------------------------------------------------------------------------------- */
 footer {
 	margin-top: 50px;
 	padding: 50px 50px 25px 50px;
 	background: var(--background-color⨣1);
+}
+
+/* // Printer */
+@media print {
+	footer {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		margin-top: 0;
+		padding: 0;
+		background: none;
+	}
 }
 
 /* -- The swag quote -- */
@@ -310,6 +420,11 @@ footer .stylish-quote figcaption {
 	footer .stylish-quote figcaption { margin-left: 0; margin-right: 0; }
 }
 
+/* // Printer */
+@media print {
+	footer .stylish-quote { display: none; }
+}
+
 /* -- Licensing and copyrights -- */
 footer .licensing {
 	text-align: center;
@@ -329,4 +444,16 @@ footer .licensing :not(.my-copyright) { font-size: 0.9em; }
 /* // Phones */
 @media all and (max-width: 480px) {
 	footer .licensing { font-size: 0.8em; }
+}
+
+/* // Printer */
+@media print {
+	footer .licensing { margin-top: 0; }
+
+	footer .licensing .my-copyright {
+		font-weight: normal;
+		font-size: 10pt;
+	}
+
+	footer .licensing .fontawesome-copyright { display: none; }
 }

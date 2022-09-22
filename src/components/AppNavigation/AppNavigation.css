@@ -18,6 +18,11 @@
 	z-index: 1000;
 }
 
+/* // Printer */
+@media print {
+	.App-navigation { display: none; }
+}
+
 /** -- App logo -- */
 .App-navigation .App-logo {
 	box-sizing: border-box;

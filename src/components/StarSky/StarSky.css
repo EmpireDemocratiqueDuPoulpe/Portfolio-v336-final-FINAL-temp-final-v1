@@ -7,6 +7,11 @@
 	left: 0;
 }
 
+/* // Printer */
+@media print {
+	.stars-sky { display: none; }
+}
+
 /* -- Star overlays -- */
 .stars-sky .stars-layer {
 	position: absolute;

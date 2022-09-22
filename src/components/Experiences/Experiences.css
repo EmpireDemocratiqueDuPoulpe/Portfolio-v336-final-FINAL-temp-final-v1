@@ -23,6 +23,12 @@
 	}
 }
 
+
+/* // Printer */
+@media print {
+	.experiences-container { width: 85%; }
+}
+
 /* -- Selector -- */
 .experiences-container .experience-selector {
 	flex-grow: 0;

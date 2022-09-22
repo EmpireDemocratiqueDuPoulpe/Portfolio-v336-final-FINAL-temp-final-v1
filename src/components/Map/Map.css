@@ -46,6 +46,11 @@
 	}
 }
 
+/* // Printer */
+@media print {
+	.map .map-interactive-status { display: none; }
+}
+
 /* -- Map wrapper -- */
 .map .map-box {
 	width: 100%;
@@ -101,3 +106,10 @@
 
 /* Left */
 .map .mapboxgl-popup.mapboxgl-popup-anchor-left .mapboxgl-popup-tip { border-right-color: var(--mapboxgl-tooltip-background); }
+
+/* -- Mapbox logo -- */
+/* // Printer */
+@media print {
+	.map .mapboxgl-ctrl-logo,
+	.map .mapboxgl-ctrl-attrib { display: none; }
+}

@@ -40,6 +40,40 @@ body {
 
 h1, h2 { color: var(--primary-color); }
 
+/* // Printer */
+@media print {
+  :root {
+    --primary-color: #0512d9;
+    --secondary-color: #7711D0;
+    --secondary-color-3: #511786;
+    --secondary-color-5: #2C1342;
+    --tertiary-color: #FA269D;
+    --tertiary-desaturated: #D44C98;
+    --background-color: #F6F6F6;
+    --background-color-3: #FFFFFF;
+    --background-color⨣1: #C8C8C8;
+    --background-color⨣2: #9D9D9D;
+    --background-color⨣3: #737373;
+    --mapboxgl-tooltip-background: #F6F6F6;
+    --text-attenuate_background⨣1: #808080;
+    --text-color_background: #191919;
+    --text-emphasis_background: #000000;
+    --text-color_primary: #090909;
+  }
+
+  html { background: var(--background-color); }
+
+  html, body {
+    width: 210mm; /* A4 format */
+    height: 297mm;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 11mm 17mm 17mm 17mm;
+}
+
 /* --- Special classes ---------------------------------------------------------------------------------------------- */
 /* -- Fonts -- */
 body, .normal-font {
@@ -52,6 +86,13 @@ body, .normal-font {
   font-family: "Montserrat", "Roboto", "Helvetica Neue", sans-serif;
   font-weight: 800;
   font-size: 1.75em;
+}
+
+/* // Printer */
+@media print {
+  body, .normal-font {
+    font-size: 12pt;
+  }
 }
 
 /* -- Links -- */
