@@ -1,0 +1,13 @@
+/* --- WebP --------------------------------------------------------------------------------------------------------- */
+picture.webp {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+}
+
+/* -- Image -- */
+picture.webp img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}

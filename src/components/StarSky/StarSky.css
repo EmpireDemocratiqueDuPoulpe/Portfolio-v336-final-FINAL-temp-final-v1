@@ -29,7 +29,13 @@
 }
 
 .stars-sky .stars-layer .nebula.style-1 {
-	background-image: url("../../assets/images/galaxy_transparent_1.png");
+	/* --- Background image fallback --- */
+		/*noinspection CssOverwrittenProperties*/ background-image: url("../../assets/images/galaxies/galaxy_transparent_1.png");
+		/*noinspection CssOverwrittenProperties*/ background-image: image-set(
+			url("../../assets/images/galaxies/galaxy_transparent_1.webp") 1x,
+			url("../../assets/images/galaxies/galaxy_transparent_1.png") 1x
+		);
+	/* --- ------------------------- --- */
 	top: 60%;
 	right: 0;
 	width: 200px;
@@ -37,7 +43,13 @@
 }
 
 .stars-sky .stars-layer .nebula.style-2 {
-	background-image: url("../../assets/images/galaxy_transparent_2.png");
+	/* --- Background image fallback --- */
+		/*noinspection CssOverwrittenProperties*/ background-image: url("../../assets/images/galaxies/galaxy_transparent_2.png");
+		/*noinspection CssOverwrittenProperties*/ background-image: image-set(
+			url("../../assets/images/galaxies/galaxy_transparent_2.webp") 1x,
+			url("../../assets/images/galaxies/galaxy_transparent_2.png") 1x
+		);
+	/* --- ------------------------- --- */
 	opacity: 0.5;
 	top: 10%;
 	left: 15%;

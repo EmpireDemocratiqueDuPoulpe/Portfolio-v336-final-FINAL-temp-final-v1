@@ -7,6 +7,7 @@
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
+import WebP from "../WebP/WebP.js";
 import "./Project.css";
 
 function Project({ name, href, techs, img, windowTitle, children }) {
@@ -14,7 +15,7 @@ function Project({ name, href, techs, img, windowTitle, children }) {
 	return (
 		<div className="project" data-window-title={windowTitle ?? name}>
 			<div className="project-img">
-				<img src={img} alt="Une capture d'écran du projet"/>
+				{img && <WebP src={img.src} fallback={img.fallback} alt="Une capture d'écran du projet"/>}
 			</div>
 
 			<div className="project-infos">
@@ -42,7 +43,10 @@ Project.propTypes = {
 	name: PropTypes.string.isRequired,
 	href: PropTypes.string,
 	techs: PropTypes.arrayOf(PropTypes.string),
-	img: PropTypes.string,
+	img: PropTypes.shape({
+		src: PropTypes.string.isRequired,
+		fallback: PropTypes.string.isRequired,
+	}),
 	windowTitle: PropTypes.string,
 	children: PropTypes.node
 };

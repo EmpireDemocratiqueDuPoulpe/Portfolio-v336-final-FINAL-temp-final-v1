@@ -1,5 +1,3 @@
-import WeightlessPainter from "../assets/images/situations/peintre_en_apesanteur.png";
-
 export default {
 	title: "Alexis Lecomte",
 	loadingStatus: [
@@ -13,18 +11,18 @@ export default {
 	fakeSituations: {
 		enable: true,
 		list: [
-			{ name: "Inventeur de chaussettes", illustration: WeightlessPainter },
-			{ name: "Dompteur de plancton", illustration: WeightlessPainter },
-			{ name: "Peintre en apesanteur", illustration: WeightlessPainter },
-			{ name: "Marin d'eau douce", illustration: WeightlessPainter },
-			{ name: "Astronaute sous-terrain", illustration: WeightlessPainter },
-			{ name: "Chasseur de moquette", illustration: WeightlessPainter },
-			{ name: "Pilote d'éolienne", illustration: WeightlessPainter },
-			{ name: "Soudeur de glace", illustration: WeightlessPainter },
-			{ name: "Traqueur de gluon", illustration: WeightlessPainter },
-			{ name: "Cartographe de cumulonimbus", illustration: WeightlessPainter },
-			{ name: "Percussionniste de mousse", illustration: WeightlessPainter },
-			{ name: "Bodybuilder animalier", illustration: WeightlessPainter },
+			{ name: "Inventeur de chaussettes", illustration:     {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			{ name: "Dompteur de plancton", illustration:         {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			{ name: "Peintre en apesanteur", illustration:        {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			{ name: "Marin d'eau douce", illustration:            {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			{ name: "Astronaute sous-terrain", illustration:      {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			{ name: "Chasseur de moquette", illustration:         {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			{ name: "Pilote d'éolienne", illustration:            {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			{ name: "Soudeur de glace", illustration:             {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			{ name: "Traqueur de gluon", illustration:            {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			{ name: "Cartographe de cumulonimbus", illustration:  {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			{ name: "Percussionniste de mousse", illustration:    {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			{ name: "Bodybuilder animalier", illustration:        {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
 		],
 		getRandom() {
 			return this.enable ? (this.list[Math.floor(Math.random() * this.list.length)]) : null;

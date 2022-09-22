@@ -11,6 +11,7 @@ import useCV from "../../context/CV/CVContext.js";
 import { Scrollbars } from "react-custom-scrollbars-2";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.js";
 import StarSky from "../../components/StarSky/StarSky.js";
+import WebP from "../../components/WebP/WebP.js";
 import Button from "../../components/Button/Button.js";
 import AppNavigation, { NavigationLink } from "../../components/AppNavigation/AppNavigation.js";
 import CVModal from "../../components/CVModal/CVModal.js";
@@ -19,10 +20,6 @@ import Project from "../../components/Project/Project.js";
 import SocialNetwork from "../../components/SocialNetwork/SocialNetwork.js";
 import Map from "../../components/Map/Map.js";
 import { Content, Map as MapConfig } from "../../config/config.js";
-import ProfilePicture from "../../assets/images/me.png";
-import PondSimulator2020 from "../../assets/images/projects/pond_simulator_2020.png";
-import Instabus from "../../assets/images/projects/instabus.png";
-import MrDriller from "../../assets/images/projects/mr_driller.png";
 import "./App.css";
 
 /*****************************************************
@@ -125,7 +122,7 @@ function App() {
 					<div className="App-padded-content">
 						<section id="presentation" className="portfolio-section" ref={presentationRef}>
 							<StarSky/>
-							<img className="fake-situation-img" src={fakeSituation.illustration} alt=""/>
+							<WebP className="fake-situation-img" src={fakeSituation.illustration.src} fallback={fakeSituation.illustration.fallback} alt=""/>
 
 							<div className="about-content">
 								<div className="welcome-msg">
@@ -141,7 +138,7 @@ function App() {
 								</div>
 
 								<div className="profile-picture">
-									<img src={ProfilePicture} alt="Une photographie de moi"/>
+									<WebP className="profile-picture-img" src="me.webp" fallback="me.png" alt="Une photographie de moi"/>
 								</div>
 							</div>
 						</section>
@@ -156,7 +153,7 @@ function App() {
 							<h2 className="title-font">Projets</h2>
 
 							<div className="projects-grid">
-								<Project name="Pond Simulator 2020" windowTitle="quack!" techs={["Java"]} img={PondSimulator2020}
+								<Project name="Pond Simulator 2020" windowTitle="quack!" techs={["Java"]} img={{ src: "projects/pond_simulator_2020.webp", fallback: "projects/pond_simulator_2020.png" }}
 									href="https://github.com/EmpireDemocratiqueDuPoulpe/Pond-Simulator-2020">
 									Pond Simulator 2020 simule, de manière simplifi&eacute;e et cartoonesque, la vie dans un lac, les canards qui y vivent, les n&eacute;nuphars qui y poussent et les r&eacute;gimes dictatorials qui &eacute;mergent du peuple ans&eacute;riforme.
 								</Project>
@@ -166,12 +163,12 @@ function App() {
 									Melodie est un site web permettant &agrave; un utilisateur authentifi&eacute; d&apos;&eacute;couter des morceaux de musique depuis ses listes de lecture. Les musiques y sont ajout&eacute;es en entrant un lien ou un fichier audio.
 								</Project>
 
-								<Project name="Instabus" windowTitle="#bus #crazy #Setra_S_416_GT-HD/2" techs={["Kotlin"]} img={Instabus}
+								<Project name="Instabus" windowTitle="#bus #crazy #Setra_S_416_GT-HD/2" techs={["Kotlin"]} img={{ src: "projects/instabus.webp", fallback: "projects/instabus.png" }}
 									href="https://github.com/EmpireDemocratiqueDuPoulpe/Instabus">
 									Instabus est un r&eacute;seau social similaire &agrave; Instagram, mais avec un concept de niche. Les utilisateurs peuvent chercher des arr&ecirc;ts de bus dans Barcelone, s&apos;y prendre en photo et le partager au monde. Je l&apos;avais dit, concept de niche.
 								</Project>
 
-								<Project name="Mr. Driller clone" techs={["Python"]} img={MrDriller}
+								<Project name="Mr. Driller clone" techs={["Python"]} img={{ src: "projects/mr_driller.webp", fallback: "projects/mr_driller.png" }}
 									href="#">
 									Y&apos;a pas de description
 								</Project>

@@ -117,10 +117,9 @@ section#presentation .profile-picture {
 	border-radius: 50%;
 }
 
-section#presentation .profile-picture img {
+section#presentation .profile-picture-img {
 	width: 100%;
 	height: 100%;
-	object-fit: contain;
 }
 
 /* // Tablets */
