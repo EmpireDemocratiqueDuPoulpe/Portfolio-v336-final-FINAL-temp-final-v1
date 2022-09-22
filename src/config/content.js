@@ -1,4 +1,5 @@
 export default {
+	/* --- Base content ----------------------------------------------------------------------------------------------- */
 	title: "Alexis Lecomte",
 	loadingStatus: [
 		"Chargement de l'interface",
@@ -8,26 +9,30 @@ export default {
 		"Amorçage des étoiles",
 		"Graissage de la barre de défilement",
 	],
+
+	/* --- Fake situations -------------------------------------------------------------------------------------------- */
 	fakeSituations: {
 		enable: true,
 		list: [
-			{ name: "Inventeur de chaussettes", illustration:     {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
-			{ name: "Dompteur de plancton", illustration:         {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
-			{ name: "Peintre en apesanteur", illustration:        {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
-			{ name: "Marin d'eau douce", illustration:            {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
-			{ name: "Astronaute sous-terrain", illustration:      {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
-			{ name: "Chasseur de moquette", illustration:         {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
-			{ name: "Pilote d'éolienne", illustration:            {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
-			{ name: "Soudeur de glace", illustration:             {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
-			{ name: "Traqueur de gluon", illustration:            {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
-			{ name: "Cartographe de cumulonimbus", illustration:  {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
-			{ name: "Percussionniste de mousse", illustration:    {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
-			{ name: "Bodybuilder animalier", illustration:        {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			{ name: "Inventeur de chaussettes", image:    {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			{ name: "Dompteur de plancton", image:        {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			{ name: "Peintre en apesanteur", image:       {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			{ name: "Marin d'eau douce", image:           {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			{ name: "Astronaute sous-terrain", image:     {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			{ name: "Chasseur de moquette", image:        {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			{ name: "Pilote d'éolienne", image:           {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			{ name: "Soudeur de glace", image:            {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			{ name: "Traqueur de gluon", image:           {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			{ name: "Cartographe de cumulonimbus", image: {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			{ name: "Percussionniste de mousse", image:   {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			{ name: "Bodybuilder animalier", image:       {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
 		],
 		getRandom() {
 			return this.enable ? (this.list[Math.floor(Math.random() * this.list.length)]) : null;
 		}
 	},
+
+	/* --- Experiences ------------------------------------------------------------------------------------------------ */
 	experiences: [
 		{
 			id: 1,
@@ -77,5 +82,41 @@ export default {
 				content: "Mamelouk vercingétorix de carnaval, mamelouk scélérat phlébotome. Chauffard rocambole schizophrène, catachrèse cyclone misérable. Gargarisme forban renégat mouchard. Ophicléide lâche, zèbre sinapisme frère de la côte. Cornemuse scolopendre, crétin des alpes apprenti dictateur à la noix de coco polichinelle. Pirate protozoaire va-nu-pieds vivisectionniste, mitrailleur à bavette amphitryon phylactère ectoplasme. Brigand polichinelle, ostrogoth emplâtre polygraphe. Soulographe sacripant rhizopode accapareur, ivrogne anacoluthe choléra soulographe."
 			}
 		}
+	],
+
+	/* --- Projects --------------------------------------------------------------------------------------------------- */
+	projects: [
+		{
+			name: "Pond Simulator 2020",
+			description: "Pond Simulator 2020 simule, de manière simplifiée et cartoonesque, la vie dans un lac, les canards qui y vivent, les nénuphars qui y poussent et les régimes dictatorials qui émergent du peuple ansériforme.",
+			techs: ["Java"],
+			image: { src: "projects/pond_simulator_2020.webp", fallback: "projects/pond_simulator_2020.png" },
+			link: { href: "https://github.com/EmpireDemocratiqueDuPoulpe/Pond-Simulator-2020" },
+			windowTitle: "quack!"
+		},
+		{
+			name: "Melodie",
+			description: "Melodie est un site web permettant à un utilisateur authentifié d'écouter des morceaux de musique depuis ses listes de lecture. Les musiques y sont ajoutées en entrant un lien ou un fichier audio.",
+			techs: ["C#", "HTML", "CSS", "JavaScript"],
+			image: null,
+			link: { href: "https://github.com/EmpireDemocratiqueDuPoulpe/Melodie" },
+			windowTitle: "♫ Playing Darude Sandstorm - Dubstep Edition"
+		},
+		{
+			name: "Instabus",
+			description: "Instabus est un réseau social similaire à Instagram, mais avec un concept de niche. Les utilisateurs peuvent chercher des arrêts de bus dans Barcelone, s'y prendre en photo et le partager au monde. Je l'avais dit, concept de niche.",
+			techs: ["Kotlin"],
+			image: { src: "projects/instabus.webp", fallback: "projects/instabus.png" },
+			link: { href: "https://github.com/EmpireDemocratiqueDuPoulpe/Instabus" },
+			windowTitle: "#bus #crazy #Setra_S_416_GT-HD/2"
+		},
+		{
+			name: "Mr. Driller clone",
+			description: "Y'a pas de description",
+			techs: ["Python"],
+			image: { src: "projects/mr_driller.webp", fallback: "projects/mr_driller.png" },
+			link: { href: "#" },
+			windowTitle: null
+		},
 	]
 };

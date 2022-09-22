@@ -30,7 +30,7 @@ import "./App.css";
  * A fake situation, because it's funny. ඞ
  * @const
  * @readonly
- * @type {{ name: string, illustration: * }}
+ * @type {{ name: string, image: { src: string, fallback: string } }}
  */
 const fakeSituation = Content.fakeSituations.getRandom();
 
@@ -122,7 +122,7 @@ function App() {
 					<div className="App-padded-content">
 						<section id="presentation" className="portfolio-section" ref={presentationRef}>
 							<StarSky/>
-							<WebP className="fake-situation-img" src={fakeSituation.illustration.src} fallback={fakeSituation.illustration.fallback} alt=""/>
+							<WebP className="fake-situation-img" src={fakeSituation.image.src} fallback={fakeSituation.image.fallback} alt=""/>
 
 							<div className="about-content">
 								<div className="welcome-msg">
@@ -153,25 +153,11 @@ function App() {
 							<h2 className="title-font">Projets</h2>
 
 							<div className="projects-grid">
-								<Project name="Pond Simulator 2020" windowTitle="quack!" techs={["Java"]} img={{ src: "projects/pond_simulator_2020.webp", fallback: "projects/pond_simulator_2020.png" }}
-									href="https://github.com/EmpireDemocratiqueDuPoulpe/Pond-Simulator-2020">
-									Pond Simulator 2020 simule, de manière simplifi&eacute;e et cartoonesque, la vie dans un lac, les canards qui y vivent, les n&eacute;nuphars qui y poussent et les r&eacute;gimes dictatorials qui &eacute;mergent du peuple ans&eacute;riforme.
-								</Project>
-
-								<Project name="Melodie" windowTitle="♫ Playing Darude Sandstorm - Dubstep Edition" techs={["C#", "HTML", "CSS", "JavaScript"]}
-									href="https://github.com/EmpireDemocratiqueDuPoulpe/Melodie">
-									Melodie est un site web permettant &agrave; un utilisateur authentifi&eacute; d&apos;&eacute;couter des morceaux de musique depuis ses listes de lecture. Les musiques y sont ajout&eacute;es en entrant un lien ou un fichier audio.
-								</Project>
-
-								<Project name="Instabus" windowTitle="#bus #crazy #Setra_S_416_GT-HD/2" techs={["Kotlin"]} img={{ src: "projects/instabus.webp", fallback: "projects/instabus.png" }}
-									href="https://github.com/EmpireDemocratiqueDuPoulpe/Instabus">
-									Instabus est un r&eacute;seau social similaire &agrave; Instagram, mais avec un concept de niche. Les utilisateurs peuvent chercher des arr&ecirc;ts de bus dans Barcelone, s&apos;y prendre en photo et le partager au monde. Je l&apos;avais dit, concept de niche.
-								</Project>
-
-								<Project name="Mr. Driller clone" techs={["Python"]} img={{ src: "projects/mr_driller.webp", fallback: "projects/mr_driller.png" }}
-									href="#">
-									Y&apos;a pas de description
-								</Project>
+								{Content.projects.map((project, index) => (
+									<Project key={`project-${project.name}-${index}`} name={project.name} techs={project.techs} img={project.image} href={project.link.href} windowTitle={project.windowTitle}>
+										{project.description}
+									</Project>
+								))}
 							</div>
 						</section>
 
