@@ -1,25 +1,36 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Alexis Lecomte",
+  "name": "Alexis Lecomte - Curriculum vitae",
+  "description": "Curriculum vitae d'Alexis Lecomte, étudiant en école d'informatique et développeur.",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "favicon.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "logo192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any"
     },
     {
       "src": "logo512.png",
       "type": "image/png",
-      "sizes": "512x512"
-    }
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    { "src": "maskable_icons/x48.png", "type": "image/png", "sizes": "48x48", "purpose": "maskable" },
+    { "src": "maskable_icons/x72.png", "type": "image/png", "sizes": "72x72", "purpose": "maskable" },
+    { "src": "maskable_icons/x96.png", "type": "image/png", "sizes": "96x96", "purpose": "maskable" },
+    { "src": "maskable_icons/x128.png", "type": "image/png", "sizes": "128x128", "purpose": "maskable" },
+    { "src": "maskable_icons/x192.png", "type": "image/png", "sizes": "192x192", "purpose": "maskable" },
+    { "src": "maskable_icons/x384.png", "type": "image/png", "sizes": "384x384", "purpose": "maskable" },
+    { "src": "maskable_icons/x512.png", "type": "image/png", "sizes": "512x512", "purpose": "maskable" }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#171139",
+  "background_color": "#171139"
 }
