@@ -11,6 +11,7 @@ import useCV from "../../context/CV/CVContext.js";
 import { Scrollbars } from "react-custom-scrollbars-2";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.js";
 import StarSky from "../../components/StarSky/StarSky.js";
+import RevealScroll from "../../components/RevealScroll/RevealScroll.js";
 import WebP from "../../components/WebP/WebP.js";
 import Button from "../../components/Button/Button.js";
 import AppNavigation, { NavigationLink } from "../../components/AppNavigation/AppNavigation.js";
@@ -143,55 +144,61 @@ function App() {
 							</div>
 						</section>
 
-						<section id="experiences" className="portfolio-section" ref={experiencesRef}>
-							<h2 className="title-font">Exp&eacute;riences</h2>
+						<RevealScroll>
+							<section id="experiences" className="portfolio-section" ref={experiencesRef}>
+								<h2 className="title-font">Exp&eacute;riences</h2>
 
-							<Experiences experiences={Content.experiences}/>
-						</section>
+								<Experiences experiences={Content.experiences}/>
+							</section>
+						</RevealScroll>
 
-						<section id="projets" className="portfolio-section" ref={projetsRef}>
-							<h2 className="title-font">Projets</h2>
+						<RevealScroll>
+							<section id="projets" className="portfolio-section" ref={projetsRef}>
+								<h2 className="title-font">Projets</h2>
 
-							<div className="projects-grid">
-								{Content.projects.map((project, index) => (
-									<Project key={`project-${project.name}-${index}`} name={project.name} techs={project.techs} img={project.image} href={project.link.href} windowTitle={project.windowTitle}>
-										{project.description}
-									</Project>
-								))}
-							</div>
-						</section>
-
-						<section id="contact" className="portfolio-section" ref={contactRef}>
-							<h2 className="title-font">Contact</h2>
-
-							<div className="contact-content">
-								<h3>Envie d&apos;en savoir plus ?</h3>
-
-								<p className="contact-explanation">
-									Je suis ouvert aux propositions <span className="emphasis">d&apos;alternance</span> ou <span className="emphasis">d&apos;embauche</span>.
-									Si vous &ecirc;tes int&eacute;ress&eacute;, vous pouvez me contacter par LinkedIn ou m&apos;envoyer
-									directement un e-mail. Vous pouvez aussi consulter mon profil GitHub sur lequel vous pourrez y retrouver
-									certain de mes projets.
-								</p>
-
-								<div className="contact-links">
-									<div className="contact-networks">
-										<SocialNetwork.LinkedIn href="https://www.linkedin.com/in/alexicomte/"/>
-										<SocialNetwork.GitHub href="https://github.com/EmpireDemocratiqueDuPoulpe"/>
-									</div>
-
-									<div className="contact-sep"/>
-
-									<div className="contact-mail">
-										<Button href="mailto:alexis.lecomte@supinfo.com" decoration="✉">
-											Envoyer un mail
-										</Button>
-									</div>
+								<div className="projects-grid">
+									{Content.projects.map((project, index) => (
+										<Project key={`project-${project.name}-${index}`} name={project.name} techs={project.techs} img={project.image} href={project.link.href} windowTitle={project.windowTitle}>
+											{project.description}
+										</Project>
+									))}
 								</div>
+							</section>
+						</RevealScroll>
 
-								<Map lat={MapConfig.center.lat} lng={MapConfig.center.lng} markers={MapConfig.markers}/>
-							</div>
-						</section>
+						<RevealScroll>
+							<section id="contact" className="portfolio-section" ref={contactRef}>
+								<h2 className="title-font">Contact</h2>
+
+								<div className="contact-content">
+									<h3>Envie d&apos;en savoir plus ?</h3>
+
+									<p className="contact-explanation">
+										Je suis ouvert aux propositions <span className="emphasis">d&apos;alternance</span> ou <span className="emphasis">d&apos;embauche</span>.
+										Si vous &ecirc;tes int&eacute;ress&eacute;, vous pouvez me contacter par LinkedIn ou m&apos;envoyer
+										directement un e-mail. Vous pouvez aussi consulter mon profil GitHub sur lequel vous pourrez y retrouver
+										certain de mes projets.
+									</p>
+
+									<div className="contact-links">
+										<div className="contact-networks">
+											<SocialNetwork.LinkedIn href="https://www.linkedin.com/in/alexicomte/"/>
+											<SocialNetwork.GitHub href="https://github.com/EmpireDemocratiqueDuPoulpe"/>
+										</div>
+
+										<div className="contact-sep"/>
+
+										<div className="contact-mail">
+											<Button href="mailto:alexis.lecomte@supinfo.com" decoration="✉">
+												Envoyer un mail
+											</Button>
+										</div>
+									</div>
+
+									<Map lat={MapConfig.center.lat} lng={MapConfig.center.lng} markers={MapConfig.markers}/>
+								</div>
+							</section>
+						</RevealScroll>
 					</div>
 
 					<footer>

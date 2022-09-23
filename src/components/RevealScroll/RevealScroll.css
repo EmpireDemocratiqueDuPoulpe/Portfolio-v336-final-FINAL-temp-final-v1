@@ -1,0 +1,13 @@
+/* --- Reveal Scroll ------------------------------------------------------------------------------------------------ */
+.reveal-scroll {
+	opacity: 0;
+	transform: translateY(2.5%);
+	transition-property: opacity, transform;
+	transition-duration: 300ms;
+	transition-timing-function: ease-in;
+}
+
+.reveal-scroll.visible {
+	opacity: 1;
+	transform: translateY(0%);
+}
