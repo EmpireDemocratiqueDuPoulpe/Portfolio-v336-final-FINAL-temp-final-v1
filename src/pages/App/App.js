@@ -12,6 +12,7 @@ import { Scrollbars } from "react-custom-scrollbars-2";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.js";
 import StarSky from "../../components/StarSky/StarSky.js";
 import RevealScroll from "../../components/RevealScroll/RevealScroll.js";
+import SectionArt from "../../components/SectionArt/SectionArt.js";
 import WebP from "../../components/WebP/WebP.js";
 import Button from "../../components/Button/Button.js";
 import AppNavigation, { NavigationLink } from "../../components/AppNavigation/AppNavigation.js";
@@ -165,6 +166,10 @@ function App() {
 								</div>
 							</section>
 						</RevealScroll>
+
+						<SectionArt translateY="-125%" mobile={false} tablet={false} printer={false}>
+							<WebP className="rocket" src="misc/rocket.webp" fallback="misc/rocket.png" alt=""/>
+						</SectionArt>
 
 						<RevealScroll>
 							<section id="contact" className="portfolio-section" ref={contactRef}>

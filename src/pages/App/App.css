@@ -64,6 +64,20 @@ section.portfolio-section {
 	section.portfolio-section > h2 { margin-left: 7.5% !important; }
 }
 
+/* --- "Art" things between section --------------------------------------------------------------------------------- */
+.section-art .rocket {
+	animation: flying-rocket 3s linear infinite;
+}
+
+@keyframes flying-rocket {
+	0%, 100% { transform: rotate(0) translateX(-2%); }
+
+	25% { transform: rotate(3deg); }
+	50% { transform: rotate(0) translateX(3%); }
+	75% { transform: rotate(-4deg); }
+}
+
+
 /* --- "About me" section ------------------------------------------------------------------------------------------- */
 /* -- Container -- */
 section#presentation .about-content  {

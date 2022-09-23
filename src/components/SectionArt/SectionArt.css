@@ -1,0 +1,30 @@
+/* --- Section "Art" ------------------------------------------------------------------------------------------------ */
+/* -- Anchor -- */
+.section-art-anchor {
+	position: relative;
+	width: 1px;
+	height: 1px;
+	margin: 0 auto;
+}
+
+/* -- Container -- */
+.section-art-anchor .section-art {
+	position: absolute;
+	width: 250px;
+	height: 150px;
+}
+
+/* // Tablets */
+@media all and (min-width: 768px) and (max-width: 1024px) {
+	.section-art-anchor .section-art.no-tablet { display: none; }
+}
+
+/* // Phones */
+@media all and (max-width: 480px) {
+	.section-art-anchor .section-art.no-mobile { display: none; }
+}
+
+/* // Printer */
+@media print {
+	.section-art-anchor .section-art.no-printer { display: none; }
+}
