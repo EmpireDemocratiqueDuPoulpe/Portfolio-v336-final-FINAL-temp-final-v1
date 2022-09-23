@@ -6,7 +6,6 @@
 	flex-direction: row;
 	justify-content: flex-start;
 	align-items: stretch;
-	height: 180px;
 	padding: 4px;
 	-o-box-shadow: -1px -1px 0 1px transparent;
 	-moz-box-shadow: -1px -1px 0 1px transparent;
@@ -59,14 +58,18 @@
 /* -- Project image -- */
 .project .project-img {
 	box-sizing: border-box;
+	position: relative;
 	flex-shrink: 0;
 	flex-grow: 0;
 	text-align: center;
 	width: 35%;
-	background: var(--secondary-color-5);
+	background: rgba(0, 0, 0, 0.25);
 }
 
 .project .project-img .webp {
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
 }
@@ -145,27 +148,11 @@
 }
 
 /* - Description - */
-.project .project-infos .project-desc {
-	display: -webkit-box;
-	font-size: 0.9em;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 6;
-	overflow-y: hidden;
-}
+.project .project-infos .project-desc { flex-grow: 1; font-size: 0.9em; }
 
 /* // Phones */
 @media all and (max-width: 480px) {
-	.project .project-infos .project-desc { display: block; font-size: 0.8em; }
-}
-
-/* // Printer */
-@media print {
-	.project .project-infos .project-desc {
-		display: inline;
-		-webkit-box-orient: unset;
-		-webkit-line-clamp: unset;
-		overflow-y: visible;
-	}
+	.project .project-infos .project-desc { font-size: 0.8em; }
 }
 
 /* - Techs - */
@@ -175,7 +162,6 @@
 	justify-content: flex-start;
 	align-items: flex-end;
 	gap: 10px;
-	flex-grow: 1;
 	font-size: 0.8em;
 	margin-top: 15px;
 	color: var(--tertiary-color);
