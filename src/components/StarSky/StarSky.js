@@ -48,20 +48,22 @@ function StarSky() {
 
 	/* ---- Page content ---------------------------- */
 	return (
-		<div ref={containerRef} className="stars-sky">
-			<div className="stars-layer far-stars">
-				<div className="nebula style-1"/>
-				<div className="nebula style-2"/>
+		<div className="stars-sky-wrapper">
+			<div ref={containerRef} className="stars-sky">
+				<div className="stars-layer far-stars">
+					<div className="nebula style-1"/>
+					<div className="nebula style-2"/>
 
-				{farStars}
-			</div>
+					{farStars}
+				</div>
 
-			<div className="stars-layer midway-stars">
-				{midwayStars}
-			</div>
+				<div className="stars-layer midway-stars">
+					{midwayStars}
+				</div>
 
-			<div className="stars-layer close-stars">
-				{closeStars}
+				<div className="stars-layer close-stars">
+					{closeStars}
+				</div>
 			</div>
 		</div>
 	);
