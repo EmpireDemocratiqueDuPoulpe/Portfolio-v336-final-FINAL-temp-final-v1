@@ -7,6 +7,8 @@
 import { useState, useEffect, useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
 import useScrollContext from "../../context/Scroll/ScrollContext.js";
+import mapboxgl from "mapbox-gl";
+mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker.js").default; // eslint-disable-line
 import ReactMap, { Marker, Popup } from "react-map-gl";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
