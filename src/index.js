@@ -21,6 +21,16 @@ root.render(
 	</DocumentTitleProvider>
 );
 
+// Disable the console in production
+if (process.env.NODE_ENV === "production") {
+	/* eslint-disable no-unused-vars */
+	console.log = (..._) => {};
+	console.warn = (..._) => {};
+	console.error = (..._) => {};
+	console.debug = (..._) => {};
+	/* eslint-enable no-unused-vars */
+}
+
 // TODO: If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
