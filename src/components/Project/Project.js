@@ -15,7 +15,7 @@ function Project({ name, href, techs, img, windowTitle, children }) {
 	return (
 		<div className="project" data-window-title={windowTitle ?? name}>
 			<div className="project-img">
-				{img && <WebP src={img.src} fallback={img.fallback} alt="Une capture d'écran du projet"/>}
+				{img && <WebP src={img.src} fallback={img.fallback} alt={`Une capture d'écran du projet "${name}".`}/>}
 			</div>
 
 			<div className="project-infos">
