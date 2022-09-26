@@ -172,14 +172,22 @@ export function NavigationProvider({ children }) {
 
 	/* ---- Effects --------------------------------- */
 	useEffect(() => {
-		const handleScroll = scrollBox => {
+		const handleScroll = () => {
 			const sortedLinks = sortLinksBySection(links.current);
 			if (sortedLinks) {
 				let selectedLink = sortedLinks[0];
 
 				// We skip the first element since it's selected by default
 				for (const link of sortedLinks.slice(1)) {
-					if ((link.sectionRef.offsetTop - (link.sectionRef.offsetHeight / 2)) <= scrollBox.scrollTop) {
+					// The original calculation to find the correct link was as follows:
+					//
+					//     Position of the element relative to the scrollable container                    A margin                    Scrolled content
+					//  ________________________________|_________________________________     ________________|________________      ________|_________
+					// |                                                                  |   |                                |     |                 |
+					// ((link.sectionRef.getBoundingClientRect().top + scrollBox.scrollTop) - (link.sectionRef.offsetHeight / 2)) <= scrollBox.scrollTop
+					//
+					// But it could be refactored without `scrollBox.scrollTop`.
+					if ((link.sectionRef.getBoundingClientRect().top - (link.sectionRef.offsetHeight / 2)) <= 0) {
 						selectedLink = link;
 					} else break;
 				}
