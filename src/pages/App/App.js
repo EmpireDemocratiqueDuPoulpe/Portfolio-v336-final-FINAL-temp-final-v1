@@ -168,7 +168,7 @@ function App() {
 						</RevealScroll>
 
 						<SectionArt translateY="-125%" mobile={false} tablet={false} printer={false}>
-							<WebP className="rocket" src="misc/rocket.webp" fallback="misc/rocket.png" alt=""/>
+							<WebP className="rocket" src="misc/rocket.webp" fallback="misc/rocket.gif" alt=""/>
 						</SectionArt>
 
 						<RevealScroll>
