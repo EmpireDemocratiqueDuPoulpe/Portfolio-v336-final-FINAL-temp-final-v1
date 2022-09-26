@@ -4,12 +4,13 @@
  * @author Alexis L. <alexis.lecomte@supinfo.com>
  */
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, lazy, Suspense } from "react";
 import { NavigationProvider } from "../../context/Navigation/NavigationContext.js";
 import useScrollContext from "../../context/Scroll/ScrollContext.js";
 import useCV from "../../context/CV/CVContext.js";
 import { Scrollbars } from "react-custom-scrollbars-2";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.js";
+import Loader from "../../components/Loader/Loader.js";
 import StarSky from "../../components/StarSky/StarSky.js";
 import RevealScroll from "../../components/RevealScroll/RevealScroll.js";
 import SectionArt from "../../components/SectionArt/SectionArt.js";
@@ -20,7 +21,7 @@ import CVModal from "../../components/CVModal/CVModal.js";
 import Experiences from "../../components/Experiences/Experiences.js";
 import Project from "../../components/Project/Project.js";
 import SocialNetwork from "../../components/SocialNetwork/SocialNetwork.js";
-import Map from "../../components/Map/Map.js";
+const Map = lazy(() => import("../../components/Map/Map.js"));
 import { Content, Map as MapConfig } from "../../config/config.js";
 import "./App.css";
 
@@ -200,7 +201,9 @@ function App() {
 										</div>
 									</div>
 
-									<Map lat={MapConfig.center.lat} lng={MapConfig.center.lng} markers={MapConfig.markers}/>
+									<Suspense fallback={<Loader size="medium"/>}>
+										<Map lat={MapConfig.center.lat} lng={MapConfig.center.lng} markers={MapConfig.markers}/>
+									</Suspense>
 								</div>
 							</section>
 						</RevealScroll>

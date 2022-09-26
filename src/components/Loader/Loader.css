@@ -1,0 +1,52 @@
+/* --- Loader ------------------------------------------------------------------------------------------------------- */
+.loader {
+	--size: 4rem;
+	--max-size: 6rem;
+
+	position: relative;
+	width: 100%;
+	max-width: var(--size);
+	margin: calc(var(--size) / 2) 0;
+	z-index: 2500;
+}
+
+/* -- Pulse animation -- */
+.loader.pulse {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.loader.pulse::before, .loader.pulse::after {
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+	animation-duration: 1.8s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	filter: drop-shadow(0 0 1rem rgba(250, 237, 38, 0.75));
+}
+
+.loader.pulse::before {
+	width: 100%;
+	padding-bottom: 100%;
+	box-shadow: inset 0 0 0 1rem var(--primary-color);
+	animation-name: pulse-in;
+}
+
+.loader.pulse::after {
+	width: calc(100% - 2rem);
+	padding-bottom: calc(100% - 2rem);
+	box-shadow: 0 0 0 0 var(--primary-color);
+	animation-name: pulse-out;
+}
+
+@keyframes pulse-in {
+	0% { opacity: 1; box-shadow: inset 0 0 0 1rem var(--primary-color); }
+	50%, 100% { opacity: 0; box-shadow: inset 0 0 0 0 var(--primary-color);; }
+}
+
+@keyframes pulse-out {
+	0%, 50% { opacity: 0; box-shadow: 0 0 0 0 var(--primary-color); }
+	100% { opacity: 1; box-shadow: 0 0 0 1rem var(--primary-color); }
+}

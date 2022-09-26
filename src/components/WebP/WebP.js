@@ -8,6 +8,7 @@ import PropTypes from "prop-types";
 import mime from "mime";
 import useClassName from "../../hooks/className/useClassName.js";
 import useImage from "../../hooks/image/useImage.js";
+import Loader from "../Loader/Loader.js";
 import "./WebP.css";
 
 function WebP({ className, src, fallback: fallbackSrc, alt, ...rest }) {
@@ -21,12 +22,16 @@ function WebP({ className, src, fallback: fallbackSrc, alt, ...rest }) {
 
 	/* ---- Page content ---------------------------- */
 	return (
-		<picture className={classes} {...rest}>
-			<source srcSet={image.isLoaded ? image.image : null} type="image/webp"/>
-			<source srcSet={fallback.isLoaded ? fallback.image : null} type={mime.getType(fallbackSrc)}/>
+		<div className={classes} {...rest}>
+			{!image.isLoaded ?? <Loader size="small"/>}
 
-			<img src={fallback.isLoaded ? fallback.image : null} alt={alt}/>
-		</picture>
+			<picture>
+				<source srcSet={image.isLoaded ? image.image : null} type="image/webp"/>
+				<source srcSet={fallback.isLoaded ? fallback.image : null} type={mime.getType(fallbackSrc)}/>
+
+				<img src={fallback.isLoaded ? fallback.image : null} alt={alt}/>
+			</picture>
+		</div>
 	);
 }
 WebP.propTypes = {
