@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
 import useWindowSize from "../../hooks/windowSize/useWindowSize.js";
 import useClassName from "../../hooks/className/useClassName.js";
 import { eventOnElement } from "../../global/Functions.js";
-import { ReactComponent as Logo } from "../../assets/images/logo_proto.svg";
+import { ReactComponent as Logo } from "../../assets/images/logo_proto_v2.svg";
 import "./AppNavigation.css";
 
 function AppNavigation({ children }) {

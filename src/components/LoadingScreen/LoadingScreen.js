@@ -10,11 +10,12 @@ import PropTypes from "prop-types";
 import LoadingDots from "./LoadingDots/LoadingDots.js";
 import LoadingStatus from "./LoadingStatus/LoadingStatus.js";
 import LoadingBar from "./LoadingBar/LoadingBar.js";
-import { ReactComponent as AppLogo } from "../../assets/images/logo_proto.svg";
+import { ReactComponent as AppLogo } from "../../assets/images/logo_proto_v2.svg";
 import "./LoadingScreen.css";
 
 const LOADING_CLASS = "loading";
 
+// TODO: Animate logo
 function LoadingScreen({ duration, enabled }) {
 	/* ---- States ---------------------------------- */
 	const [state, setState] = useState(enabled);
