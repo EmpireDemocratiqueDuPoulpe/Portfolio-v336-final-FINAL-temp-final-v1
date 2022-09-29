@@ -16,6 +16,7 @@
   --text-color_background: #D0CACA;
   --text-emphasis_background: #F3ECEC;
   --text-color_primary: #090909;
+  --error-color: #C91F37;
 }
 
 html {
