@@ -14,11 +14,11 @@ import "./AppNavigation.css";
 
 function AppNavigation({ children }) {
 	/* ---- States ---------------------------------- */
-	const { width } = useWindowSize();
+	const { width, height, isPortrait, isLandscape } = useWindowSize();
 	const classes = useClassName(hook => {
 		hook.set("navigation-links");
-		hook.setIf((width <= 480), "phone-mode");
-	}, [width]);
+		hook.setIf((isPortrait && (width <= 480) || (isLandscape && (height <= 480))), "phone-mode");
+	}, [isPortrait, width, isLandscape, height]);
 	const [linksMenuOpen, setLinksMenuOpen] = useState(false);
 	const linksMenuClasses = useClassName(hook => {
 		hook.set("navigation-links-btn");

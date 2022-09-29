@@ -74,6 +74,20 @@
 	transition: opacity 350ms linear, transform 350ms linear;
 }
 
+/* // Tablets */
+@media all and (min-width: 768px) and (max-width: 1024px) {
+	.button .decoration { display: none; }
+}
+
+/* // Phones */
+@media all and (max-width: 480px) {
+	.button .decoration { display: none; }
+}
+
+@media all and (max-height: 480px) and (orientation: landscape) {
+	.button .decoration { display: none; }
+}
+
 /* -- Events -- */
 /* - Borders - */
 .button:active, .button:focus { outline: none; }

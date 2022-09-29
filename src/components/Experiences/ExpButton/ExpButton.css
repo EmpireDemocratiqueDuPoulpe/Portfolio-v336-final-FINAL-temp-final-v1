@@ -19,6 +19,13 @@
 	}
 }
 
+@media all and (max-height: 480px) and (orientation: landscape) {
+	.experience-button {
+		border-top-width: 1px;
+		border-left-width: 0;
+	}
+}
+
 /* -- Animated background and border -- */
 .experience-button::before,
 .experience-button::after {
@@ -43,6 +50,15 @@
 
 /* // Phones */
 @media all and (max-width: 480px) {
+	.experience-button::before {
+		width: 100%;
+		height: 0;
+		transition-property: height;
+	}
+	.experience-button.selected::before { width: 100%; height: 100% }
+}
+
+@media all and (max-height: 480px) and (orientation: landscape) {
 	.experience-button::before {
 		width: 100%;
 		height: 0;
@@ -83,6 +99,22 @@
 	}
 }
 
+@media all and (max-height: 480px) and (orientation: landscape) {
+	.experience-button::after {
+		top: -2px;
+		left: 50%;
+		width: 0;
+		height: 3px;
+		transition-property: left, width;
+	}
+	.experience-button:hover::after,
+	.experience-button.selected::after {
+		left: 0;
+		width: 100%;
+		height: 3px;
+	}
+}
+
 /* -- Job title -- */
 .experience-button .exp-btn-title {
 	margin: 0;
@@ -101,6 +133,21 @@
 
 /* // Phones */
 @media all and (max-width: 480px) {
+	.experience-button .exp-btn-title { display: none; }
+
+	.experience-button .exp-btn-company {
+		display: inline;
+		font-size: 1em;
+		color: var(--primary-color);
+		font-family: "Montserrat", "Roboto", "Helvetica Neue", sans-serif;
+		font-weight: 500;
+		white-space: nowrap;
+		text-overflow: initial;
+		overflow: initial;
+	}
+}
+
+@media all and (max-height: 480px) and (orientation: landscape) {
 	.experience-button .exp-btn-title { display: none; }
 
 	.experience-button .exp-btn-company {

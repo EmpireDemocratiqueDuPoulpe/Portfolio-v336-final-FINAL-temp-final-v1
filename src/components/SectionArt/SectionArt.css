@@ -24,6 +24,10 @@
 	.section-art-anchor .section-art.no-mobile { display: none; }
 }
 
+@media all and (max-height: 480px) and (orientation: landscape) {
+	.section-art-anchor .section-art.no-mobile { display: none; }
+}
+
 /* // Printer */
 @media print {
 	.section-art-anchor .section-art.no-printer { display: none; }

@@ -97,6 +97,20 @@ section#presentation .about-content  {
 	section#presentation .about-content { gap: 60px; }
 }
 
+/* // Phones */
+@media all and (max-height: 480px) and (orientation: landscape) {
+	section#presentation { height: 100vh }
+	section#presentation .about-content {
+		top: 55%;
+		justify-content: center;
+		align-items: center;
+		gap: 0;
+		width: 100%;
+	}
+
+	section#presentation .about-content .hello { display: none; }
+}
+
 /* // Printer */
 @media print {
 	section#presentation .about-content {
@@ -194,9 +208,17 @@ section#presentation .fake-situation-img {
 
 	section#presentation .about-content .my-situation .real-situation { font-size: 1.5em; }
 	section#presentation .about-content .my-situation .fake-situation { font-size: 0.7em; margin-top: 0.7em; }
+
+	section#presentation .fake-situation-img {
+		top: auto;
+		bottom: -3%;
+		left: 3%;
+		width: 90px;
+		height: 90px;
+	}
 }
 
-@media all and (max-width: 480px) and (orientation: portrait) {
+@media all and (max-height: 480px) and (orientation: landscape) {
 	section#presentation .fake-situation-img {
 		top: auto;
 		bottom: -3%;
@@ -251,6 +273,10 @@ section#presentation .profile-picture-img {
 	section#presentation .profile-picture { display: none; }
 }
 
+@media all and (max-height: 480px) and (orientation: landscape) {
+	section#presentation .profile-picture { display: none; }
+}
+
 /* // Printer */
 @media print {
 	section#presentation .profile-picture { background: rgba(0, 0, 0, 0.15); }
@@ -287,6 +313,16 @@ section#projets .projects-grid {
 	}
 }
 
+@media all and (max-height: 480px) and (orientation: landscape) {
+	section#projets .projects-grid {
+		grid-template-columns: 1fr;
+		grid-auto-rows: initial;
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
 /* // Printer */
 @media print {
 	section#projets .projects-grid {
@@ -306,6 +342,28 @@ section#contact .contact-content {
 }
 
 section#contact .contact-content .emphasis { color: var(--primary-color); }
+
+/* // Tablets */
+@media all and (min-width: 768px) and (max-width: 1024px) {
+	section#contact h2 { margin-left: 20%; }
+
+	section#contact .contact-content { width: 60%; }
+}
+
+/* // Phones */
+@media all and (max-width: 480px) {
+	section#contact { font-size: 0.8em; }
+
+	section#contact h2 { margin-left: 0; }
+
+	section#contact .contact-content { width: 100%; }
+}
+
+@media all and (max-height: 480px) and (orientation: landscape) {
+	section#contact { font-size: 0.9em; }
+
+	section#contact .contact-content { width: 100%; }
+}
 
 /* // Printer */
 @media print {
@@ -357,22 +415,6 @@ section#contact .contact-content .contact-links .contact-mail {
 section#contact .contact-content .map {
 	width: 100%;
 	margin: 30px auto 0 auto;
-}
-
-/* // Tablets */
-@media all and (min-width: 768px) and (max-width: 1024px) {
-	section#contact h2 { margin-left: 20%; }
-
-	section#contact .contact-content { width: 60%; }
-}
-
-/* // Phones */
-@media all and (max-width: 480px) {
-	section#contact { font-size: 0.8em; }
-
-	section#contact h2 { margin-left: 0; }
-
-	section#contact .contact-content { width: 100%; }
 }
 
 /* // Printer */
@@ -446,6 +488,10 @@ footer .stylish-quote figcaption {
 	footer .stylish-quote figcaption { margin-left: 0; margin-right: 0; }
 }
 
+@media all and (max-height: 480px) and (orientation: landscape) {
+	footer .stylish-quote { width: 100%; font-size: 1.4em; }
+}
+
 /* // Printer */
 @media print {
 	footer .stylish-quote { display: none; }
@@ -469,6 +515,10 @@ footer .licensing :not(.my-copyright) { font-size: 0.9em; }
 
 /* // Phones */
 @media all and (max-width: 480px) {
+	footer .licensing { font-size: 0.8em; }
+}
+
+@media all and (max-height: 480px) and (orientation: landscape) {
 	footer .licensing { font-size: 0.8em; }
 }
 
