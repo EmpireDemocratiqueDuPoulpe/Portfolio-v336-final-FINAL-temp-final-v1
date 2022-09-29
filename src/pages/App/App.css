@@ -223,8 +223,20 @@ section#presentation .about-content .cv-btn { margin: 60px auto 0 auto; }
 section#presentation .profile-picture {
 	flex-grow: 0;
 	flex-shrink: 0;
+	position: relative;
 	width: 250px;
 	height: 250px;
+	border-radius: 0 0 50% 50%;
+	overflow: hidden;
+}
+
+section#presentation .profile-picture::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 	background: rgba(0, 0, 0, 0.5);
 	border-radius: 50%;
 }
