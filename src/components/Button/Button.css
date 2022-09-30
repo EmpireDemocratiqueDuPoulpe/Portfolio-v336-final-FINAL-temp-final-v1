@@ -15,7 +15,6 @@
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	appearance: none;
-	/* TODO: text-transform: uppercase; ? */
 	text-decoration: none;
 	cursor: pointer;
 }
