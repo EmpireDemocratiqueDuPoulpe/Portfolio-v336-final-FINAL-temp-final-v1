@@ -66,6 +66,7 @@ const initialState = { status: states.LOADING, image: null, error: null };
  * @return {Image} - The image state.
  */
 function useImage(src) {
+	/* ---- States ---------------------------------- */
 	const [state, dispatch] = useReducer((state, action) => {
 		switch (action.type) {
 			case states.LOADING:
@@ -79,12 +80,14 @@ function useImage(src) {
 		}
 	}, initialState, undefined);
 
+	/* ---- Functions ------------------------------- */
 	const setLoading = () => { dispatch({ type: states.LOADING }); };
 
 	const setLoaded = (image) => { dispatch({ type: states.LOADED, image }); };
 
 	const setError = (error) => { dispatch({ type: internalStates.ERROR, error }); };
 
+	/* ---- Effects --------------------------------- */
 	useEffect(() => {
 		const fetch = async () => {
 			setLoading();
@@ -100,6 +103,7 @@ function useImage(src) {
 		fetch().catch();
 	}, [src]);
 
+	/* ---- Expose hook ----------------------------- */
 	return { ...state, isLoaded: state.status === states.LOADED };
 }
 

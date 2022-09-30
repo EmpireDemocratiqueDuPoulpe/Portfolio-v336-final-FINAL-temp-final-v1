@@ -28,6 +28,8 @@ body:not(.loading) .loading-screen {
 }
 
 /* -- App logo -- */
+/* Duplicated in no-js-styling.css */
+/*noinspection DuplicatedCode*/
 .loading-screen .loading-logo {
 	box-sizing: border-box;
 	position: absolute;

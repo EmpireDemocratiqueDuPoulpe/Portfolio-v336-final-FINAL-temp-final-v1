@@ -56,4 +56,6 @@ function GitHub({ href }) {
 }
 GitHub.propTypes = commonPropTypes;
 
+// These properties are used, really.
+// noinspection JSUnusedGlobalSymbols
 export default { LinkedIn, GitHub };

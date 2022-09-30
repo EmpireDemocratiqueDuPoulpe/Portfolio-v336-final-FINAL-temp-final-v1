@@ -13,6 +13,8 @@
 	overflow: hidden;
 }
 
+/* Duplicated in no-js-styling.css */
+/* noinspection DuplicatedCode */
 .loading-status::after {
 	content: "";
 	position: absolute;

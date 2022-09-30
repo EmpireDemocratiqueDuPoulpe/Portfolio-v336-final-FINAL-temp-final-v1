@@ -50,7 +50,7 @@ const CVContext = createContext(null);
  * CV modal states
  * @const
  * @readonly
- * @enum {Object<string>}
+ * @type {Object<string>}
  */
 export const states = { HIDDEN: "hidden", HIDING: "hiding", SHOWN: "shown" };
 
@@ -89,14 +89,14 @@ export function CVProvider({ children }) {
 	 * Shows the CV modal.
 	 * @function
 	 */
-	const show = () => {
+	const show = useCallback(() => {
 		if (width >= 1100) {
 			setState(states.SHOWN);
 			document.body.parentElement.classList.add(NO_SCROLL_CLASS);
 		} else {
 			openInNewTab();
 		}
-	};
+	}, [width]);
 
 	const openInNewTab = () => {
 		fetch("./documents/cv.pdf")
@@ -128,7 +128,7 @@ export function CVProvider({ children }) {
 		} else if (state === states.SHOWN) {
 			hide();
 		}
-	}, [state, hide]);
+	}, [state, show, hide]);
 
 	/** @type {getDurationStrFunction} */
 	const getDurationStr = useCallback(() => `${animDurationMs}ms`, [animDurationMs]);
@@ -156,7 +156,7 @@ export function CVProvider({ children }) {
 		animation: { durationMs: animDurationMs, getDurationStr, setDuration: changeAnimationDuration },
 		pages: { total: pagesCount, current: currentPage },
 		events: { onLoadSuccess: handleLoadSuccess },
-	}), [state, hide, toggle, animDurationMs, getDurationStr, pagesCount, currentPage]);
+	}), [state, show, hide, toggle, animDurationMs, getDurationStr, pagesCount, currentPage]);
 	
 	/* ---- Page content ---------------------------- */
 	return (

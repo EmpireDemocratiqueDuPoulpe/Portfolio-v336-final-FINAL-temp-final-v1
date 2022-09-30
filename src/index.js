@@ -34,6 +34,7 @@ console.log("%cSecret code: %c68 74 74 70 73 3a 2f 2f 77 77 77 2e 79 6f 75 74 75
 console.log("%c//////////////////////////", `${titleCSS} padding-left: 30px;`);
 
 // Disable the console in production
+// eslint-disable-next-line no-undef
 if (process.env.NODE_ENV === "production") {
 	/* eslint-disable no-unused-vars */
 	console.log = (..._) => {};

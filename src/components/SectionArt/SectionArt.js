@@ -1,3 +1,9 @@
+/**
+ * @module SectionArt
+ * @category Components
+ * @author Alexis L. <alexis.lecomte@supinfo.com>
+ */
+
 import PropTypes from "prop-types";
 import useClassName from "../../hooks/className/useClassName.js";
 import "./SectionArt.css";

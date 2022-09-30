@@ -116,6 +116,7 @@ export function DocumentTitleProvider({ children }) {
 
 	/** @type {disableOverrideFunction} */
 	const disableOverride = useCallback(() => {
+		// noinspection JSValidateTypes
 		titleRef.current.override = null;
 		updateTitle();
 	}, [updateTitle]);

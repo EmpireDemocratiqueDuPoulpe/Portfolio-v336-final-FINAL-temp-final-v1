@@ -43,6 +43,7 @@ export function clickOnEnter(e, callback, ...callbackArgs) {
  * @return {{ onClick: (function(): void), onKeyDown: (function(e: KeyboardEvent): void), role: "button", tabIndex: 0 }}
  */
 export function eventOnElement(callback, ...callbackArgs) {
+	// noinspection JSUnusedGlobalSymbols
 	return {
 		onClick: () => callback(...callbackArgs),
 		onKeyDown: e => clickOnEnter(e, callback, ...callbackArgs),
