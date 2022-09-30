@@ -1,0 +1,6 @@
+{
+	"algorithms": ["br", "gz"],
+	"directory": "/build",
+	"filetypes": [".js", ".map", ".html", ".css"],
+	"retainUncompressedFiles": true
+}
