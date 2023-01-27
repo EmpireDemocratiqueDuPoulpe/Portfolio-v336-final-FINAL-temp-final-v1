@@ -165,7 +165,7 @@ section#presentation .about-content .my-situation .real-situation {
 section#presentation .about-content .my-situation .fake-situation {
 	color: var(--tertiary-color);
 	white-space: nowrap;
-	z-index: -1;
+	animation-delay: 3.75s;
 }
 
 section#presentation .fake-situation-img {
