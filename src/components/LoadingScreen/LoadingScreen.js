@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 import LoadingDots from "./LoadingDots/LoadingDots.js";
 import LoadingStatus from "./LoadingStatus/LoadingStatus.js";
 import LoadingBar from "./LoadingBar/LoadingBar.js";
-import { ReactComponent as AppLogo } from "../../assets/images/logo_proto_v2.svg";
+import Logo from "../../assets/images/logo.png";
 import "./LoadingScreen.css";
 
 const LOADING_CLASS = "loading";
@@ -44,7 +44,7 @@ function LoadingScreen({ duration, enabled }) {
 	return (
 		<div className="loading-screen">
 			<div className="loading-logo">
-				<AppLogo/>
+				<img src={Logo} alt="Logo"/>
 			</div>
 
 			<div className="loading-screen-content">

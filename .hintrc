@@ -1,0 +1,10 @@
+{
+	"connector": {
+    "name": "puppeteer"
+  },
+  "extends": [ "web-recommended", "accessibility" ],
+  "formatters": [ "html", "summary" ],
+	"hints": {
+  },
+  "parsers": [ "html", "css", "javascript", "jsx" ],
+}

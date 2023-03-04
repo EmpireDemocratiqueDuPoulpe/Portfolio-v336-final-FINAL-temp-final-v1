@@ -43,10 +43,10 @@ body:not(.loading) .loading-screen {
 	transform: translateX(-50%);
 }
 
-.loading-screen .loading-logo svg {
+.loading-screen .loading-logo img {
 	width: 100%;
 	height: 100%;
-	fill: var(--background-color⨣2);
+	object-fit: contain;
 }
 
 /* // Tablets */

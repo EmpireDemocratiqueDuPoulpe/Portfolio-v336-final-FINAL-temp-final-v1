@@ -27,8 +27,8 @@ function Button({ className, href, onClick, decoration, children }) {
 	 */
 	const Wrapper = ({ children }) => href
 		? <a className={classes} href={href} target="_blank" rel="noreferrer">{children}</a>
-		: <button className={classes} onClick={onClick}>{children}</button>;
-	
+		: <button className={classes} type="button" onClick={onClick}>{children}</button>;
+
 	/* ---- Page content ---------------------------- */
 	return (
 		<Wrapper>
