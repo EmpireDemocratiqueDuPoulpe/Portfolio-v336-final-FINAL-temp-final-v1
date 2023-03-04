@@ -458,8 +458,9 @@ footer .stylish-quote figcaption {
 footer .stylish-quote blockquote {
 	text-indent: -0.50em;
 	color: var(--text-emphasis_background);
-	border-left: 2px red solid;
+	border-left: 2px transparent solid;
 }
+footer .stylish-quote.debug blockquote { border-left-color: red; }
 
 @supports (hanging-punctuation: first) {
 	footer .stylish-quote blockquote {

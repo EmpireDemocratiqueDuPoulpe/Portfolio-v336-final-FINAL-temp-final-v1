@@ -125,7 +125,9 @@ function App() {
 					<div className="App-padded-content">
 						<section id="presentation" className="portfolio-section" ref={presentationRef}>
 							<StarSky/>
-							<WebP className="fake-situation-img" src={fakeSituation.image.src} fallback={fakeSituation.image.fallback} alt=""/>
+							{fakeSituation.image && (
+								<WebP className="fake-situation-img" src={fakeSituation.image.src} fallback={fakeSituation.image.fallback} alt=""/>
+							)}
 
 							<div className="about-content">
 								<div className="welcome-msg">
@@ -216,12 +218,12 @@ function App() {
 							</blockquote>
 
 							<figcaption>
-								&mdash; Gandalf le cric, <cite>Le senior des zigotos</cite>
+								&mdash; Gandalf le gris, <cite>24 janvier 3019</cite>
 							</figcaption>
 						</figure>
 
 						<div className="licensing">
-							<p className="copyright my-copyright">Copyright &copy; Alexis Lecomte - 2022</p>
+							<p className="copyright my-copyright">Copyright &copy; Alexis Lecomte - 2023</p>
 
 							<p className="copyright fontawesome-copyright">
 								Font Awesome Pro 6.1.2 by <a className="link" href="https://fontawesome.com" target="_blank" rel="noreferrer">@fontawesome</a>

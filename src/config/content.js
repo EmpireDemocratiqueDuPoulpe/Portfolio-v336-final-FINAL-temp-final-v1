@@ -14,18 +14,19 @@ export default {
 	fakeSituations: {
 		enable: true,
 		list: [
-			{ name: "Inventeur de chaussettes", image:    {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
-			{ name: "Dompteur de plancton", image:        {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
-			{ name: "Peintre en apesanteur", image:       {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
-			{ name: "Marin d'eau douce", image:           {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
-			{ name: "Astronaute sous-terrain", image:     {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
-			{ name: "Chasseur de moquette", image:        {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
-			{ name: "Pilote d'éolienne", image:           {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
-			{ name: "Soudeur de glace", image:            {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
-			{ name: "Traqueur de gluon", image:           {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
-			{ name: "Cartographe de cumulonimbus", image: {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
-			{ name: "Percussionniste de mousse", image:   {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
-			{ name: "Bodybuilder animalier", image:       {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} },
+			/* { name: "Inventeur de chaussettes", image:    {src: "situations/peintre_en_apesanteur.webp", fallback: "situations/peintre_en_apesanteur.png"} }, */
+			{ name: "Inventeur de chaussettes", image:    null },
+			{ name: "Dompteur de plancton", image:        null },
+			{ name: "Peintre en apesanteur", image:       null },
+			{ name: "Marin d'eau douce", image:           null },
+			{ name: "Astronaute sous-terrain", image:     null },
+			{ name: "Chasseur de moquette", image:        null },
+			{ name: "Pilote d'éolienne", image:           null },
+			{ name: "Soudeur de glace", image:            null },
+			{ name: "Traqueur de gluon", image:           null },
+			{ name: "Cartographe de cumulonimbus", image: null },
+			{ name: "Percussionniste de mousse", image:   null },
+			{ name: "Bodybuilder animalier", image:       null },
 		],
 		getRandom() {
 			return this.enable ? (this.list[Math.floor(Math.random() * this.list.length)]) : null;
@@ -69,18 +70,15 @@ export default {
 			title: "Développeur logiciel", company: "Railenium",
 			startDate: "01/03/2022", endDate: "15/11/2022",
 			description: {
-				intro: "Phlébotome hors-la-loi frère de la côte, moujik pyrophore, terroriste sauvage rocambole gangster trafiquant de chair humaine topinambour. Frère de la côte mégacycle, cloporte satrape brontosaure. ",
+				intro: "Développement d'une application chargée d'automatiser le traitement d'un enregistrement vidéo utilisé à des fins d'étude FOH.",
 				bulletedList: [
-					"Mitrailleur à bavette va-nu-pieds malotru aérolithe. Mitrailleur à bavette vermine polichinelle, canaque cornemuse brontosaure. ",
-					"Gangster dynamiteur paltoquet voleur, rocambole iconoclaste cataplasme sauvage. Ku-Klux-Klan protozoaire cro-magnon, épouvantail jus de réglisse ostrogoth cachalot. ",
-					"Marchand de guano serpent cataplasme ectoplasme. Patate kroumir emplâtre, cataplasme saltimbanque, aztèque phylactère phlébotome traîne-potence vivisectionniste. "
+					"Interface graphique pour faciliter l'utilisation.",
+					"Détection automatique d'éléments sur la vidéo : rails, objets, ...",
+					"Mise en corrélation des éléments détectés avec des données oculométriques."
 				],
-				outro: "Jus de réglisse catachrèse vermicelle, terroriste arlequin, pacte à quatre scélérats coquin polygraphe misérable va-nu-pieds."
+				outro: "Ce projet permettra d'automatiser un processus fastidieux à l'aide de l'intelligence artificielle."
 			},
-			feedback: {
-				title: "Avis de l'entreprise/<NOM EMPLOYÉ>",
-				content: "Mamelouk vercingétorix de carnaval, mamelouk scélérat phlébotome. Chauffard rocambole schizophrène, catachrèse cyclone misérable. Gargarisme forban renégat mouchard. Ophicléide lâche, zèbre sinapisme frère de la côte. Cornemuse scolopendre, crétin des alpes apprenti dictateur à la noix de coco polichinelle. Pirate protozoaire va-nu-pieds vivisectionniste, mitrailleur à bavette amphitryon phylactère ectoplasme. Brigand polichinelle, ostrogoth emplâtre polygraphe. Soulographe sacripant rhizopode accapareur, ivrogne anacoluthe choléra soulographe."
-			}
+			feedback: null
 		}
 	],
 
@@ -98,7 +96,7 @@ export default {
 			name: "Melodie",
 			description: "Melodie est un site web permettant à un utilisateur authentifié d'écouter des morceaux de musique depuis ses listes de lecture. Les musiques y sont ajoutées en entrant un lien ou un fichier audio.",
 			techs: ["C#", "HTML", "CSS", "JavaScript"],
-			image: null,
+			image: { src: "projects/melodie.webp", fallback: "projects/melodie.png" },
 			link: { href: "https://github.com/EmpireDemocratiqueDuPoulpe/Melodie" },
 			windowTitle: "♫ Playing Darude Sandstorm - Dubstep Edition"
 		},
@@ -111,12 +109,12 @@ export default {
 			windowTitle: "#bus #crazy #Setra_S_416_GT-HD/2"
 		},
 		{
-			name: "Mr. Driller clone",
-			description: "Y'a pas de description",
+			name: "Mr. Driller",
+			description: "Un clone d'un jeu sorti en 1999 sur de multiples consoles.",
 			techs: ["Python"],
 			image: { src: "projects/mr_driller.webp", fallback: "projects/mr_driller.png" },
 			link: { href: "#" },
-			windowTitle: null
+			windowTitle: "Littéralement Minecraft"
 		},
 	]
 };
