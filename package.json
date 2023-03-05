@@ -7,6 +7,7 @@
     "url": "https://github.com/EmpireDemocratiqueDuPoulpe/Portfolio-v336-final-FINAL-temp-final"
   },
   "private": true,
+  "homepage": "http://lithium.v6.rocks",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-brands-svg-icons": "^6.2.0",
