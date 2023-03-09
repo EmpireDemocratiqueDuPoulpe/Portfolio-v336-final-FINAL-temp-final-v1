@@ -74,11 +74,12 @@
 	border-top-color: var(--primary-color);
 }
 
-.navigation-link:focus-visible::after { border-top-color: var(--tertiary-color); }
-
 /* - Focus - */
 .navigation-link:focus-visible,
 .navigation-link.current:focus-visible { color: var(--tertiary-color) !important; outline: none; }
+
+.navigation-link:focus-visible::before { background-color: var(--tertiary-color); }
+.navigation-link:focus-visible::after { border-top-color: var(--tertiary-color); }
 
 /* - Selected - */
 .navigation-link.current { color: var(--primary-color) !important; }
