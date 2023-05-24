@@ -21,7 +21,8 @@
 	transition-timing-function: ease-in-out;
 	transform: translate(-50%, -50%);
 }
-.social-network .social-network-icon:hover {
+.social-network:hover .social-network-icon,
+.social-network:focus .social-network-icon {
 	width: 125%;
 	height: 125%;
 	color: var(--tertiary-color);

@@ -169,7 +169,15 @@ function App() {
 												{project.description}
 											</Project>
 										))}
+
+										<div className="dummy-element"/>
+
+										<div className="see-more-projects">
+											<a className="link see-more" href="https://github.com/EmpireDemocratiqueDuPoulpe">Voir plus de projets ❯</a>
+										</div>
 									</div>
+
+
 								</section>
 							</RevealScroll>
 

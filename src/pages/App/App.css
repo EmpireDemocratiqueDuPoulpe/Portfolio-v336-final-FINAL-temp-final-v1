@@ -1,3 +1,7 @@
+/* --- App -----------------------------------------------------------------------------------------------------------*/
+.App { overflow: hidden; }
+
+
 /* --- App scrollbar -------------------------------------------------------------------------------------------------*/
 .App-scrollbar .scrollbar-vertical-track { margin-top: 9px; }
 
@@ -296,6 +300,31 @@ section#projets .projects-grid {
 	width: 65vw;
 	margin: 0 auto;
 }
+
+section#projets .see-more-projects { text-align: right; }
+section#projets .link.see-more {
+	position: relative;
+	font-size: 0.9em;
+	color: var(--primary-color);
+	text-decoration: none;
+	transition: all 150ms ease-in;
+}
+
+section#projets .link.see-more::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0.1em;
+	background-color: var(--primary-color);
+	transition: transform 150ms ease-in;
+	transform: scale(0);
+	transform-origin: center;
+}
+
+section#projets .link.see-more:hover::after,
+section#projets .link.see-more:focus::after { transform: scale(1); }
 
 /* // Tablets */
 @media all and (min-width: 768px) and (max-width: 1024px) {

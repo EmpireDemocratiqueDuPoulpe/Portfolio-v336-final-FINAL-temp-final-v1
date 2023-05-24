@@ -110,7 +110,8 @@
 	text-decoration: none;
 	transition: color 150ms ease-in;
 }
-.project .project-infos .project-link:hover { color: var(--primary-color); }
+.project .project-infos .project-link:hover,
+.project .project-infos .project-link:focus { color: var(--primary-color); }
 
 .project .project-infos .project-link span {
 	position: absolute;
@@ -127,7 +128,8 @@
 	transition: width 150ms ease-in, padding-right 150ms ease-in, color 150ms ease-in;
 	overflow: hidden;
 }
-.project .project-infos .project-link:hover span {
+.project .project-infos .project-link:hover span,
+.project .project-infos .project-link:focus span {
 	width: 150px;
 	padding-right: 5px;
 	color: var(--primary-color);
@@ -140,7 +142,8 @@
 	color: var(--text-color_background);
 	transition: color 150ms ease-in;
 }
-.project .project-infos .project-link:hover .project-link-icon { color: var(--primary-color); }
+.project .project-infos .project-link:hover .project-link-icon,
+.project .project-infos .project-link:focus .project-link-icon { color: var(--primary-color); }
 
 /* // Printer */
 @media print {

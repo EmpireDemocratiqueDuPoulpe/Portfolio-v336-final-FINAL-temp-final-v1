@@ -4,7 +4,7 @@
  * @author Alexis L. <alexis.lecomte@supinfo.com>
  */
 
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
 import useScrollContext from "../../context/Scroll/ScrollContext.js";
 import mapboxgl from "mapbox-gl";
@@ -38,6 +38,7 @@ function Map({ lat, lng, zoom, markers }) {
 	const scroll = useScrollContext();
 	const [isInteractive, setInteractive] = useState(/** @type {boolean} */ false);
 	const [popup, setPopup] = useState(/** @type {null|Object} */ markers ? markers.features[0] : null);
+	const mapDomRef = useRef(null);
 
 	const mapMarkers = useMemo(() => !markers ? [] : markers.features.map(feature => (
 		<Marker
@@ -81,6 +82,19 @@ function Map({ lat, lng, zoom, markers }) {
 		return () => { scroll.removeListener(onScroll); };
 	}, [scroll, onScroll]);
 
+	useEffect(() => {
+		if (mapDomRef.current) {
+			try {
+				const container = mapDomRef.current.getContainer();
+				const mapBoxLogo = container.getElementsByClassName("mapboxgl-ctrl-logo")[0];
+				const mapBoxAttrib = container.getElementsByClassName("mapboxgl-ctrl-attrib-button")[0];
+				mapBoxLogo.tabIndex = -1;
+				mapBoxAttrib.tabIndex = -1;
+			} catch (e) { console.error(e); }
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [mapDomRef.current]);
+
 	/* ---- Page content ---------------------------- */
 	return (
 		<div className="map">
@@ -89,6 +103,7 @@ function Map({ lat, lng, zoom, markers }) {
 			</div>
 
 			<ReactMap
+				ref={mapDomRef}
 				mapboxAccessToken={MapConfig.apiKey}
 				mapStyle="mapbox://styles/mapbox/streets-v11"
 				initialViewState={{ latitude: lat, longitude: lng, zoom }}>

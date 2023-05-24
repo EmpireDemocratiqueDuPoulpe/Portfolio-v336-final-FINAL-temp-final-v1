@@ -1,9 +1,6 @@
 /* --- Root CSS ----------------------------------------------------------------------------------------------------- */
 :root {
   --primary-color: #FAED26;
-  --secondary-color: #7711D0;
-  --secondary-color-3: #511786;
-  --secondary-color-5: #2C1342;
   --tertiary-color: #FA269D;
   --tertiary-desaturated: #D44C98;
   --background-color: #171139;
@@ -45,9 +42,6 @@ h1, h2 { color: var(--primary-color); }
 @media print {
   :root {
     --primary-color: #0512d9;
-    --secondary-color: #7711D0;
-    --secondary-color-3: #511786;
-    --secondary-color-5: #2C1342;
     --tertiary-color: #FA269D;
     --tertiary-desaturated: #D44C98;
     --background-color: #F6F6F6;
