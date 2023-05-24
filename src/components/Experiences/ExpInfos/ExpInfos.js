@@ -5,48 +5,75 @@
  * @author Alexis L. <alexis.lecomte@supinfo.com>
  */
 
+import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import useExperiences from "../../../context/Experiences/ExperiencesContext.js";
 import "./ExpInfos.css";
 
-function ExpInfos() {
+function ExpInfos({ manualExperience }) {
 	/* ---- States ---------------------------------- */
 	const experiences = useExperiences();
+	const [selectedExperience, setSelectedExperience] = useState(null);
 
+	/* ---- Effects --------------------------------- */
+	useEffect(() => {
+		if (experiences && experiences.current) {
+			setSelectedExperience(experiences.current);
+		} else if (manualExperience) {
+			setSelectedExperience(manualExperience);
+		}
+	}, [experiences, manualExperience]);
+	
 	/* ---- Page content ---------------------------- */
-	return !experiences.current ? null : (
+	return !selectedExperience ? null : (
 		<div className="experience">
 			<h3 className="experience-name">
-				<span>{experiences.current.title}</span>
+				<span>{selectedExperience.title}</span>
 
 				<span className="experience-company">
 					<span className="exp-company-sep">&#47;&#47;&#47;</span>
-					<span className="exp-company-name">{experiences.current.company}</span>
+					<span className="exp-company-name">{selectedExperience.company}</span>
 				</span>
 			</h3>
-			<span className="experience-date">Du {experiences.current.startDate} au {experiences.current.endDate}</span>
+			<span className="experience-date">Du {selectedExperience.startDate} {selectedExperience.endDate ? (<>au {selectedExperience.endDate}</>) : (<>&agrave; aujourd&apos;hui</>)}</span>
 
 			<div className="experience-details">
-				{experiences.current.description.intro && <p className="experience-desc-intro">{experiences.current.description.intro}</p>}
+				{selectedExperience.description.intro && <p className="experience-desc-intro">{selectedExperience.description.intro}</p>}
 
-				{experiences.current.description.bulletedList && (
+				{selectedExperience.description.bulletedList && (
 					<ul className="experience-desc-bulleted-list">
-						{experiences.current.description.bulletedList.map((item, index) => (
-							<li key={`experience-${experiences.id}-list_item-${index}`}>{item}</li>
+						{selectedExperience.description.bulletedList.map((item, index) => (
+							<li key={`experience-${selectedExperience.id}-list_item-${index}`}>{item}</li>
 						))}
 					</ul>
 				)}
 
-				{experiences.current.description.outro && <p className="experience-desc-outro">{experiences.current.description.outro}</p>}
+				{selectedExperience.description.outro && <p className="experience-desc-outro">{selectedExperience.description.outro}</p>}
 			</div>
 
-			{experiences.current.feedback && (
+			{selectedExperience.feedback && (
 				<div className="experience-feedback">
-					<h4 className="ef-title">{experiences.current.feedback.title}</h4>
-					<p className="ef-content">{experiences.current.feedback.content}</p>
+					<h4 className="ef-title">{selectedExperience.feedback.title}</h4>
+					<p className="ef-content">{selectedExperience.feedback.content}</p>
 				</div>
 			)}
 		</div>
 	);
 }
+ExpInfos.propTypes = {
+	manualExperience: PropTypes.shape({
+		id: PropTypes.number.isRequired,
+		title: PropTypes.string.isRequired,
+		company: PropTypes.string.isRequired,
+		startDate: PropTypes.string.isRequired,
+		endDate: PropTypes.string,
+		description: PropTypes.shape({
+			intro: PropTypes.string,
+			bulletedList: PropTypes.arrayOf(PropTypes.string),
+			outro: PropTypes.string,
+		}).isRequired,
+		feedback: PropTypes.string
+	})
+};
 
 export default ExpInfos;

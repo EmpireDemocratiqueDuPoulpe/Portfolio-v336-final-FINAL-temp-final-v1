@@ -58,9 +58,7 @@ section.portfolio-section {
 	section.portfolio-section {
 		min-height: unset;
 		height: auto;
-		padding-right: 0;
-		padding-bottom: 0;
-		padding-left: 0;
+		padding: 0;
 		break-inside: avoid;
 		page-break-inside: avoid;
 	}
@@ -235,6 +233,11 @@ section#presentation .fake-situation-img {
 /* // Printer */
 @media print {
 	section#presentation .fake-situation-img { display: none; }
+
+	section#presentation .about-content .my-situation .fake-situation {
+		animation-name: unset;
+		text-decoration: line-through;
+	}
 }
 
 /* -- CV button */
@@ -360,6 +363,8 @@ section#projets .link.see-more:focus::after { transform: scale(1); }
 	}
 
 	section#projets .projects-grid > .project:not(:last-child) { margin-bottom: 30px; }
+
+	section#projets .link.see-more { display: none; }
 }
 
 /* --- "Contact" section -------------------------------------------------------------------------------------------- */

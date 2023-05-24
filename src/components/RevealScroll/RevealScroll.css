@@ -11,3 +11,11 @@
 	opacity: 1;
 	transform: translateY(0%);
 }
+
+/* // Printer */
+@media print {
+	.reveal-scroll, .reveal-scroll.visible {
+		opacity: 1 !important;
+		transform: translate(0%) !important;
+	}
+}
