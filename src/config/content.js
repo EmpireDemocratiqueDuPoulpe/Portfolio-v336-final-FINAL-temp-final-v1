@@ -79,6 +79,20 @@ export default {
 				outro: "Ce projet permettra d'automatiser un processus fastidieux à l'aide de l'intelligence artificielle."
 			},
 			feedback: null
+		},
+		{
+			id: 4,
+			title: "Développeur logiciel", company: "Capgemini",
+			startDate: "02/05/2023", endDate: null,
+			description: {
+				intro: "Entretien et maintien d'une application de gestion de facture.",
+				bulletedList: [
+					"Évolution du produit selon les demandes du client.",
+					"Résolution des potentiels bogues de l'application.",
+				],
+				outro: null
+			},
+			feedback: null
 		}
 	],
 
