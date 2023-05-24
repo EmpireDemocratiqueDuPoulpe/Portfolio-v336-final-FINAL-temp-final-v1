@@ -98,144 +98,147 @@ function App() {
 
 	/* ---- Page content ---------------------------- */
 	return (
-		<Scrollbars
-			className="App-scrollbar"
-			ref={scrollbar}
-			renderView={props => <div {...props} className="scrollbar-view"/>}
-			renderTrackVertical={({ style, ...props }) => <div {...props} style={{ top: "2px", right: "2px", bottom: "2px", ...style }} className="scrollbar-vertical-track"/>}
-			renderThumbVertical={props => <div {...props} className="scrollbar-vertical-thumb"/>}
-			autoHeight={true} autoHeightMin="100%" autoHeightMax="100vh"
-			autoHide={false}
-			onScrollFrame={scroll.handleScroll}>
-			<div className="App">
-				<LoadingScreen enabled/>
+		<>
+			{/* eslint-disable react/prop-types */}
+			<Scrollbars
+				className="App-scrollbar"
+				ref={scrollbar}
+				renderView={props => <div {...props} className="scrollbar-view" style={{ ...props?.style, overflowX: "hidden" }}/>}
+				renderTrackVertical={({ style, ...props }) => <div {...props} style={{ top: "2px", right: "2px", bottom: "2px", ...style }} className="scrollbar-vertical-track"/>}
+				renderThumbVertical={props => <div {...props} className="scrollbar-vertical-thumb"/>}
+				autoHeight={true} autoHeightMin="100%" autoHeightMax="100vh"
+				autoHide={false}
+				onScrollFrame={scroll.handleScroll}>
+				<div className="App">
+					{/* eslint-enable react/prop-types */}
+					<LoadingScreen enabled/>
 
-				<NavigationProvider>
-					<AppNavigation>
-						<NavigationLink href="#presentation" sectionRef={presentationRef}>Pr&eacute;sentation</NavigationLink>
-						<NavigationLink href="#experiences" sectionRef={experiencesRef}>Exp&eacute;rience</NavigationLink>
-						<NavigationLink href="#projets" sectionRef={projetsRef}>Projets</NavigationLink>
-						<NavigationLink href="#contact" sectionRef={contactRef}>Contact</NavigationLink>
-					</AppNavigation>
-				</NavigationProvider>
+					<NavigationProvider>
+						<AppNavigation>
+							<NavigationLink href="#presentation" sectionRef={presentationRef}>Pr&eacute;sentation</NavigationLink>
+							<NavigationLink href="#experiences" sectionRef={experiencesRef}>Exp&eacute;rience</NavigationLink>
+							<NavigationLink href="#projets" sectionRef={projetsRef}>Projets</NavigationLink>
+							<NavigationLink href="#contact" sectionRef={contactRef}>Contact</NavigationLink>
+						</AppNavigation>
+					</NavigationProvider>
 
-				<CVModal/>
+					<CVModal/>
 
-				<div className="App-content" ref={AppContentRef}>
-					<div className="App-padded-content">
-						<section id="presentation" className="portfolio-section" ref={presentationRef}>
-							<StarSky/>
-							{fakeSituation.image && (
-								<WebP className="fake-situation-img" src={fakeSituation.image.src} fallback={fakeSituation.image.fallback} alt=""/>
-							)}
+					<div className="App-content" ref={AppContentRef}>
+						<div className="App-padded-content">
+							<section id="presentation" className="portfolio-section" ref={presentationRef}>
+								<StarSky/>
+								{fakeSituation.image && (
+									<WebP className="fake-situation-img" src={fakeSituation.image.src} fallback={fakeSituation.image.fallback} alt=""/>
+								)}
 
-							<div className="about-content">
-								<div className="welcome-msg">
-									<span className="hello">Bonjour, je m&apos;appelle</span>
-									<h1 className="my-name title-font">Alexis Lecomte</h1>
+								<div className="about-content">
+									<div className="welcome-msg">
+										<span className="hello">Bonjour, je m&apos;appelle</span>
+										<h1 className="my-name title-font">Alexis Lecomte</h1>
 
-									<div className="my-situation">
-										<span className="real-situation title-font">&Eacute;tudiant en &eacute;cole d&apos;informatique</span>
-										<span className="fake-situation animated-strikethrough always-on">{fakeSituation.name}</span>
-									</div>
-
-									<Button className="cv-btn" onClick={cv.show} decoration="❯">Consulter mon CV</Button>
-								</div>
-
-								<div className="profile-picture">
-									<WebP className="profile-picture-img" src="me.webp" fallback="me.png" alt="Une photographie de moi"/>
-								</div>
-							</div>
-						</section>
-
-						<RevealScroll>
-							<section id="experiences" className="portfolio-section" ref={experiencesRef}>
-								<h2 className="title-font">Exp&eacute;riences</h2>
-
-								<Experiences experiences={Content.experiences}/>
-							</section>
-						</RevealScroll>
-
-						<RevealScroll>
-							<section id="projets" className="portfolio-section" ref={projetsRef}>
-								<h2 className="title-font">Projets</h2>
-
-								<div className="projects-grid">
-									{Content.projects.map((project, index) => (
-										<Project key={`project-${project.name}-${index}`} name={project.name} techs={project.techs} img={project.image} href={project.link.href} windowTitle={project.windowTitle}>
-											{project.description}
-										</Project>
-									))}
-								</div>
-							</section>
-						</RevealScroll>
-
-						<SectionArt translateY="-125%" mobile={false} tablet={false} printer={false}>
-							<WebP className="rocket" src="misc/rocket.webp" fallback="misc/rocket.gif" alt=""/>
-						</SectionArt>
-
-						<RevealScroll>
-							<section id="contact" className="portfolio-section" ref={contactRef}>
-								<h2 className="title-font">Contact</h2>
-
-								<div className="contact-content">
-									<h3>Envie d&apos;en savoir plus ?</h3>
-
-									<p className="contact-explanation">
-										Je suis ouvert aux propositions <span className="emphasis">d&apos;alternance</span> ou <span className="emphasis">d&apos;embauche</span>.
-										Si vous &ecirc;tes int&eacute;ress&eacute;, vous pouvez me contacter par LinkedIn ou m&apos;envoyer
-										directement un e-mail. Vous pouvez aussi consulter mon profil GitHub sur lequel vous pourrez y retrouver
-										certain de mes projets.
-									</p>
-
-									<div className="contact-links">
-										<div className="contact-networks">
-											<SocialNetwork.LinkedIn href="https://www.linkedin.com/in/alexicomte/"/>
-											<SocialNetwork.GitHub href="https://github.com/EmpireDemocratiqueDuPoulpe"/>
+										<div className="my-situation">
+											<span className="real-situation title-font">&Eacute;tudiant en &eacute;cole d&apos;informatique</span>
+											<span className="fake-situation animated-strikethrough always-on">{fakeSituation.name}</span>
 										</div>
 
-										<div className="contact-sep"/>
-
-										<div className="contact-mail">
-											<Button href="mailto:alexis.lecomte@supinfo.com" decoration="✉">
-												Envoyer un mail
-											</Button>
-										</div>
+										<Button className="cv-btn" onClick={cv.show} decoration="❯">Consulter mon CV</Button>
 									</div>
 
-									<Suspense fallback={<Loader size="medium"/>}>
-										<Map lat={MapConfig.center.lat} lng={MapConfig.center.lng} markers={MapConfig.markers}/>
-									</Suspense>
+									<div className="profile-picture">
+										<WebP className="profile-picture-img" src="me.webp" fallback="me.png" alt="Une photographie de moi"/>
+									</div>
 								</div>
 							</section>
-						</RevealScroll>
-					</div>
 
-					<footer>
-						<figure className="stylish-quote">
-							<blockquote>
-								&#x201C;Le voyageur est arrivé au bout du chemin. Il peut désormais <span className="emphasis">&laquo;&nbsp;swipe-up&nbsp;&raquo;</span> pour retrouver les informations de contact.&#x201D;
-							</blockquote>
+							<RevealScroll>
+								<section id="experiences" className="portfolio-section" ref={experiencesRef}>
+									<h2 className="title-font">Exp&eacute;riences</h2>
 
-							<figcaption>
-								&mdash; Gandalf le gris, <cite>24 janvier 3019</cite>
-							</figcaption>
-						</figure>
+									<Experiences experiences={Content.experiences}/>
+								</section>
+							</RevealScroll>
 
-						<div className="licensing">
-							<p className="copyright my-copyright">Copyright &copy; Alexis Lecomte - 2023</p>
+							<RevealScroll>
+								<section id="projets" className="portfolio-section" ref={projetsRef}>
+									<h2 className="title-font">Projets</h2>
 
-							<p className="copyright fontawesome-copyright">
-								Font Awesome Pro 6.1.2 by <a className="link" href="https://fontawesome.com" target="_blank" rel="noreferrer">@fontawesome</a>
-								&nbsp;- <a className="link" href="https://fontawesome.com/license/free" target="_blank" rel="noreferrer">License</a>
-								&nbsp;(Commercial License) - Copyright 2022 Fonticons, Inc.
-							</p>
+									<div className="projects-grid">
+										{Content.projects.map((project, index) => (
+											<Project key={`project-${project.name}-${index}`} name={project.name} techs={project.techs} img={project.image} href={project.link.href} windowTitle={project.windowTitle}>
+												{project.description}
+											</Project>
+										))}
+									</div>
+								</section>
+							</RevealScroll>
+
+							<SectionArt translateY="-125%" mobile={false} tablet={false} printer={false}>
+								<WebP className="rocket" src="misc/rocket.webp" fallback="misc/rocket.gif" alt=""/>
+							</SectionArt>
+
+							<RevealScroll>
+								<section id="contact" className="portfolio-section" ref={contactRef}>
+									<h2 className="title-font">Contact</h2>
+
+									<div className="contact-content">
+										<h3>Envie d&apos;en savoir plus ?</h3>
+
+										<p className="contact-explanation">
+											Je suis ouvert aux propositions <span className="emphasis">d&apos;alternance</span> ou <span className="emphasis">d&apos;embauche</span>.
+											Si vous &ecirc;tes int&eacute;ress&eacute;, vous pouvez me contacter par LinkedIn ou m&apos;envoyer
+											directement un e-mail. Vous pouvez aussi consulter mon profil GitHub sur lequel vous pourrez y retrouver
+											certain de mes projets.
+										</p>
+
+										<div className="contact-links">
+											<div className="contact-networks">
+												<SocialNetwork.LinkedIn href="https://www.linkedin.com/in/alexicomte/"/>
+												<SocialNetwork.GitHub href="https://github.com/EmpireDemocratiqueDuPoulpe"/>
+											</div>
+
+											<div className="contact-sep"/>
+
+											<div className="contact-mail">
+												<Button href="mailto:alexis.lecomte@supinfo.com" decoration="✉">
+													Envoyer un mail
+												</Button>
+											</div>
+										</div>
+
+										<Suspense fallback={<Loader size="medium"/>}>
+											<Map lat={MapConfig.center.lat} lng={MapConfig.center.lng} markers={MapConfig.markers}/>
+										</Suspense>
+									</div>
+								</section>
+							</RevealScroll>
 						</div>
-					</footer>
-				</div>
-			</div>
-		</Scrollbars>
 
+						<footer>
+							<figure className="stylish-quote">
+								<blockquote>
+									&#x201C;Le voyageur est arrivé au bout du chemin. Il peut désormais <span className="emphasis">&laquo;&nbsp;swipe-up&nbsp;&raquo;</span> pour retrouver les informations de contact.&#x201D;
+								</blockquote>
+
+								<figcaption>
+									&mdash; Gandalf le gris, <cite>24 janvier 3019</cite>
+								</figcaption>
+							</figure>
+
+							<div className="licensing">
+								<p className="copyright my-copyright">Copyright &copy; Alexis Lecomte - 2023</p>
+
+								<p className="copyright fontawesome-copyright">
+									Font Awesome Pro 6.1.2 by <a className="link" href="https://fontawesome.com" target="_blank" rel="noreferrer">@fontawesome</a>
+									&nbsp;- <a className="link" href="https://fontawesome.com/license/free" target="_blank" rel="noreferrer">License</a>
+									&nbsp;(Commercial License) - Copyright 2022 Fonticons, Inc.
+								</p>
+							</div>
+						</footer>
+					</div>
+				</div>
+			</Scrollbars>
+		</>
 	);
 }
 
