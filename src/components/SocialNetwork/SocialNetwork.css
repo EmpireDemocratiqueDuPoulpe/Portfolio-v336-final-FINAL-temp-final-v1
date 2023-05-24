@@ -25,5 +25,5 @@
 .social-network:focus .social-network-icon {
 	width: 125%;
 	height: 125%;
-	color: var(--tertiary-color);
+	color: var(--secondary-color);
 }

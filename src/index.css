@@ -1,8 +1,8 @@
 /* --- Root CSS ----------------------------------------------------------------------------------------------------- */
 :root {
   --primary-color: #FAED26;
-  --tertiary-color: #FA269D;
-  --tertiary-desaturated: #D44C98;
+  --secondary-color: #FA269D;
+  --secondary-desaturated: #D44C98;
   --background-color: #171139;
   --background-color-3: #120920;
   --background-color⨣1: #3B3257;
@@ -42,8 +42,8 @@ h1, h2 { color: var(--primary-color); }
 @media print {
   :root {
     --primary-color: #0512d9;
-    --tertiary-color: #FA269D;
-    --tertiary-desaturated: #D44C98;
+    --secondary-color: #FA269D;
+    --secondary-desaturated: #D44C98;
     --background-color: #F6F6F6;
     --background-color-3: #FFFFFF;
     --background-color⨣1: #C8C8C8;
@@ -92,7 +92,7 @@ body, .normal-font {
 
 /* -- Links -- */
 .link {
-  color: var(--tertiary-color);
+  color: var(--secondary-color);
 }
 
 /* -- Animated strikethrough -- */

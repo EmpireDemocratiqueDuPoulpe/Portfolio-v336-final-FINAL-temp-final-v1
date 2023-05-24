@@ -165,7 +165,7 @@ section#presentation .about-content .my-situation .real-situation {
 }
 
 section#presentation .about-content .my-situation .fake-situation {
-	color: var(--tertiary-color);
+	color: var(--secondary-color);
 	white-space: nowrap;
 	animation-delay: 3.75s;
 }
@@ -543,7 +543,7 @@ footer .licensing .copyright {
 	color: var(--text-attenuate_background⨣1);
 }
 
-footer .licensing .copyright .link { color: var(--tertiary-desaturated); }
+footer .licensing .copyright .link { color: var(--secondary-desaturated); }
 
 footer .licensing .my-copyright { font-weight: 600; }
 footer .licensing :not(.my-copyright) { font-size: 0.9em; }

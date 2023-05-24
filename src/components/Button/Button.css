@@ -10,7 +10,7 @@
 	height: 55px;
 	line-height: calc(55px - 0.3em);
 	background: none;
-	border: thin var(--tertiary-color) solid;
+	border: thin var(--secondary-color) solid;
 	color: var(--text-color_background);
 	-moz-appearance: none;
 	-webkit-appearance: none;
@@ -58,7 +58,7 @@
 	bottom: -10px;
 	left: -5%;
 	width: 0;
-	background: var(--tertiary-color);
+	background: var(--secondary-color);
 	transform: skewX(-24deg);
 	transition: width 300ms ease-out;
 	z-index: -1;
