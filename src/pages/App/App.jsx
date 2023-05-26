@@ -155,7 +155,7 @@ function App() {
 											else if ((today.getMonth() + 1) === 10 && today.getDate() === 31) modifier = "_halloween";
 
 											return (
-												<WebP className="profile-picture-img" src={`me/me${modifier}.webp`} fallback="me/me_christmas.png" alt="Une photographie de moi"/>
+												<WebP className="profile-picture-img" src={`me/me${modifier}.webp`} fallback={`me/me${modifier}.png`} alt="Une photographie de moi"/>
 											);
 										})()}
 									</div>
