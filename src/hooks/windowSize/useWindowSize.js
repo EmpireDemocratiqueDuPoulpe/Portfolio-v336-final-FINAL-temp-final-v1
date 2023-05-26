@@ -28,8 +28,8 @@ import { useState, useEffect } from "react";
 /**
  * @typedef {Object} WindowProperties
  *
- * @property {WindowSize.width} width - Inner width of the `window` object.
- * @property {WindowSize.height} height - Inner height of the `window` object.
+ * @property {number} width - Inner width of the `window` object.
+ * @property {number} height - Inner height of the `window` object.
  * @property {WindowOrientation} orientation - Window orientation.
  * @property {boolean} isPortrait - Provided for convenience. Is the window in portrait mode?
  * @property {boolean} isLandscape - Provided for convenience. Is the window in landscape mode?
