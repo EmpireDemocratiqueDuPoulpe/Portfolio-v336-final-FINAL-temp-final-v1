@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 import mime from "mime";
 import useClassName from "../../hooks/className/useClassName.js";
 import useImage from "../../hooks/image/useImage.js";
-import Loader from "../Loader/Loader.js";
+import Loader from "../Loader/Loader.jsx";
 import "./WebP.css";
 
 function WebP({ className, src, fallback: fallbackSrc, alt, ...rest }) {

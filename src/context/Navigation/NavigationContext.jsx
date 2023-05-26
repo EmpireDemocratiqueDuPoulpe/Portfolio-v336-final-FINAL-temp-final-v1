@@ -6,8 +6,8 @@
 
 import { createContext, useContext, useRef, useEffect, useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
-import useDocumentTitleContext from "../DocumentTitle/DocumentTitleContext.js";
-import useScrollContext from "../Scroll/ScrollContext.js";
+import useDocumentTitleContext from "../DocumentTitle/DocumentTitleContext.jsx";
+import useScrollContext from "../Scroll/ScrollContext.jsx";
 
 /*****************************************************
  * Typedefs

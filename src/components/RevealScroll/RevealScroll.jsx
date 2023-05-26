@@ -6,7 +6,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
-import useScrollContext from "../../context/Scroll/ScrollContext.js";
+import useScrollContext from "../../context/Scroll/ScrollContext.jsx";
 import useClassName from "../../hooks/className/useClassName.js";
 import "./RevealScroll.css";
 

@@ -9,7 +9,7 @@ import { useMemo } from "react";
 import PropTypes from "prop-types";
 import { random } from "lodash-es";
 import useClassName from "../../../hooks/className/useClassName.js";
-import ReactRellax from "../../ReactRellax/ReactRellax.js";
+import ReactRellax from "../../ReactRellax/ReactRellax.jsx";
 import "./Star.css";
 
 /*****************************************************

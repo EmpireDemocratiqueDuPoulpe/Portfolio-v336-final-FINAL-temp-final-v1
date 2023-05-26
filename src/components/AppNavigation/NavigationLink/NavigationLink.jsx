@@ -7,7 +7,7 @@
 
 import { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
-import useNavigationContext from "../../../context/Navigation/NavigationContext.js";
+import useNavigationContext from "../../../context/Navigation/NavigationContext.jsx";
 import "./NavigationLink.css";
 
 /*****************************************************

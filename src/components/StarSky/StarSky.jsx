@@ -5,7 +5,7 @@
  */
 
 import { useState, useRef, useEffect } from "react";
-import Star from "./Star/Star.js";
+import Star from "./Star/Star.jsx";
 import "./StarSky.css";
 
 function StarSky() {

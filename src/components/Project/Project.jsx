@@ -7,7 +7,7 @@
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
-import WebP from "../WebP/WebP.js";
+import WebP from "../WebP/WebP.jsx";
 import "./Project.css";
 
 function Project({ name, href, techs, img, windowTitle, schoolProject, children }) {

@@ -5,10 +5,10 @@
  */
 
 import PropTypes from "prop-types";
-import { ExperiencesProvider } from "../../context/Experiences/ExperiencesContext.js";
+import { ExperiencesProvider } from "../../context/Experiences/ExperiencesContext.jsx";
 import usePrint from "../../hooks/print/usePrint.js";
-import ExpButton from "./ExpButton/ExpButton.js";
-import ExpInfos from "./ExpInfos/ExpInfos.js";
+import ExpButton from "./ExpButton/ExpButton.jsx";
+import ExpInfos from "./ExpInfos/ExpInfos.jsx";
 import "./Experiences.css";
 
 function Experiences({ experiences }) {

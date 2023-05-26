@@ -7,7 +7,7 @@
 
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import useExperiences from "../../../context/Experiences/ExperiencesContext.js";
+import useExperiences from "../../../context/Experiences/ExperiencesContext.jsx";
 import "./ExpInfos.css";
 
 function ExpInfos({ manualExperience }) {
