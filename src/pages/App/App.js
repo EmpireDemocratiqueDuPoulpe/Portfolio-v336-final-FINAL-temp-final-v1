@@ -262,7 +262,7 @@ function App() {
 								</figcaption>
 							</figure>
 
-							<div className="licensing">
+							<div className="licensing" aria-disabled={true} role="none presentation">
 								<p className="copyright my-copyright">Copyright &copy; Alexis Lecomte - {new Date().getFullYear()}</p>
 
 								<p className="copyright fontawesome-copyright">
