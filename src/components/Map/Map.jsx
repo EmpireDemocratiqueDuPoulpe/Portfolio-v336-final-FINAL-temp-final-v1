@@ -6,7 +6,7 @@
 
 import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
-import useScrollContext from "../../context/Scroll/ScrollContext.js";
+import useScrollContext from "../../context/Scroll/ScrollContext.jsx";
 import mapboxgl from "mapbox-gl";
 // noinspection JSUnresolvedVariable
 mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker.js").default; // eslint-disable-line

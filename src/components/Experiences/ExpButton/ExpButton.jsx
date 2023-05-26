@@ -6,7 +6,7 @@
  */
 
 import PropTypes from "prop-types";
-import useExperiences from "../../../context/Experiences/ExperiencesContext.js";
+import useExperiences from "../../../context/Experiences/ExperiencesContext.jsx";
 import { eventOnElement } from "../../../global/Functions.js";
 import "./ExpButton.css";
 

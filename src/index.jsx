@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./pages/App/App.js";
-import { DocumentTitleProvider } from "./context/DocumentTitle/DocumentTitleContext.js";
-import { ScrollProvider } from "./context/Scroll/ScrollContext.js";
-import { CVProvider } from "./context/CV/CVContext.js";
+import App from "./pages/App/App.jsx";
+import { DocumentTitleProvider } from "./context/DocumentTitle/DocumentTitleContext.jsx";
+import { ScrollProvider } from "./context/Scroll/ScrollContext.jsx";
+import { CVProvider } from "./context/CV/CVContext.jsx";
 // import reportWebVitals from "./reportWebVitals";
 import "normalize.css";
 import "./index.css";

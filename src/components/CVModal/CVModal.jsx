@@ -4,7 +4,7 @@
  * @author Alexis L. <alexis.lecomte@supinfo.com>
  */
 
-import useCV from "../../context/CV/CVContext.js";
+import useCV from "../../context/CV/CVContext.jsx";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack5.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";

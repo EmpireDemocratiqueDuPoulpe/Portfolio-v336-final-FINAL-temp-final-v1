@@ -7,9 +7,9 @@
 
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import LoadingDots from "./LoadingDots/LoadingDots.js";
-import LoadingStatus from "./LoadingStatus/LoadingStatus.js";
-import LoadingBar from "./LoadingBar/LoadingBar.js";
+import LoadingDots from "./LoadingDots/LoadingDots.jsx";
+import LoadingStatus from "./LoadingStatus/LoadingStatus.jsx";
+import LoadingBar from "./LoadingBar/LoadingBar.jsx";
 import Logo from "../../assets/images/logo.png";
 import "./LoadingScreen.css";
 

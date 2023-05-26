@@ -71,4 +71,4 @@ AppNavigation.propTypes = {
 };
 
 export default AppNavigation;
-export { default as NavigationLink } from "./NavigationLink/NavigationLink.js";
+export { default as NavigationLink } from "./NavigationLink/NavigationLink.jsx";

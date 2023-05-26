@@ -5,24 +5,24 @@
  */
 
 import { useRef, useEffect, lazy, Suspense } from "react";
-import { NavigationProvider } from "../../context/Navigation/NavigationContext.js";
-import useScrollContext from "../../context/Scroll/ScrollContext.js";
-import useCV from "../../context/CV/CVContext.js";
+import { NavigationProvider } from "../../context/Navigation/NavigationContext.jsx";
+import useScrollContext from "../../context/Scroll/ScrollContext.jsx";
+import useCV from "../../context/CV/CVContext.jsx";
 import useWindowSize from "../../hooks/windowSize/useWindowSize.js";
 import { Scrollbars } from "react-custom-scrollbars-2";
-import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.js";
-import Loader from "../../components/Loader/Loader.js";
-import StarSky from "../../components/StarSky/StarSky.js";
-import RevealScroll from "../../components/RevealScroll/RevealScroll.js";
-import SectionArt from "../../components/SectionArt/SectionArt.js";
-import WebP from "../../components/WebP/WebP.js";
-import Button from "../../components/Button/Button.js";
-import AppNavigation, { NavigationLink } from "../../components/AppNavigation/AppNavigation.js";
-import CVModal from "../../components/CVModal/CVModal.js";
-import Experiences from "../../components/Experiences/Experiences.js";
-import Project from "../../components/Project/Project.js";
-import SocialNetwork from "../../components/SocialNetwork/SocialNetwork.js";
-const Map = lazy(() => import("../../components/Map/Map.js"));
+import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.jsx";
+import Loader from "../../components/Loader/Loader.jsx";
+import StarSky from "../../components/StarSky/StarSky.jsx";
+import RevealScroll from "../../components/RevealScroll/RevealScroll.jsx";
+import SectionArt from "../../components/SectionArt/SectionArt.jsx";
+import WebP from "../../components/WebP/WebP.jsx";
+import Button from "../../components/Button/Button.jsx";
+import AppNavigation, { NavigationLink } from "../../components/AppNavigation/AppNavigation.jsx";
+import CVModal from "../../components/CVModal/CVModal.jsx";
+import Experiences from "../../components/Experiences/Experiences.jsx";
+import Project from "../../components/Project/Project.jsx";
+import SocialNetwork from "../../components/SocialNetwork/SocialNetwork.jsx";
+const Map = lazy(() => import("../../components/Map/Map.jsx"));
 import { Content, Map as MapConfig } from "../../config/config.js";
 import "./App.css";
 

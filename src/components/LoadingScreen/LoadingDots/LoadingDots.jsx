@@ -6,7 +6,7 @@
  */
 
 import PropTypes from "prop-types";
-import LoadingDot from "./LoadingDot/LoadingDot.js";
+import LoadingDot from "./LoadingDot/LoadingDot.jsx";
 
 function LoadingDots({ duration, count }) {
 	/* ---- Page content ---------------------------- */
