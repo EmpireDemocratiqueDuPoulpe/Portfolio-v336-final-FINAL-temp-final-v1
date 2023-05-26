@@ -35,11 +35,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && compress-cra",
-    "webhint": "hint http://localhost:3000/",
+    "localhint": "hint https://empiredemocratiquedupoulpe.github.io",
+    "webhint": "hint https://empiredemocratiquedupoulpe.github.io",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "test": "react-scripts test",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b main -d build",
+    "deploy": "gh-pages --repo https://github.com/EmpireDemocratiqueDuPoulpe/EmpireDemocratiqueDuPoulpe.github.io.git --branch main -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
