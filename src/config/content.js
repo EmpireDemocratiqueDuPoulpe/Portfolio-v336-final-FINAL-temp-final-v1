@@ -131,7 +131,7 @@ export default {
 			schoolProject: false,
 			description: "Ce sublime site web sur lequel vous naviguez actuellement.",
 			techs: ["HTML", "CSS", "JavaScript", "React.JS"],
-			image: { src: "projects/portfolio-v336-final-FINAL-temp-final-v1.webp", fallback: "projects/portfolio-v336-final-FINAL-temp-final-v1.png" },
+			image: { src: "projects/portfolio.webp", fallback: "projects/portfolio.png" },
 			link: { href: "https://github.com/EmpireDemocratiqueDuPoulpe/Portfolio-v336-final-FINAL-temp-final-v1" },
 			windowTitle: "Où est-ce que l'on télécharge HTML ?"
 		},
