@@ -170,6 +170,10 @@ function App() {
 								</section>
 							</RevealScroll>
 
+							<SectionArt scale="1.75" translateY="-130%" mobile={false} tablet={false} printer={false}>
+								<WebP className="astronaut" src="misc/astronaut.webp" fallback="misc/astronaut.png" alt=""/>
+							</SectionArt>
+
 							<RevealScroll>
 								<section id="projets" className="portfolio-section" ref={projetsRef}>
 									<h2 className="title-font">Projets</h2>
@@ -192,8 +196,8 @@ function App() {
 								</section>
 							</RevealScroll>
 
-							<SectionArt translateY="-125%" mobile={false} tablet={false} printer={false}>
-								<WebP className="rocket" src="misc/rocket.webp" fallback="misc/rocket.gif" alt=""/>
+							<SectionArt scale="1.5" translateY="-80%" mobile={false} tablet={false} printer={false}>
+								<WebP className="space-shuttle" src="misc/space_shuttle.webp" fallback="misc/space_shuttle.gif" alt=""/>
 							</SectionArt>
 
 							<RevealScroll>

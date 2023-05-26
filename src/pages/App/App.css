@@ -67,7 +67,17 @@ section.portfolio-section {
 }
 
 /* --- "Art" things between section --------------------------------------------------------------------------------- */
-.section-art .rocket {
+.section-art .astronaut {
+	animation: floating-astronaut 35s ease-in-out infinite;
+}
+
+@keyframes floating-astronaut {
+	0%, 100% { transform: rotate(-10deg); }
+
+	50% { transform: rotate(63deg); }
+}
+
+.section-art .space-shuttle {
 	animation: flying-rocket 3s linear infinite;
 }
 

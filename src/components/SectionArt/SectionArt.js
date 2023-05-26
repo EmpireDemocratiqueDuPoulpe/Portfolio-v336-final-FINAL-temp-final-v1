@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 import useClassName from "../../hooks/className/useClassName.js";
 import "./SectionArt.css";
 
-function SectionArt({ translateX, translateY, mobile, tablet, printer, children }) {
+function SectionArt({ scale, translateX, translateY, mobile, tablet, printer, children }) {
 	/* ---- States ---------------------------------- */
 	const classes = useClassName(hook => {
 		hook.set("section-art");
@@ -20,13 +20,14 @@ function SectionArt({ translateX, translateY, mobile, tablet, printer, children 
 	/* ---- Page content ---------------------------- */
 	return (
 		<div className="section-art-anchor">
-			<div className={classes} style={{ transform: `translate(${translateX ?? "-50%"}, ${translateY ?? "-50%"})` }}>
+			<div className={classes} style={{ scale: scale, transform: `translate(${translateX}, ${translateY})` }}>
 				{children}
 			</div>
 		</div>
 	);
 }
 SectionArt.propTypes = {
+	scale: PropTypes.string,
 	translateX: PropTypes.string,
 	translateY: PropTypes.string,
 	mobile: PropTypes.bool,
@@ -34,6 +35,11 @@ SectionArt.propTypes = {
 	printer: PropTypes.bool,
 	children: PropTypes.node
 };
-SectionArt.defaultProps = { mobile: true, tablet: true };
+SectionArt.defaultProps = {
+	translateX: "-50%",
+	translateY: "-50%",
+	mobile: true,
+	tablet: true
+};
 
 export default SectionArt;
