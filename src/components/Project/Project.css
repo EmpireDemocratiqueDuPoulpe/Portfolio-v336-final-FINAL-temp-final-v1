@@ -84,19 +84,16 @@
 .project .project-infos {
 	position: relative;
 	flex-grow: 1;
+}
+
+.project .project-infos .project-infos-content {
+	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
+	height: 100%;
 	padding: 15px;
-}
-
-/* - Name - */
-.project .project-infos .project-name { margin-top: 0; color: var(--text-emphasis_background); }
-
-/* // Phones */
-@media all and (max-width: 480px) {
-	.project .project-infos .project-name { font-size: 1em; margin-right: 1.5em; }
 }
 
 /* - Link to the project - */
@@ -128,11 +125,17 @@
 	transition: width 150ms ease-in, padding-right 150ms ease-in, color 150ms ease-in;
 	overflow: hidden;
 }
+
 .project .project-infos .project-link:hover span,
 .project .project-infos .project-link:focus span {
-	width: 150px;
+	width: calc(6em + 5px);
 	padding-right: 5px;
 	color: var(--primary-color);
+}
+
+.project .project-infos .project-link:hover ~ .project-infos-content .project-name,
+.project .project-infos .project-link:focus ~ .project-infos-content .project-name {
+	width: calc(var(--project-name-width) - 5em);
 }
 
 .project .project-infos .project-link .project-link-icon {
@@ -148,6 +151,29 @@
 /* // Printer */
 @media print {
 	.project .project-infos .project-link { display: none; }
+}
+
+/* - Name - */
+.project .project-infos .project-name {
+	--project-name-width: 92.5%;
+
+	display: inline-block;
+	width: var(--project-name-width);
+	margin: 0;
+	color: var(--text-emphasis_background);
+
+	transition: width 150ms ease-in;
+}
+
+.project .project-infos .project-source {
+	font-size: 0.8em;
+	margin: 0 0 1.15em 0;
+	font-style: italic;
+}
+
+/* // Phones */
+@media all and (max-width: 480px) {
+	.project .project-infos .project-name { font-size: 1em; margin-right: 1.5em; }
 }
 
 /* - Description - */

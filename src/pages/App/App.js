@@ -134,11 +134,10 @@ function App() {
 
 								<div className="about-content">
 									<div className="welcome-msg">
-										<span className="hello">Bonjour, je m&apos;appelle</span>
 										<h1 className="my-name title-font">Alexis Lecomte</h1>
 
 										<div className="my-situation">
-											<span className="real-situation title-font">&Eacute;tudiant en &eacute;cole d&apos;informatique</span>
+											<span className="real-situation title-font">{Content.realSituation}</span>
 											<span className="fake-situation animated-strikethrough always-on">{fakeSituation.name}</span>
 										</div>
 
@@ -165,7 +164,7 @@ function App() {
 
 									<div className="projects-grid">
 										{Content.projects.map((project, index) => (
-											<Project key={`project-${project.name}-${index}`} name={project.name} techs={project.techs} img={project.image} href={project.link.href} windowTitle={project.windowTitle}>
+											<Project key={`project-${project.name}-${index}`} name={project.name} techs={project.techs} img={project.image} href={project.link.href} windowTitle={project.windowTitle} schoolProject={project.schoolProject}>
 												{project.description}
 											</Project>
 										))}
@@ -173,7 +172,7 @@ function App() {
 										<div className="dummy-element"/>
 
 										<div className="see-more-projects">
-											<a className="link see-more" href="https://github.com/EmpireDemocratiqueDuPoulpe">Voir plus de projets ❯</a>
+											<a className="link see-more" href={`${Content.contact.gitHubURI}?tab=repositories&type=source`}>Voir plus de projets ❯</a>
 										</div>
 									</div>
 
@@ -193,22 +192,36 @@ function App() {
 										<h3>Envie d&apos;en savoir plus ?</h3>
 
 										<p className="contact-explanation">
-											Je suis ouvert aux propositions <span className="emphasis">d&apos;alternance</span> ou <span className="emphasis">d&apos;embauche</span>.
-											Si vous &ecirc;tes int&eacute;ress&eacute;, vous pouvez me contacter par LinkedIn ou m&apos;envoyer
-											directement un e-mail. Vous pouvez aussi consulter mon profil GitHub sur lequel vous pourrez y retrouver
-											certain de mes projets.
+											{Content.contact.hired ? (
+												<>
+													<span className="emphasis">Je suis déjà en contrat dans une entreprise.</span>
+													&nbsp;Cependant, je reste ouvert aux propositions d&apos;embauche.
+													Si vous &ecirc;tes int&eacute;ress&eacute;, vous pouvez me contacter
+													par LinkedIn ou m&apos;envoyer directement un e-mail.
+													Vous pouvez &eacute;galement consulter mon profil GitHub sur lequel
+													s&apos;y trouve la plupart de mes projets personnels.
+												</>
+											) : (
+												<>
+													Je suis ouvert aux propositions d&apos;embauche !
+													Si vous &ecirc;tes int&eacute;ress&eacute;, vous pouvez me contacter
+													par LinkedIn ou m&apos;envoyer directement un e-mail.
+													Vous pouvez &eacute;galement consulter mon profil GitHub sur lequel
+													s&apos;y trouve la plupart de mes projets personnels.
+												</>
+											)}
 										</p>
 
 										<div className="contact-links">
 											<div className="contact-networks">
-												<SocialNetwork.LinkedIn href="https://www.linkedin.com/in/alexicomte/"/>
-												<SocialNetwork.GitHub href="https://github.com/EmpireDemocratiqueDuPoulpe"/>
+												<SocialNetwork.LinkedIn href={Content.contact.linkedInURI}/>
+												<SocialNetwork.GitHub href={Content.contact.gitHubURI}/>
 											</div>
 
 											<div className="contact-sep"/>
 
 											<div className="contact-mail">
-												<Button href="mailto:alexis.lecomte@supinfo.com" decoration="✉">
+												<Button href={`mailto:${Content.contact.mailAddress}`} decoration="✉">
 													Envoyer un mail
 												</Button>
 											</div>
@@ -234,7 +247,7 @@ function App() {
 							</figure>
 
 							<div className="licensing">
-								<p className="copyright my-copyright">Copyright &copy; Alexis Lecomte - 2023</p>
+								<p className="copyright my-copyright">Copyright &copy; Alexis Lecomte - {new Date().getFullYear()}</p>
 
 								<p className="copyright fontawesome-copyright">
 									Font Awesome Pro 6.1.2 by <a className="link" href="https://fontawesome.com" target="_blank" rel="noreferrer">@fontawesome</a>

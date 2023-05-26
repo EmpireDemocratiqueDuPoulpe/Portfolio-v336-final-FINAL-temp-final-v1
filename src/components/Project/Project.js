@@ -10,7 +10,7 @@ import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import WebP from "../WebP/WebP.js";
 import "./Project.css";
 
-function Project({ name, href, techs, img, windowTitle, children }) {
+function Project({ name, href, techs, img, windowTitle, schoolProject, children }) {
 	/* ---- Page content ---------------------------- */
 	return (
 		<div className="project" data-window-title={windowTitle ?? name}>
@@ -19,8 +19,6 @@ function Project({ name, href, techs, img, windowTitle, children }) {
 			</div>
 
 			<div className="project-infos">
-				<h3 className="project-name">{name}</h3>
-
 				{href && (
 					<a className="link project-link" href={href}>
 						<span>Visiter le lien</span>
@@ -28,13 +26,18 @@ function Project({ name, href, techs, img, windowTitle, children }) {
 					</a>
 				)}
 
-				<span className="project-desc">{children}</span>
+				<div className="project-infos-content">
+					<h3 className="project-name">{name}</h3>
+					<span className="project-source">{schoolProject && <>Projet scolaire</>}</span>
 
-				{techs && (
-					<div className="project-techs">
-						{techs.map((tech, index) => <span key={`${tech}-${index}`} className="tech">{tech}</span>)}
-					</div>
-				)}
+					<span className="project-desc">{children}</span>
+
+					{techs && (
+						<div className="project-techs">
+							{techs.map((tech, index) => <span key={`${tech}-${index}`} className="tech">{tech}</span>)}
+						</div>
+					)}
+				</div>
 			</div>
 		</div>
 	);
@@ -48,6 +51,7 @@ Project.propTypes = {
 		fallback: PropTypes.string.isRequired,
 	}),
 	windowTitle: PropTypes.string,
+	schoolProject: PropTypes.bool,
 	children: PropTypes.node
 };
 
