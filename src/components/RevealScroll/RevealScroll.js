@@ -24,7 +24,7 @@ function RevealScroll({ children }) {
 	useEffect(() => {
 		const showElement = scrollBox => {
 			if (containerRef.current) {
-				if ((containerRef.current.offsetTop - (containerRef.current.offsetHeight / 1.75)) <= scrollBox.scrollTop) {
+				if ((containerRef.current.offsetTop - (containerRef.current.offsetHeight / 1.25)) <= scrollBox.scrollTop) {
 					setVisible(true);
 				}
 			}
