@@ -8,6 +8,7 @@ import { useRef, useEffect, lazy, Suspense } from "react";
 import { NavigationProvider } from "../../context/Navigation/NavigationContext.js";
 import useScrollContext from "../../context/Scroll/ScrollContext.js";
 import useCV from "../../context/CV/CVContext.js";
+import useWindowSize from "../../hooks/windowSize/useWindowSize.js";
 import { Scrollbars } from "react-custom-scrollbars-2";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.js";
 import Loader from "../../components/Loader/Loader.js";
@@ -45,6 +46,7 @@ function App() {
 	/* ---- States ---------------------------------- */
 	const scroll = useScrollContext();
 	const cv = useCV();
+	const { width: windowWidth } = useWindowSize();
 	const scrollbar = useRef(/** @type {Object|null} */ null);
 	const clipPathPropName = useRef(/** @type {string|-1|null} */ null);
 	const AppContentRef = useRef(/** @type {HTMLElement|null} */ null);
@@ -169,7 +171,7 @@ function App() {
 											</Project>
 										))}
 
-										<div className="dummy-element"/>
+										{windowWidth >= 1100 && <div className="dummy-element"/>}
 
 										<div className="see-more-projects">
 											<a className="link see-more" href={`${Content.contact.gitHubURI}?tab=repositories&type=source`}>Voir plus de projets ❯</a>
