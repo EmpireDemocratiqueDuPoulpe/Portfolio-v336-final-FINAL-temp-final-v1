@@ -15,7 +15,6 @@ import "./LoadingScreen.css";
 
 const LOADING_CLASS = "loading";
 
-// TODO: Animate logo
 function LoadingScreen({ duration, enabled }) {
 	/* ---- States ---------------------------------- */
 	const [state, setState] = useState(enabled);
