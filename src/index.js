@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import ReactGA from "react-ga4";
 import App from "./pages/App/App.jsx";
 import { DocumentTitleProvider } from "./context/DocumentTitle/DocumentTitleContext.jsx";
 import { ScrollProvider } from "./context/Scroll/ScrollContext.jsx";
 import { CVProvider } from "./context/CV/CVContext.jsx";
-// import reportWebVitals from "./reportWebVitals";
+import reportWebVitals from "./reportWebVitals";
 import "normalize.css";
 import "./index.css";
 
@@ -44,7 +45,16 @@ if (process.env.NODE_ENV === "production") {
 	/* eslint-enable no-unused-vars */
 }
 
-// TODO: If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();
+// Enable analytics report
+ReactGA.initialize("G-8TC44Y21EY");
+ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+
+reportWebVitals(({ id, name, value }) => {
+	ReactGA.event({
+		label: id,
+		action: name,
+		category: "Web Vitals",
+		nonInteraction: true,
+		value: value
+	});
+});
