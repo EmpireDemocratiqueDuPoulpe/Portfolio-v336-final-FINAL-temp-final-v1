@@ -1,15 +1,21 @@
 name: "Deploy to GitHub Pages"
-on: [push, pull_request]  # Event triggers
+on:  # Event triggers
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest  # OS running this job
+    runs-on: ubuntu-latest
     steps:
       - name: "Checkout"
         uses: actions/checkout@v2
       - name: "Install dependencies using NPM"
         run: npm install
-      - name: "Deployement"
+      - name: "Deployment"
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/EmpireDemocratiqueDuPoulpe/EmpireDemocratiqueDuPoulpe.github.io.git
           npm run deploy -- --user "github-actions-bot <support+actions@github.com>" -m "Deploy React app to GitHub Pages"
