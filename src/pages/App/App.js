@@ -147,7 +147,17 @@ function App() {
 									</div>
 
 									<div className="profile-picture">
-										<WebP className="profile-picture-img" src="me.webp" fallback="me.png" alt="Une photographie de moi"/>
+										{(() => {
+											let modifier = "";
+											const today = new Date();
+
+											if ((today.getMonth() + 1) === 12 && today.getDate() === 25) modifier = "_christmas";
+											else if ((today.getMonth() + 1) === 10 && today.getDate() === 31) modifier = "_halloween";
+
+											return (
+												<WebP className="profile-picture-img" src={`me/me${modifier}.webp`} fallback="me/me_christmas.png" alt="Une photographie de moi"/>
+											);
+										})()}
 									</div>
 								</div>
 							</section>
